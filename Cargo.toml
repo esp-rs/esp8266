@@ -1,9 +1,15 @@
 [package]
 name = "esp8266"
-version = "0.1.0"
+version = "0.0.1"
 authors = ["Robin Appelman <robin@icewind.nl>"]
 edition = "2018"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+include = [
+    "/src/**",
+    "svd/esp8266.svd"
+]
+license = "MIT OR Apache-2.0"
 
 [dependencies]
+bare-metal = "0.2"
+vcell = "0.1"
