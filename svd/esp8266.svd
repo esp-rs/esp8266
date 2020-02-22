@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<device xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.0" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<device xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1.0.xsd" schemaVersion="1.0"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
     <name>Espressif</name>
     <version>1.0</version>
     <width>32</width>
@@ -14,637 +15,2648 @@
     </cpu>
     <peripherals>
         <peripheral>
-            <name>IO_MUX</name>
-            <baseAddress>0x60000800</baseAddress>
+            <name>I2S</name>
+            <baseAddress>0x60000e00</baseAddress>
             <addressBlock>
                 <offset>0</offset>
-                <size>0x00000000</size>
+                <size>0x00000160</size>
                 <usage>registers</usage>
             </addressBlock>
             <registers>
                 <register>
-                    <name>CONF</name>
+                    <name>I2STXFIFO</name>
                     <addressOffset>0x0</addressOffset>
-                    <description>configuration</description>
+                    <description>I2STXFIFO</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>CONF_DATA</name>
+                            <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                         </field>
                     </fields>
                 </register>
                 <register>
-                    <name>GPIO_PIN0</name>
+                    <name>I2SRXFIFO</name>
                     <addressOffset>0x4</addressOffset>
-                    <description>GPIO_PIN0</description>
+                    <description>I2SRXFIFO</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN0_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN0_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN0_WAKEUP_ENABLE</name>
-                            <bitOffset>10</bitOffset>
-                            <bitWidth>1</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN0_INT_TYPE</name>
-                            <bitOffset>7</bitOffset>
-                            <bitWidth>3</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN0_PAD_DRIVER</name>
-                            <bitOffset>2</bitOffset>
-                            <bitWidth>1</bitWidth>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
                         </field>
                     </fields>
                 </register>
                 <register>
-                    <name>GPIO_PIN1</name>
+                    <name>I2SCONF</name>
                     <addressOffset>0x8</addressOffset>
-                    <description>GPIO_PIN1</description>
+                    <description>I2SCONF</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN1_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
+                            <name>I2S_BCK_DIV_NUM</name>
+                            <bitOffset>22</bitOffset>
+                            <bitWidth>6</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN1_CONFIG</name>
+                            <name>I2S_CLKM_DIV_NUM</name>
+                            <bitOffset>16</bitOffset>
+                            <bitWidth>6</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_BITS_MOD</name>
+                            <bitOffset>12</bitOffset>
+                            <bitWidth>4</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_RECE_MSB_SHIFT</name>
                             <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
+                            <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN1_WAKEUP_ENABLE</name>
+                            <name>I2S_TRANS_MSB_SHIFT</name>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN1_INT_TYPE</name>
-                            <bitOffset>7</bitOffset>
-                            <bitWidth>3</bitWidth>
+                            <name>I2S_I2S_RX_START</name>
+                            <bitOffset>9</bitOffset>
+                            <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN1_PAD_DRIVER</name>
+                            <name>I2S_I2S_TX_START</name>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_MSB_RIGHT</name>
+                            <bitOffset>7</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_RIGHT_FIRST</name>
+                            <bitOffset>6</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_RECE_SLAVE_MOD</name>
+                            <bitOffset>5</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_TRANS_SLAVE_MOD</name>
+                            <bitOffset>4</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_I2S_RX_FIFO_RESET</name>
+                            <bitOffset>3</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_I2S_TX_FIFO_RESET</name>
                             <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_I2S_RX_RESET</name>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_I2S_TX_RESET</name>
+                            <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                     </fields>
                 </register>
                 <register>
-                    <name>GPIO_PIN2</name>
+                    <name>I2SINT_RAW</name>
                     <addressOffset>0xc</addressOffset>
-                    <description>GPIO_PIN2</description>
+                    <description>I2SINT_RAW</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN2_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN2_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN2_WAKEUP_ENABLE</name>
-                            <bitOffset>10</bitOffset>
+                            <name>I2S_I2S_TX_REMPTY_INT_RAW</name>
+                            <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN2_INT_TYPE</name>
-                            <bitOffset>7</bitOffset>
-                            <bitWidth>3</bitWidth>
+                            <name>I2S_I2S_TX_WFULL_INT_RAW</name>
+                            <bitOffset>4</bitOffset>
+                            <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN2_PAD_DRIVER</name>
+                            <name>I2S_I2S_RX_REMPTY_INT_RAW</name>
+                            <bitOffset>3</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_I2S_RX_WFULL_INT_RAW</name>
                             <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_I2S_TX_PUT_DATA_INT_RAW</name>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_I2S_RX_TAKE_DATA_INT_RAW</name>
+                            <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                     </fields>
                 </register>
                 <register>
-                    <name>GPIO_PIN3</name>
+                    <name>I2SINT_ST</name>
                     <addressOffset>0x10</addressOffset>
-                    <description>GPIO_PIN3</description>
+                    <description>I2SINT_ST</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN3_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN3_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN3_WAKEUP_ENABLE</name>
-                            <bitOffset>10</bitOffset>
+                            <name>I2S_I2S_TX_REMPTY_INT_ST</name>
+                            <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN3_INT_TYPE</name>
-                            <bitOffset>7</bitOffset>
-                            <bitWidth>3</bitWidth>
+                            <name>I2S_I2S_TX_WFULL_INT_ST</name>
+                            <bitOffset>4</bitOffset>
+                            <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN3_PAD_DRIVER</name>
+                            <name>I2S_I2S_RX_REMPTY_INT_ST</name>
+                            <bitOffset>3</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_I2S_RX_WFULL_INT_ST</name>
                             <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_I2S_TX_PUT_DATA_INT_ST</name>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_I2S_RX_TAKE_DATA_INT_ST</name>
+                            <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                     </fields>
                 </register>
                 <register>
-                    <name>GPIO_PIN4</name>
+                    <name>I2SINT_ENA</name>
                     <addressOffset>0x14</addressOffset>
-                    <description>GPIO_PIN4</description>
+                    <description>I2SINT_ENA</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN4_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN4_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN4_WAKEUP_ENABLE</name>
-                            <bitOffset>10</bitOffset>
+                            <name>I2S_I2S_TX_REMPTY_INT_ENA</name>
+                            <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN4_INT_TYPE</name>
-                            <bitOffset>7</bitOffset>
-                            <bitWidth>3</bitWidth>
+                            <name>I2S_I2S_TX_WFULL_INT_ENA</name>
+                            <bitOffset>4</bitOffset>
+                            <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN4_PAD_DRIVER</name>
+                            <name>I2S_I2S_RX_REMPTY_INT_ENA</name>
+                            <bitOffset>3</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_I2S_RX_WFULL_INT_ENA</name>
                             <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_I2S_TX_PUT_DATA_INT_ENA</name>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_I2S_RX_TAKE_DATA_INT_ENA</name>
+                            <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                     </fields>
                 </register>
                 <register>
-                    <name>GPIO_PIN5</name>
+                    <name>I2SINT_CLR</name>
                     <addressOffset>0x18</addressOffset>
-                    <description>GPIO_PIN5</description>
+                    <description>I2SINT_CLR</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN5_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN5_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN5_WAKEUP_ENABLE</name>
-                            <bitOffset>10</bitOffset>
+                            <name>I2S_I2S_TX_REMPTY_INT_CLR</name>
+                            <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN5_INT_TYPE</name>
-                            <bitOffset>7</bitOffset>
-                            <bitWidth>3</bitWidth>
+                            <name>I2S_I2S_TX_WFULL_INT_CLR</name>
+                            <bitOffset>4</bitOffset>
+                            <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN5_PAD_DRIVER</name>
+                            <name>I2S_I2S_RX_REMPTY_INT_CLR</name>
+                            <bitOffset>3</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_I2S_RX_WFULL_INT_CLR</name>
                             <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_I2S_PUT_DATA_INT_CLR</name>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_I2S_TAKE_DATA_INT_CLR</name>
+                            <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                     </fields>
                 </register>
                 <register>
-                    <name>GPIO_PIN6</name>
+                    <name>I2STIMING</name>
                     <addressOffset>0x1c</addressOffset>
-                    <description>GPIO_PIN6</description>
+                    <description>I2STIMING</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN6_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
+                            <name>I2S_TRANS_BCK_IN_INV</name>
+                            <bitOffset>22</bitOffset>
+                            <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN6_CONFIG</name>
-                            <bitOffset>11</bitOffset>
+                            <name>I2S_RECE_DSYNC_SW</name>
+                            <bitOffset>21</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_TRANS_DSYNC_SW</name>
+                            <bitOffset>20</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_RECE_BCK_OUT_DELAY</name>
+                            <bitOffset>18</bitOffset>
                             <bitWidth>2</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN6_WAKEUP_ENABLE</name>
+                            <name>I2S_RECE_WS_OUT_DELAY</name>
+                            <bitOffset>16</bitOffset>
+                            <bitWidth>2</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_TRANS_SD_OUT_DELAY</name>
+                            <bitOffset>14</bitOffset>
+                            <bitWidth>2</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_TRANS_WS_OUT_DELAY</name>
+                            <bitOffset>12</bitOffset>
+                            <bitWidth>2</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_TRANS_BCK_OUT_DELAY</name>
                             <bitOffset>10</bitOffset>
-                            <bitWidth>1</bitWidth>
+                            <bitWidth>2</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN6_INT_TYPE</name>
-                            <bitOffset>7</bitOffset>
-                            <bitWidth>3</bitWidth>
+                            <name>I2S_RECE_SD_IN_DELAY</name>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>2</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN6_PAD_DRIVER</name>
+                            <name>I2S_RECE_WS_IN_DELAY</name>
+                            <bitOffset>6</bitOffset>
+                            <bitWidth>2</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_RECE_BCK_IN_DELAY</name>
+                            <bitOffset>4</bitOffset>
+                            <bitWidth>2</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_TRANS_WS_IN_DELAY</name>
                             <bitOffset>2</bitOffset>
-                            <bitWidth>1</bitWidth>
+                            <bitWidth>2</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_TRANS_BCK_IN_DELAY</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>2</bitWidth>
                         </field>
                     </fields>
                 </register>
                 <register>
-                    <name>GPIO_PIN7</name>
+                    <name>I2S_FIFO_CONF</name>
                     <addressOffset>0x20</addressOffset>
-                    <description>GPIO_PIN7</description>
+                    <description>I2S_FIFO_CONF</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN7_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN7_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN7_WAKEUP_ENABLE</name>
-                            <bitOffset>10</bitOffset>
-                            <bitWidth>1</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN7_INT_TYPE</name>
-                            <bitOffset>7</bitOffset>
+                            <name>I2S_I2S_RX_FIFO_MOD</name>
+                            <bitOffset>16</bitOffset>
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN7_PAD_DRIVER</name>
-                            <bitOffset>2</bitOffset>
+                            <name>I2S_I2S_TX_FIFO_MOD</name>
+                            <bitOffset>13</bitOffset>
+                            <bitWidth>3</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_I2S_DSCR_EN</name>
+                            <bitOffset>12</bitOffset>
                             <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_I2S_TX_DATA_NUM</name>
+                            <bitOffset>6</bitOffset>
+                            <bitWidth>6</bitWidth>
+                        </field>
+                        <field>
+                            <name>I2S_I2S_RX_DATA_NUM</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>6</bitWidth>
                         </field>
                     </fields>
                 </register>
                 <register>
-                    <name>GPIO_PIN8</name>
+                    <name>I2SRXEOF_NUM</name>
                     <addressOffset>0x24</addressOffset>
-                    <description>GPIO_PIN8</description>
+                    <description>I2SRXEOF_NUM</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN8_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN8_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN8_WAKEUP_ENABLE</name>
-                            <bitOffset>10</bitOffset>
-                            <bitWidth>1</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN8_INT_TYPE</name>
-                            <bitOffset>7</bitOffset>
-                            <bitWidth>3</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN8_PAD_DRIVER</name>
-                            <bitOffset>2</bitOffset>
-                            <bitWidth>1</bitWidth>
+                            <name>I2S_I2S_RX_EOF_NUM</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
                         </field>
                     </fields>
                 </register>
                 <register>
-                    <name>GPIO_PIN9</name>
+                    <name>I2SCONF_SIGLE_DATA</name>
                     <addressOffset>0x28</addressOffset>
-                    <description>GPIO_PIN9</description>
+                    <description>I2SCONF_SIGLE_DATA</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN9_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
+                            <name>I2S_I2S_SIGLE_DATA</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
                         </field>
+                    </fields>
+                </register>
+            </registers>
+        </peripheral>
+        <peripheral>
+            <name>SLC</name>
+            <baseAddress>0x60000b00</baseAddress>
+            <addressBlock>
+                <offset>0</offset>
+                <size>0x00000400</size>
+                <usage>registers</usage>
+            </addressBlock>
+            <registers>
+                <register>
+                    <name>SLC_CONF0</name>
+                    <addressOffset>0x0</addressOffset>
+                    <description>SLC_CONF0</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
                         <field>
-                            <name>GPIO_PIN9_CONFIG</name>
-                            <bitOffset>11</bitOffset>
+                            <name>SLC_MODE</name>
+                            <bitOffset>12</bitOffset>
                             <bitWidth>2</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN9_WAKEUP_ENABLE</name>
-                            <bitOffset>10</bitOffset>
+                            <name>SLC_DATA_BURST_EN</name>
+                            <bitOffset>9</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN9_INT_TYPE</name>
-                            <bitOffset>7</bitOffset>
-                            <bitWidth>3</bitWidth>
+                            <name>SLC_DSCR_BURST_EN</name>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN9_PAD_DRIVER</name>
+                            <name>SLC_RX_NO_RESTART_CLR</name>
+                            <bitOffset>7</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RX_AUTO_WRBACK</name>
+                            <bitOffset>6</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RX_LOOP_TEST</name>
+                            <bitOffset>5</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TX_LOOP_TEST</name>
+                            <bitOffset>4</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_AHBM_RST</name>
+                            <bitOffset>3</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_AHBM_FIFO_RST</name>
                             <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RXLINK_RST</name>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TXLINK_RST</name>
+                            <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                     </fields>
                 </register>
                 <register>
-                    <name>GPIO_PIN10</name>
+                    <name>SLC_INT_RAW</name>
+                    <addressOffset>0x4</addressOffset>
+                    <description>SLC_INT_RAW</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>SLC_TX_DSCR_EMPTY_INT_RAW</name>
+                            <bitOffset>21</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RX_DSCR_ERR_INT_RAW</name>
+                            <bitOffset>20</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TX_DSCR_ERR_INT_RAW</name>
+                            <bitOffset>19</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TOHOST_INT_RAW</name>
+                            <bitOffset>18</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RX_EOF_INT_RAW</name>
+                            <bitOffset>17</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RX_DONE_INT_RAW</name>
+                            <bitOffset>16</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TX_EOF_INT_RAW</name>
+                            <bitOffset>15</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TX_DONE_INT_RAW</name>
+                            <bitOffset>14</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TOKEN1_1TO0_INT_RAW</name>
+                            <bitOffset>13</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TOKEN0_1TO0_INT_RAW</name>
+                            <bitOffset>12</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TX_OVF_INT_RAW</name>
+                            <bitOffset>11</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RX_UDF_INT_RAW</name>
+                            <bitOffset>10</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TX_START_INT_RAW</name>
+                            <bitOffset>9</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RX_START_INT_RAW</name>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT7_INT_RAW</name>
+                            <bitOffset>7</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT6_INT_RAW</name>
+                            <bitOffset>6</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT5_INT_RAW</name>
+                            <bitOffset>5</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT4_INT_RAW</name>
+                            <bitOffset>4</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT3_INT_RAW</name>
+                            <bitOffset>3</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT2_INT_RAW</name>
+                            <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT1_INT_RAW</name>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT0_INT_RAW</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SLC_INT_STATUS</name>
+                    <addressOffset>0x8</addressOffset>
+                    <description>SLC_INT_STATUS</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>SLC_TX_DSCR_EMPTY_INT_ST</name>
+                            <bitOffset>21</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RX_DSCR_ERR_INT_ST</name>
+                            <bitOffset>20</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TX_DSCR_ERR_INT_ST</name>
+                            <bitOffset>19</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TOHOST_INT_ST</name>
+                            <bitOffset>18</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RX_EOF_INT_ST</name>
+                            <bitOffset>17</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RX_DONE_INT_ST</name>
+                            <bitOffset>16</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TX_EOF_INT_ST</name>
+                            <bitOffset>15</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TX_DONE_INT_ST</name>
+                            <bitOffset>14</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TOKEN1_1TO0_INT_ST</name>
+                            <bitOffset>13</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TOKEN0_1TO0_INT_ST</name>
+                            <bitOffset>12</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TX_OVF_INT_ST</name>
+                            <bitOffset>11</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RX_UDF_INT_ST</name>
+                            <bitOffset>10</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TX_START_INT_ST</name>
+                            <bitOffset>9</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RX_START_INT_ST</name>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT7_INT_ST</name>
+                            <bitOffset>7</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT6_INT_ST</name>
+                            <bitOffset>6</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT5_INT_ST</name>
+                            <bitOffset>5</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT4_INT_ST</name>
+                            <bitOffset>4</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT3_INT_ST</name>
+                            <bitOffset>3</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT2_INT_ST</name>
+                            <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT1_INT_ST</name>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT0_INT_ST</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SLC_INT_ENA</name>
+                    <addressOffset>0xc</addressOffset>
+                    <description>SLC_INT_ENA</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>SLC_TX_DSCR_EMPTY_INT_ENA</name>
+                            <bitOffset>21</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RX_DSCR_ERR_INT_ENA</name>
+                            <bitOffset>20</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TX_DSCR_ERR_INT_ENA</name>
+                            <bitOffset>19</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TOHOST_INT_ENA</name>
+                            <bitOffset>18</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RX_EOF_INT_ENA</name>
+                            <bitOffset>17</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RX_DONE_INT_ENA</name>
+                            <bitOffset>16</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TX_EOF_INT_ENA</name>
+                            <bitOffset>15</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TX_DONE_INT_ENA</name>
+                            <bitOffset>14</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TOKEN1_1TO0_INT_ENA</name>
+                            <bitOffset>13</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TOKEN0_1TO0_INT_ENA</name>
+                            <bitOffset>12</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TX_OVF_INT_ENA</name>
+                            <bitOffset>11</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RX_UDF_INT_ENA</name>
+                            <bitOffset>10</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TX_START_INT_ENA</name>
+                            <bitOffset>9</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RX_START_INT_ENA</name>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT7_INT_ENA</name>
+                            <bitOffset>7</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT6_INT_ENA</name>
+                            <bitOffset>6</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT5_INT_ENA</name>
+                            <bitOffset>5</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT4_INT_ENA</name>
+                            <bitOffset>4</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT3_INT_ENA</name>
+                            <bitOffset>3</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT2_INT_ENA</name>
+                            <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT1_INT_ENA</name>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT0_INT_ENA</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SLC_INT_CLR</name>
+                    <addressOffset>0x10</addressOffset>
+                    <description>SLC_INT_CLR</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>SLC_TX_DSCR_EMPTY_INT_CLR</name>
+                            <bitOffset>21</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RX_DSCR_ERR_INT_CLR</name>
+                            <bitOffset>20</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TX_DSCR_ERR_INT_CLR</name>
+                            <bitOffset>19</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TOHOST_INT_CLR</name>
+                            <bitOffset>18</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RX_EOF_INT_CLR</name>
+                            <bitOffset>17</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RX_DONE_INT_CLR</name>
+                            <bitOffset>16</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TX_EOF_INT_CLR</name>
+                            <bitOffset>15</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TX_DONE_INT_CLR</name>
+                            <bitOffset>14</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TOKEN1_1TO0_INT_CLR</name>
+                            <bitOffset>13</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TOKEN0_1TO0_INT_CLR</name>
+                            <bitOffset>12</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TX_OVF_INT_CLR</name>
+                            <bitOffset>11</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RX_UDF_INT_CLR</name>
+                            <bitOffset>10</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TX_START_INT_CLR</name>
+                            <bitOffset>9</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RX_START_INT_CLR</name>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT7_INT_CLR</name>
+                            <bitOffset>7</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT6_INT_CLR</name>
+                            <bitOffset>6</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT5_INT_CLR</name>
+                            <bitOffset>5</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT4_INT_CLR</name>
+                            <bitOffset>4</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT3_INT_CLR</name>
+                            <bitOffset>3</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT2_INT_CLR</name>
+                            <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT1_INT_CLR</name>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FRHOST_BIT0_INT_CLR</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SLC_RX_STATUS</name>
+                    <addressOffset>0x14</addressOffset>
+                    <description>SLC_RX_STATUS</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>SLC_RX_EMPTY</name>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RX_FULL</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SLC_RX_FIFO_PUSH</name>
+                    <addressOffset>0x18</addressOffset>
+                    <description>SLC_RX_FIFO_PUSH</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>SLC_RXFIFO_PUSH</name>
+                            <bitOffset>16</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RXFIFO_WDATA</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>9</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SLC_TX_STATUS</name>
+                    <addressOffset>0x1c</addressOffset>
+                    <description>SLC_TX_STATUS</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>SLC_TX_EMPTY</name>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TX_FULL</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SLC_TX_FIFO_POP</name>
+                    <addressOffset>0x20</addressOffset>
+                    <description>SLC_TX_FIFO_POP</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>SLC_TXFIFO_POP</name>
+                            <bitOffset>16</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TXFIFO_RDATA</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>11</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SLC_RX_LINK</name>
+                    <addressOffset>0x24</addressOffset>
+                    <description>SLC_RX_LINK</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>SLC_RXLINK_PARK</name>
+                            <bitOffset>31</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RXLINK_RESTART</name>
+                            <bitOffset>30</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RXLINK_START</name>
+                            <bitOffset>29</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RXLINK_STOP</name>
+                            <bitOffset>28</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_RXLINK_ADDR</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>20</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SLC_TX_LINK</name>
+                    <addressOffset>0x28</addressOffset>
+                    <description>SLC_TX_LINK</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>SLC_TXLINK_PARK</name>
+                            <bitOffset>31</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TXLINK_RESTART</name>
+                            <bitOffset>30</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TXLINK_START</name>
+                            <bitOffset>29</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TXLINK_STOP</name>
+                            <bitOffset>28</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TXLINK_ADDR</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>20</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SLC_INTVEC_TOHOST</name>
                     <addressOffset>0x2c</addressOffset>
-                    <description>GPIO_PIN10</description>
+                    <description>SLC_INTVEC_TOHOST</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN10_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN10_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN10_WAKEUP_ENABLE</name>
-                            <bitOffset>10</bitOffset>
-                            <bitWidth>1</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN10_INT_TYPE</name>
-                            <bitOffset>7</bitOffset>
-                            <bitWidth>3</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN10_PAD_DRIVER</name>
-                            <bitOffset>2</bitOffset>
-                            <bitWidth>1</bitWidth>
+                            <name>SLC_TOHOST_INTVEC</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>8</bitWidth>
                         </field>
                     </fields>
                 </register>
                 <register>
-                    <name>GPIO_PIN11</name>
+                    <name>SLC_TOKEN0</name>
                     <addressOffset>0x30</addressOffset>
-                    <description>GPIO_PIN11</description>
+                    <description>SLC_TOKEN0</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN11_INT_ENA</name>
+                            <name>SLC_TOKEN0</name>
+                            <bitOffset>16</bitOffset>
+                            <bitWidth>12</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TOKEN0_LOCAL_INC_MORE</name>
+                            <bitOffset>14</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TOKEN0_LOCAL_INC</name>
                             <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN11_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN11_WAKEUP_ENABLE</name>
-                            <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN11_INT_TYPE</name>
-                            <bitOffset>7</bitOffset>
-                            <bitWidth>3</bitWidth>
+                            <name>SLC_TOKEN0_LOCAL_WR</name>
+                            <bitOffset>12</bitOffset>
+                            <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN11_PAD_DRIVER</name>
-                            <bitOffset>2</bitOffset>
-                            <bitWidth>1</bitWidth>
+                            <name>SLC_TOKEN0_LOCAL_WDATA</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>12</bitWidth>
                         </field>
                     </fields>
                 </register>
                 <register>
-                    <name>GPIO_PIN12</name>
+                    <name>SLC_TOKEN1</name>
                     <addressOffset>0x34</addressOffset>
-                    <description>GPIO_PIN12</description>
+                    <description>SLC_TOKEN1</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN12_INT_ENA</name>
+                            <name>SLC_TOKEN1</name>
+                            <bitOffset>16</bitOffset>
+                            <bitWidth>12</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TOKEN1_LOCAL_INC_MORE</name>
+                            <bitOffset>14</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TOKEN1_LOCAL_INC</name>
                             <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN12_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN12_WAKEUP_ENABLE</name>
-                            <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN12_INT_TYPE</name>
-                            <bitOffset>7</bitOffset>
-                            <bitWidth>3</bitWidth>
+                            <name>SLC_TOKEN1_LOCAL_WR</name>
+                            <bitOffset>12</bitOffset>
+                            <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN12_PAD_DRIVER</name>
-                            <bitOffset>2</bitOffset>
-                            <bitWidth>1</bitWidth>
+                            <name>SLC_TOKEN1_LOCAL_WDATA</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>12</bitWidth>
                         </field>
                     </fields>
                 </register>
                 <register>
-                    <name>GPIO_PIN13</name>
+                    <name>SLC_CONF1</name>
                     <addressOffset>0x38</addressOffset>
-                    <description>GPIO_PIN13</description>
+                    <description>SLC_CONF1</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN13_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN13_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN13_WAKEUP_ENABLE</name>
-                            <bitOffset>10</bitOffset>
-                            <bitWidth>1</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN13_INT_TYPE</name>
-                            <bitOffset>7</bitOffset>
-                            <bitWidth>3</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN13_PAD_DRIVER</name>
-                            <bitOffset>2</bitOffset>
-                            <bitWidth>1</bitWidth>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
                         </field>
                     </fields>
                 </register>
                 <register>
-                    <name>GPIO_PIN14</name>
+                    <name>SLC_STATE0</name>
                     <addressOffset>0x3c</addressOffset>
-                    <description>GPIO_PIN14</description>
+                    <description>SLC_STATE0</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN14_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN14_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN14_WAKEUP_ENABLE</name>
-                            <bitOffset>10</bitOffset>
-                            <bitWidth>1</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN14_INT_TYPE</name>
-                            <bitOffset>7</bitOffset>
-                            <bitWidth>3</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN14_PAD_DRIVER</name>
-                            <bitOffset>2</bitOffset>
-                            <bitWidth>1</bitWidth>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
                         </field>
                     </fields>
                 </register>
                 <register>
-                    <name>GPIO_PIN15</name>
+                    <name>SLC_STATE1</name>
                     <addressOffset>0x40</addressOffset>
-                    <description>GPIO_PIN15</description>
+                    <description>SLC_STATE1</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN15_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN15_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN15_WAKEUP_ENABLE</name>
-                            <bitOffset>10</bitOffset>
-                            <bitWidth>1</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN15_INT_TYPE</name>
-                            <bitOffset>7</bitOffset>
-                            <bitWidth>3</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN15_PAD_DRIVER</name>
-                            <bitOffset>2</bitOffset>
-                            <bitWidth>1</bitWidth>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
                         </field>
                     </fields>
                 </register>
                 <register>
-                    <name>GPIO_PIN16</name>
+                    <name>SLC_BRIDGE_CONF</name>
                     <addressOffset>0x44</addressOffset>
-                    <description>GPIO_PIN16</description>
+                    <description>SLC_BRIDGE_CONF</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN16_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
+                            <name>SLC_TX_PUSH_IDLE_NUM</name>
+                            <bitOffset>16</bitOffset>
+                            <bitWidth>16</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN16_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN16_WAKEUP_ENABLE</name>
-                            <bitOffset>10</bitOffset>
+                            <name>SLC_TX_DUMMY_MODE</name>
+                            <bitOffset>12</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN16_INT_TYPE</name>
-                            <bitOffset>7</bitOffset>
+                            <name>SLC_FIFO_MAP_ENA</name>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>4</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TXEOF_ENA</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>6</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SLC_RX_EOF_DES_ADDR</name>
+                    <addressOffset>0x48</addressOffset>
+                    <description>SLC_RX_EOF_DES_ADDR</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SLC_TX_EOF_DES_ADDR</name>
+                    <addressOffset>0x4c</addressOffset>
+                    <description>SLC_TX_EOF_DES_ADDR</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SLC_RX_EOF_BFR_DES_ADDR</name>
+                    <addressOffset>0x50</addressOffset>
+                    <description>SLC_RX_EOF_BFR_DES_ADDR</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SLC_AHB_TEST</name>
+                    <addressOffset>0x54</addressOffset>
+                    <description>SLC_AHB_TEST</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>SLC_AHB_TESTADDR</name>
+                            <bitOffset>4</bitOffset>
+                            <bitWidth>2</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_AHB_TESTMODE</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>3</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SLC_SDIO_ST</name>
+                    <addressOffset>0x58</addressOffset>
+                    <description>SLC_SDIO_ST</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>SLC_BUS_ST</name>
+                            <bitOffset>12</bitOffset>
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN16_PAD_DRIVER</name>
-                            <bitOffset>2</bitOffset>
+                            <name>SLC_SDIO_WAKEUP</name>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_FUNC_ST</name>
+                            <bitOffset>4</bitOffset>
+                            <bitWidth>4</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_CMD_ST</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>3</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SLC_RX_DSCR_CONF</name>
+                    <addressOffset>0x5c</addressOffset>
+                    <description>SLC_RX_DSCR_CONF</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>SLC_INFOR_NO_REPLACE</name>
+                            <bitOffset>9</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SLC_TOKEN_NO_REPLACE</name>
+                            <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                     </fields>
                 </register>
                 <register>
-                    <name>GPIO_PIN17</name>
-                    <addressOffset>0x48</addressOffset>
-                    <description>GPIO_PIN17</description>
+                    <name>SLC_TXLINK_DSCR</name>
+                    <addressOffset>0x60</addressOffset>
+                    <description>SLC_TXLINK_DSCR</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN17_INT_ENA</name>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SLC_TXLINK_DSCR_BF0</name>
+                    <addressOffset>0x64</addressOffset>
+                    <description>SLC_TXLINK_DSCR_BF0</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SLC_TXLINK_DSCR_BF1</name>
+                    <addressOffset>0x68</addressOffset>
+                    <description>SLC_TXLINK_DSCR_BF1</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SLC_RXLINK_DSCR</name>
+                    <addressOffset>0x6c</addressOffset>
+                    <description>SLC_RXLINK_DSCR</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SLC_RXLINK_DSCR_BF0</name>
+                    <addressOffset>0x70</addressOffset>
+                    <description>SLC_RXLINK_DSCR_BF0</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SLC_RXLINK_DSCR_BF1</name>
+                    <addressOffset>0x74</addressOffset>
+                    <description>SLC_RXLINK_DSCR_BF1</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SLC_DATE</name>
+                    <addressOffset>0x78</addressOffset>
+                    <description>SLC_DATE</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SLC_ID</name>
+                    <addressOffset>0x7c</addressOffset>
+                    <description>SLC_ID</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+            </registers>
+        </peripheral>
+        <peripheral>
+            <name>UART</name>
+            <baseAddress>0x60000000</baseAddress>
+            <addressBlock>
+                <offset>0</offset>
+                <size>0x000001e0</size>
+                <usage>registers</usage>
+            </addressBlock>
+            <registers>
+                <register>
+                    <name>UART_FIFO</name>
+                    <addressOffset>0x0</addressOffset>
+                    <description>UART_FIFO</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>UART_RXFIFO_RD_BYTE</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>8</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_INT_RAW</name>
+                    <addressOffset>0x4</addressOffset>
+                    <description>UART_INT_RAW</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>UART_RXFIFO_TOUT_INT_RAW</name>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_BRK_DET_INT_RAW</name>
+                            <bitOffset>7</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_CTS_CHG_INT_RAW</name>
+                            <bitOffset>6</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_DSR_CHG_INT_RAW</name>
+                            <bitOffset>5</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_RXFIFO_OVF_INT_RAW</name>
+                            <bitOffset>4</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_FRM_ERR_INT_RAW</name>
+                            <bitOffset>3</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_PARITY_ERR_INT_RAW</name>
+                            <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_TXFIFO_EMPTY_INT_RAW</name>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_RXFIFO_FULL_INT_RAW</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_INT_ST</name>
+                    <addressOffset>0x8</addressOffset>
+                    <description>UART_INT_ST</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>UART_RXFIFO_TOUT_INT_ST</name>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_BRK_DET_INT_ST</name>
+                            <bitOffset>7</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_CTS_CHG_INT_ST</name>
+                            <bitOffset>6</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_DSR_CHG_INT_ST</name>
+                            <bitOffset>5</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_RXFIFO_OVF_INT_ST</name>
+                            <bitOffset>4</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_FRM_ERR_INT_ST</name>
+                            <bitOffset>3</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_PARITY_ERR_INT_ST</name>
+                            <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_TXFIFO_EMPTY_INT_ST</name>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_RXFIFO_FULL_INT_ST</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_INT_ENA</name>
+                    <addressOffset>0xc</addressOffset>
+                    <description>UART_INT_ENA</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>UART_RXFIFO_TOUT_INT_ENA</name>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_BRK_DET_INT_ENA</name>
+                            <bitOffset>7</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_CTS_CHG_INT_ENA</name>
+                            <bitOffset>6</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_DSR_CHG_INT_ENA</name>
+                            <bitOffset>5</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_RXFIFO_OVF_INT_ENA</name>
+                            <bitOffset>4</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_FRM_ERR_INT_ENA</name>
+                            <bitOffset>3</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_PARITY_ERR_INT_ENA</name>
+                            <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_TXFIFO_EMPTY_INT_ENA</name>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_RXFIFO_FULL_INT_ENA</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_INT_CLR</name>
+                    <addressOffset>0x10</addressOffset>
+                    <description>UART_INT_CLR</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>UART_RXFIFO_TOUT_INT_CLR</name>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_BRK_DET_INT_CLR</name>
+                            <bitOffset>7</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_CTS_CHG_INT_CLR</name>
+                            <bitOffset>6</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_DSR_CHG_INT_CLR</name>
+                            <bitOffset>5</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_RXFIFO_OVF_INT_CLR</name>
+                            <bitOffset>4</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_FRM_ERR_INT_CLR</name>
+                            <bitOffset>3</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_PARITY_ERR_INT_CLR</name>
+                            <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_TXFIFO_EMPTY_INT_CLR</name>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_RXFIFO_FULL_INT_CLR</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_CLKDIV</name>
+                    <addressOffset>0x14</addressOffset>
+                    <description>UART_CLKDIV</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>UART_CLKDIV</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>20</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_AUTOBAUD</name>
+                    <addressOffset>0x18</addressOffset>
+                    <description>UART_AUTOBAUD</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>UART_GLITCH_FILT</name>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>8</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_AUTOBAUD_EN</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_STATUS</name>
+                    <addressOffset>0x1c</addressOffset>
+                    <description>UART_STATUS</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>UART_TXD</name>
+                            <bitOffset>31</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_RTSN</name>
+                            <bitOffset>30</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_DTRN</name>
+                            <bitOffset>29</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_TXFIFO_CNT</name>
+                            <bitOffset>16</bitOffset>
+                            <bitWidth>8</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_RXD</name>
+                            <bitOffset>15</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_CTSN</name>
+                            <bitOffset>14</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_DSRN</name>
                             <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
+                            <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN17_CONFIG</name>
+                            <name>UART_RXFIFO_CNT</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>8</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_CONF0</name>
+                    <addressOffset>0x20</addressOffset>
+                    <description>UART_CONF0</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>UART_DTR_INV</name>
+                            <bitOffset>24</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_RTS_INV</name>
+                            <bitOffset>23</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_TXD_INV</name>
+                            <bitOffset>22</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_DSR_INV</name>
+                            <bitOffset>21</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_CTS_INV</name>
+                            <bitOffset>20</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_RXD_INV</name>
+                            <bitOffset>19</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_TXFIFO_RST</name>
+                            <bitOffset>18</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_RXFIFO_RST</name>
+                            <bitOffset>17</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_IRDA_EN</name>
+                            <bitOffset>16</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_TX_FLOW_EN</name>
+                            <bitOffset>15</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_LOOPBACK</name>
+                            <bitOffset>14</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_IRDA_RX_INV</name>
+                            <bitOffset>13</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_IRDA_TX_INV</name>
+                            <bitOffset>12</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_IRDA_WCTL</name>
                             <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
+                            <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN17_WAKEUP_ENABLE</name>
+                            <name>UART_IRDA_TX_EN</name>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN17_INT_TYPE</name>
-                            <bitOffset>7</bitOffset>
-                            <bitWidth>3</bitWidth>
+                            <name>UART_IRDA_DPLX</name>
+                            <bitOffset>9</bitOffset>
+                            <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN17_PAD_DRIVER</name>
-                            <bitOffset>2</bitOffset>
+                            <name>UART_TXD_BRK</name>
+                            <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_SW_DTR</name>
+                            <bitOffset>7</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_SW_RTS</name>
+                            <bitOffset>6</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_STOP_BIT_NUM</name>
+                            <bitOffset>4</bitOffset>
+                            <bitWidth>2</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_BIT_NUM</name>
+                            <bitOffset>2</bitOffset>
+                            <bitWidth>2</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_PARITY_EN</name>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_CONF1</name>
+                    <addressOffset>0x24</addressOffset>
+                    <description>UART_CONF1</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>UART_RX_TOUT_EN</name>
+                            <bitOffset>31</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_RX_TOUT_THRHD</name>
+                            <bitOffset>24</bitOffset>
+                            <bitWidth>7</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_RX_FLOW_EN</name>
+                            <bitOffset>23</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_RX_FLOW_THRHD</name>
+                            <bitOffset>16</bitOffset>
+                            <bitWidth>7</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_TXFIFO_EMPTY_THRHD</name>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>7</bitWidth>
+                        </field>
+                        <field>
+                            <name>UART_RXFIFO_FULL_THRHD</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>7</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_LOWPULSE</name>
+                    <addressOffset>0x28</addressOffset>
+                    <description>UART_LOWPULSE</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>UART_LOWPULSE_MIN_CNT</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>20</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_HIGHPULSE</name>
+                    <addressOffset>0x2c</addressOffset>
+                    <description>UART_HIGHPULSE</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>UART_HIGHPULSE_MIN_CNT</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>20</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_PULSE_NUM</name>
+                    <addressOffset>0x30</addressOffset>
+                    <description>UART_PULSE_NUM</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>UART_PULSE_NUM_CNT</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>10</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_DATE</name>
+                    <addressOffset>0x78</addressOffset>
+                    <description>UART_DATE</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_ID</name>
+                    <addressOffset>0x7c</addressOffset>
+                    <description>UART_ID</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+            </registers>
+        </peripheral>
+        <peripheral>
+            <name>WDT</name>
+            <baseAddress>0x60000900</baseAddress>
+            <addressBlock>
+                <offset>0</offset>
+                <size>0x00000080</size>
+                <usage>registers</usage>
+            </addressBlock>
+            <registers>
+                <register>
+                    <name>WDT_CTL</name>
+                    <addressOffset>0x0</addressOffset>
+                    <description>WDT_CTL</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>WDT_OP</name>
+                    <addressOffset>0x4</addressOffset>
+                    <description>WDT_OP</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>WDT_OP_ND</name>
+                    <addressOffset>0x8</addressOffset>
+                    <description>WDT_OP_ND</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>WDT_RST</name>
+                    <addressOffset>0x14</addressOffset>
+                    <description>WDT_RST</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+            </registers>
+        </peripheral>
+        <peripheral>
+            <name>IO_MUX</name>
+            <baseAddress>0x60000800</baseAddress>
+            <addressBlock>
+                <offset>0</offset>
+                <size>0x00000220</size>
+                <usage>registers</usage>
+            </addressBlock>
+            <registers>
+                <register>
+                    <name>IO_MUX_CONF</name>
+                    <addressOffset>0x0</addressOffset>
+                    <description>IO_MUX_CONF</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>SPI0_CLK_EQU_SYS_CLK</name>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>SPI1_CLK_EQU_SYS_CLK</name>
+                            <bitOffset>9</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>IO_MUX_MTDI</name>
+                    <addressOffset>0x4</addressOffset>
+                    <description>IO_MUX_MTDI</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>IO_MUX_MTCK</name>
+                    <addressOffset>0x8</addressOffset>
+                    <description>IO_MUX_MTCK</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>IO_MUX_MTMS</name>
+                    <addressOffset>0xc</addressOffset>
+                    <description>IO_MUX_MTMS</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>IO_MUX_MTDO</name>
+                    <addressOffset>0x10</addressOffset>
+                    <description>IO_MUX_MTDO</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>IO_MUX_U0RXD</name>
+                    <addressOffset>0x14</addressOffset>
+                    <description>IO_MUX_U0RXD</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>IO_MUX_U0TXD</name>
+                    <addressOffset>0x18</addressOffset>
+                    <description>IO_MUX_U0TXD</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>IO_MUX_SD_CLK</name>
+                    <addressOffset>0x1c</addressOffset>
+                    <description>IO_MUX_SD_CLK</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>IO_MUX_SD_DATA0</name>
+                    <addressOffset>0x20</addressOffset>
+                    <description>IO_MUX_SD_DATA0</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>IO_MUX_SD_DATA1</name>
+                    <addressOffset>0x24</addressOffset>
+                    <description>IO_MUX_SD_DATA1</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>IO_MUX_SD_DATA2</name>
+                    <addressOffset>0x28</addressOffset>
+                    <description>IO_MUX_SD_DATA2</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>IO_MUX_SD_DATA3</name>
+                    <addressOffset>0x2c</addressOffset>
+                    <description>IO_MUX_SD_DATA3</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>IO_MUX_SD_CMD</name>
+                    <addressOffset>0x30</addressOffset>
+                    <description>IO_MUX_SD_CMD</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>IO_MUX_GPIO0</name>
+                    <addressOffset>0x34</addressOffset>
+                    <description>IO_MUX_GPIO0</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>IO_MUX_GPIO2</name>
+                    <addressOffset>0x38</addressOffset>
+                    <description>IO_MUX_GPIO2</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>IO_MUX_GPIO4</name>
+                    <addressOffset>0x3c</addressOffset>
+                    <description>IO_MUX_GPIO4</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>IO_MUX_GPIO5</name>
+                    <addressOffset>0x40</addressOffset>
+                    <description>IO_MUX_GPIO5</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+            </registers>
+        </peripheral>
+        <peripheral>
+            <name>DPORT</name>
+            <baseAddress>0x3ff00000</baseAddress>
+            <addressBlock>
+                <offset>0</offset>
+                <size>0x00000040</size>
+                <usage>registers</usage>
+            </addressBlock>
+            <registers>
+                <register>
+                    <name>EDGE_INT_ENABLE</name>
+                    <addressOffset>0x4</addressOffset>
+                    <description>EDGE_INT_ENABLE</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>DPORT_CTL</name>
+                    <addressOffset>0x14</addressOffset>
+                    <description>DPORT_CTL</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>DPORT_CTL_DOUBLE_CLK</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+            </registers>
+        </peripheral>
+        <peripheral>
+            <name>EFUSE</name>
+            <baseAddress>0x3ff00050</baseAddress>
+            <addressBlock>
+                <offset>0</offset>
+                <size>0x00000080</size>
+                <usage>registers</usage>
+            </addressBlock>
+            <registers>
+                <register>
+                    <name>EFUSE_DATA0</name>
+                    <addressOffset>0x0</addressOffset>
+                    <description>EFUSE_DATA0</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>EFUSE_DATA1</name>
+                    <addressOffset>0x4</addressOffset>
+                    <description>EFUSE_DATA1</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>EFUSE_DATA2</name>
+                    <addressOffset>0x8</addressOffset>
+                    <description>EFUSE_DATA2</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>EFUSE_DATA3</name>
+                    <addressOffset>0xc</addressOffset>
+                    <description>EFUSE_DATA3</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+            </registers>
+        </peripheral>
+        <peripheral>
+            <name>TIMER</name>
+            <baseAddress>0x60000600</baseAddress>
+            <addressBlock>
+                <offset>0</offset>
+                <size>0x00000120</size>
+                <usage>registers</usage>
+            </addressBlock>
+            <registers>
+                <register>
+                    <name>FRC1_LOAD</name>
+                    <addressOffset>0x0</addressOffset>
+                    <description>FRC1_LOAD</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>TIMER_FRC1_LOAD_VALUE</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>23</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>FRC1_COUNT</name>
+                    <addressOffset>0x4</addressOffset>
+                    <description>FRC1_COUNT</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>TIMER_FRC1_COUNT</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>23</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>FRC1_CTRL</name>
+                    <addressOffset>0x8</addressOffset>
+                    <description>FRC1_CTRL</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>TIMER_FRC1_INT</name>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>TIMER_FRC1_CTRL</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>8</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>FRC1_INT</name>
+                    <addressOffset>0xc</addressOffset>
+                    <description>FRC1_INT</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>TIMER_FRC1_INT_CLR_MASK</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>FRC2_LOAD</name>
+                    <addressOffset>0x20</addressOffset>
+                    <description>FRC2_LOAD</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>TIMER_FRC2_LOAD_VALUE</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>FRC2_COUNT</name>
+                    <addressOffset>0x24</addressOffset>
+                    <description>FRC2_COUNT</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>TIMER_FRC2_COUNT</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>FRC2_CTRL</name>
+                    <addressOffset>0x28</addressOffset>
+                    <description>FRC2_CTRL</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>TIMER_FRC2_INT</name>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>TIMER_FRC2_CTRL</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>8</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>FRC2_INT</name>
+                    <addressOffset>0x2c</addressOffset>
+                    <description>FRC2_INT</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>TIMER_FRC2_INT_CLR_MASK</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>FRC2_ALARM</name>
+                    <addressOffset>0x30</addressOffset>
+                    <description>FRC2_ALARM</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>TIMER_FRC2_ALARM</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+            </registers>
+        </peripheral>
+        <peripheral>
+            <name>RTC</name>
+            <baseAddress>0x60000700</baseAddress>
+            <addressBlock>
+                <offset>0</offset>
+                <size>0x00000040</size>
+                <usage>registers</usage>
+            </addressBlock>
+            <registers>
+                <register>
+                    <name>RTC_STORE0</name>
+                    <addressOffset>0x30</addressOffset>
+                    <description>RTC_STORE0</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>RTC_STATE1</name>
+                    <addressOffset>0x14</addressOffset>
+                    <description>RTC_STATE1</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>Register</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
                         </field>
                     </fields>
                 </register>
@@ -655,7 +2667,7 @@
             <baseAddress>0x60000300</baseAddress>
             <addressBlock>
                 <offset>0</offset>
-                <size>0x00002e60</size>
+                <size>0x000003a0</size>
                 <usage>registers</usage>
             </addressBlock>
             <registers>
@@ -667,9 +2679,14 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
+                            <name>GPIO_BT_SEL</name>
+                            <bitOffset>16</bitOffset>
+                            <bitWidth>16</bitWidth>
+                        </field>
+                        <field>
                             <name>GPIO_OUT_DATA</name>
                             <bitOffset>0</bitOffset>
-                            <bitWidth>32</bitWidth>
+                            <bitWidth>16</bitWidth>
                         </field>
                     </fields>
                 </register>
@@ -683,7 +2700,7 @@
                         <field>
                             <name>GPIO_OUT_DATA_W1TS</name>
                             <bitOffset>0</bitOffset>
-                            <bitWidth>32</bitWidth>
+                            <bitWidth>16</bitWidth>
                         </field>
                     </fields>
                 </register>
@@ -697,7 +2714,7 @@
                         <field>
                             <name>GPIO_OUT_DATA_W1TC</name>
                             <bitOffset>0</bitOffset>
-                            <bitWidth>32</bitWidth>
+                            <bitWidth>16</bitWidth>
                         </field>
                     </fields>
                 </register>
@@ -709,9 +2726,14 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
+                            <name>GPIO_SDIO_SEL</name>
+                            <bitOffset>16</bitOffset>
+                            <bitWidth>6</bitWidth>
+                        </field>
+                        <field>
                             <name>GPIO_ENABLE_DATA</name>
                             <bitOffset>0</bitOffset>
-                            <bitWidth>32</bitWidth>
+                            <bitWidth>16</bitWidth>
                         </field>
                     </fields>
                 </register>
@@ -725,7 +2747,7 @@
                         <field>
                             <name>GPIO_ENABLE_DATA_W1TS</name>
                             <bitOffset>0</bitOffset>
-                            <bitWidth>32</bitWidth>
+                            <bitWidth>16</bitWidth>
                         </field>
                     </fields>
                 </register>
@@ -739,7 +2761,7 @@
                         <field>
                             <name>GPIO_ENABLE_DATA_W1TC</name>
                             <bitOffset>0</bitOffset>
-                            <bitWidth>32</bitWidth>
+                            <bitWidth>16</bitWidth>
                         </field>
                     </fields>
                 </register>
@@ -751,9 +2773,14 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
+                            <name>GPIO_STRAPPING</name>
+                            <bitOffset>16</bitOffset>
+                            <bitWidth>16</bitWidth>
+                        </field>
+                        <field>
                             <name>GPIO_IN_DATA</name>
                             <bitOffset>0</bitOffset>
-                            <bitWidth>32</bitWidth>
+                            <bitWidth>16</bitWidth>
                         </field>
                     </fields>
                 </register>
@@ -765,9 +2792,9 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_STATUS_INT</name>
+                            <name>GPIO_STATUS_INTERRUPT</name>
                             <bitOffset>0</bitOffset>
-                            <bitWidth>32</bitWidth>
+                            <bitWidth>16</bitWidth>
                         </field>
                     </fields>
                 </register>
@@ -779,9 +2806,9 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_STATUS_INT_W1TS</name>
+                            <name>GPIO_STATUS_INTERRUPT_W1TS</name>
                             <bitOffset>0</bitOffset>
-                            <bitWidth>32</bitWidth>
+                            <bitWidth>16</bitWidth>
                         </field>
                     </fields>
                 </register>
@@ -793,9 +2820,9 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_STATUS_INT_W1TC</name>
+                            <name>GPIO_STATUS_INTERRUPT_W1TC</name>
                             <bitOffset>0</bitOffset>
-                            <bitWidth>32</bitWidth>
+                            <bitWidth>16</bitWidth>
                         </field>
                     </fields>
                 </register>
@@ -806,11 +2833,6 @@
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
-                        <field>
-                            <name>GPIO_PIN0_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
                         <field>
                             <name>GPIO_PIN0_CONFIG</name>
                             <bitOffset>11</bitOffset>
@@ -827,8 +2849,13 @@
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN0_PAD_DRIVER</name>
+                            <name>GPIO_PIN0_DRIVER</name>
                             <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>GPIO_PIN0_SOURCE</name>
+                            <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                     </fields>
@@ -840,11 +2867,6 @@
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
-                        <field>
-                            <name>GPIO_PIN1_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
                         <field>
                             <name>GPIO_PIN1_CONFIG</name>
                             <bitOffset>11</bitOffset>
@@ -861,8 +2883,13 @@
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN1_PAD_DRIVER</name>
+                            <name>GPIO_PIN1_DRIVER</name>
                             <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>GPIO_PIN1_SOURCE</name>
+                            <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                     </fields>
@@ -874,11 +2901,6 @@
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
-                        <field>
-                            <name>GPIO_PIN2_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
                         <field>
                             <name>GPIO_PIN2_CONFIG</name>
                             <bitOffset>11</bitOffset>
@@ -895,8 +2917,13 @@
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN2_PAD_DRIVER</name>
+                            <name>GPIO_PIN2_DRIVER</name>
                             <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>GPIO_PIN2_SOURCE</name>
+                            <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                     </fields>
@@ -908,11 +2935,6 @@
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
-                        <field>
-                            <name>GPIO_PIN3_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
                         <field>
                             <name>GPIO_PIN3_CONFIG</name>
                             <bitOffset>11</bitOffset>
@@ -929,8 +2951,13 @@
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN3_PAD_DRIVER</name>
+                            <name>GPIO_PIN3_DRIVER</name>
                             <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>GPIO_PIN3_SOURCE</name>
+                            <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                     </fields>
@@ -942,11 +2969,6 @@
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
-                        <field>
-                            <name>GPIO_PIN4_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
                         <field>
                             <name>GPIO_PIN4_CONFIG</name>
                             <bitOffset>11</bitOffset>
@@ -963,8 +2985,13 @@
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN4_PAD_DRIVER</name>
+                            <name>GPIO_PIN4_DRIVER</name>
                             <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>GPIO_PIN4_SOURCE</name>
+                            <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                     </fields>
@@ -976,11 +3003,6 @@
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
-                        <field>
-                            <name>GPIO_PIN5_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
                         <field>
                             <name>GPIO_PIN5_CONFIG</name>
                             <bitOffset>11</bitOffset>
@@ -997,8 +3019,13 @@
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN5_PAD_DRIVER</name>
+                            <name>GPIO_PIN5_DRIVER</name>
                             <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>GPIO_PIN5_SOURCE</name>
+                            <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                     </fields>
@@ -1010,11 +3037,6 @@
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
-                        <field>
-                            <name>GPIO_PIN6_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
                         <field>
                             <name>GPIO_PIN6_CONFIG</name>
                             <bitOffset>11</bitOffset>
@@ -1031,8 +3053,13 @@
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN6_PAD_DRIVER</name>
+                            <name>GPIO_PIN6_DRIVER</name>
                             <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>GPIO_PIN6_SOURCE</name>
+                            <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                     </fields>
@@ -1044,11 +3071,6 @@
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
-                        <field>
-                            <name>GPIO_PIN7_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
                         <field>
                             <name>GPIO_PIN7_CONFIG</name>
                             <bitOffset>11</bitOffset>
@@ -1065,8 +3087,13 @@
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN7_PAD_DRIVER</name>
+                            <name>GPIO_PIN7_DRIVER</name>
                             <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>GPIO_PIN7_SOURCE</name>
+                            <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                     </fields>
@@ -1078,11 +3105,6 @@
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
-                        <field>
-                            <name>GPIO_PIN8_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
                         <field>
                             <name>GPIO_PIN8_CONFIG</name>
                             <bitOffset>11</bitOffset>
@@ -1099,8 +3121,13 @@
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN8_PAD_DRIVER</name>
+                            <name>GPIO_PIN8_DRIVER</name>
                             <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>GPIO_PIN8_SOURCE</name>
+                            <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                     </fields>
@@ -1112,11 +3139,6 @@
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
-                        <field>
-                            <name>GPIO_PIN9_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
                         <field>
                             <name>GPIO_PIN9_CONFIG</name>
                             <bitOffset>11</bitOffset>
@@ -1133,8 +3155,13 @@
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN9_PAD_DRIVER</name>
+                            <name>GPIO_PIN9_DRIVER</name>
                             <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>GPIO_PIN9_SOURCE</name>
+                            <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                     </fields>
@@ -1146,11 +3173,6 @@
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
-                        <field>
-                            <name>GPIO_PIN10_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
                         <field>
                             <name>GPIO_PIN10_CONFIG</name>
                             <bitOffset>11</bitOffset>
@@ -1167,8 +3189,13 @@
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN10_PAD_DRIVER</name>
+                            <name>GPIO_PIN10_DRIVER</name>
                             <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>GPIO_PIN10_SOURCE</name>
+                            <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                     </fields>
@@ -1180,11 +3207,6 @@
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
-                        <field>
-                            <name>GPIO_PIN11_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
                         <field>
                             <name>GPIO_PIN11_CONFIG</name>
                             <bitOffset>11</bitOffset>
@@ -1201,8 +3223,13 @@
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN11_PAD_DRIVER</name>
+                            <name>GPIO_PIN11_DRIVER</name>
                             <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>GPIO_PIN11_SOURCE</name>
+                            <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                     </fields>
@@ -1214,11 +3241,6 @@
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
-                        <field>
-                            <name>GPIO_PIN12_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
                         <field>
                             <name>GPIO_PIN12_CONFIG</name>
                             <bitOffset>11</bitOffset>
@@ -1235,8 +3257,13 @@
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN12_PAD_DRIVER</name>
+                            <name>GPIO_PIN12_DRIVER</name>
                             <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>GPIO_PIN12_SOURCE</name>
+                            <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                     </fields>
@@ -1248,11 +3275,6 @@
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
-                        <field>
-                            <name>GPIO_PIN13_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
                         <field>
                             <name>GPIO_PIN13_CONFIG</name>
                             <bitOffset>11</bitOffset>
@@ -1269,8 +3291,13 @@
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN13_PAD_DRIVER</name>
+                            <name>GPIO_PIN13_DRIVER</name>
                             <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>GPIO_PIN13_SOURCE</name>
+                            <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                     </fields>
@@ -1282,11 +3309,6 @@
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
-                        <field>
-                            <name>GPIO_PIN14_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
                         <field>
                             <name>GPIO_PIN14_CONFIG</name>
                             <bitOffset>11</bitOffset>
@@ -1303,8 +3325,13 @@
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN14_PAD_DRIVER</name>
+                            <name>GPIO_PIN14_DRIVER</name>
                             <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>GPIO_PIN14_SOURCE</name>
+                            <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                     </fields>
@@ -1316,11 +3343,6 @@
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
-                        <field>
-                            <name>GPIO_PIN15_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
                         <field>
                             <name>GPIO_PIN15_CONFIG</name>
                             <bitOffset>11</bitOffset>
@@ -1337,43 +3359,81 @@
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN15_PAD_DRIVER</name>
+                            <name>GPIO_PIN15_DRIVER</name>
                             <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>GPIO_PIN15_SOURCE</name>
+                            <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                     </fields>
                 </register>
                 <register>
-                    <name>GPIO_PIN16</name>
+                    <name>GPIO_SIGMA_DELTA</name>
                     <addressOffset>0x68</addressOffset>
-                    <description>GPIO_PIN16</description>
+                    <description>GPIO_SIGMA_DELTA</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN16_INT_ENA</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>5</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN16_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
-                            <name>GPIO_PIN16_WAKEUP_ENABLE</name>
-                            <bitOffset>10</bitOffset>
+                            <name>SIGMA_DELTA_ENABLE</name>
+                            <bitOffset>16</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN16_INT_TYPE</name>
-                            <bitOffset>7</bitOffset>
-                            <bitWidth>3</bitWidth>
+                            <name>SIGMA_DELTA_PRESCALAR</name>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>8</bitWidth>
                         </field>
                         <field>
-                            <name>GPIO_PIN16_PAD_DRIVER</name>
-                            <bitOffset>2</bitOffset>
+                            <name>SIGMA_DELTA_TARGET</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>8</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>GPIO_RTC_CALIB_SYNC</name>
+                    <addressOffset>0x6c</addressOffset>
+                    <description>GPIO_RTC_CALIB_SYNC</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>RTC_CALIB_START</name>
+                            <bitOffset>31</bitOffset>
                             <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>RTC_PERIOD_NUM</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>10</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>GPIO_RTC_CALIB_VALUE</name>
+                    <addressOffset>0x70</addressOffset>
+                    <description>GPIO_RTC_CALIB_VALUE</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>RTC_CALIB_RDY</name>
+                            <bitOffset>31</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>RTC_CALIB_RDY_REAL</name>
+                            <bitOffset>30</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>RTC_CALIB_VALUE</name>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>20</bitWidth>
                         </field>
                     </fields>
                 </register>
