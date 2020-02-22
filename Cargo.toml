@@ -4,6 +4,7 @@ version = "0.0.2"
 description = "A minimal peripheral access crate the ESP8266"
 authors = ["Robin Appelman <robin@icewind.nl>"]
 edition = "2018"
+repository = "https://github.com/icewind1991/esp8266"
 
 include = [
     "/src/**",
