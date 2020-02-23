@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<device schemaVersion="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
-        xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1.0.xsd">
+<device xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1.0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+        schemaVersion="1.0">
     <name>Espressif</name>
     <version>1.0</version>
     <width>32</width>
@@ -2776,11 +2776,6 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>frc1_ctrl_data</name>
-                            <bitOffset>9</bitOffset>
-                            <bitWidth>23</bitWidth>
-                        </field>
-                        <field>
                             <name>frc1_int</name>
                             <description>the status of the interrupt, when the count isdereased to zero</description>
                             <bitOffset>8</bitOffset>
@@ -2804,11 +2799,6 @@
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
-                        <field>
-                            <name>frc1_int_data</name>
-                            <bitOffset>1</bitOffset>
-                            <bitWidth>31</bitWidth>
-                        </field>
                         <field>
                             <name>frc1_int_clr_mask</name>
                             <description>write to clear the status of the interrupt, if theinterrupt type is "level"
@@ -2856,11 +2846,6 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>frc2_ctrl_data</name>
-                            <bitOffset>9</bitOffset>
-                            <bitWidth>23</bitWidth>
-                        </field>
-                        <field>
                             <name>frc2_int</name>
                             <description>the status of the interrupt, when the count is equal tothe alarm value
                             </description>
@@ -2885,11 +2870,6 @@
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
-                        <field>
-                            <name>frc2_int_data</name>
-                            <bitOffset>1</bitOffset>
-                            <bitWidth>31</bitWidth>
-                        </field>
                         <field>
                             <name>frc2_int_clr_mask</name>
                             <description>write to clear the status of the interrupt, if theinterrupt type is "level"
@@ -2917,12 +2897,6 @@
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
-                        <field>
-                            <name>uart_fifo_data</name>
-                            <description>UART FIFO,length 128</description>
-                            <bitOffset>8</bitOffset>
-                            <bitWidth>24</bitWidth>
-                        </field>
                         <field>
                             <name>rxfifo_rd_byte</name>
                             <description>R/W share the same address</description>
@@ -3217,11 +3191,6 @@
                             <bitWidth>8</bitWidth>
                         </field>
                         <field>
-                            <name>uart_autobaud_data</name>
-                            <bitOffset>1</bitOffset>
-                            <bitWidth>7</bitWidth>
-                        </field>
-                        <field>
                             <name>autobaud_en</name>
                             <description>Set this bit to enable baudrate detect</description>
                             <bitOffset>0</bitOffset>
@@ -3255,11 +3224,6 @@
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>uart_status_data</name>
-                            <bitOffset>14</bitOffset>
-                            <bitWidth>15</bitWidth>
-                        </field>
-                        <field>
                             <name>txfifo_cnt</name>
                             <description>Number of data in UART TX fifo</description>
                             <bitOffset>16</bitOffset>
@@ -3282,11 +3246,6 @@
                             <description>The level of uart dsr pin</description>
                             <bitOffset>13</bitOffset>
                             <bitWidth>1</bitWidth>
-                        </field>
-                        <field>
-                            <name>uart_status_data</name>
-                            <bitOffset>8</bitOffset>
-                            <bitWidth>5</bitWidth>
                         </field>
                         <field>
                             <name>rxfifo_cnt</name>
@@ -3439,20 +3398,10 @@
                             <bitWidth>7</bitWidth>
                         </field>
                         <field>
-                            <name>uart_conf1_data</name>
-                            <bitOffset>15</bitOffset>
-                            <bitWidth>1</bitWidth>
-                        </field>
-                        <field>
                             <name>txfifo_empty_thrhd</name>
                             <description>The config bits for tx fifo empty threshold,0-127</description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>7</bitWidth>
-                        </field>
-                        <field>
-                            <name>uart_conf1_data</name>
-                            <bitOffset>7</bitOffset>
-                            <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>rxfifo_full_thrhd</name>
