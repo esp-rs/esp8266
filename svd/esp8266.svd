@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<device xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.0"
+<device schemaVersion="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
         xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1.0.xsd">
     <name>Espressif</name>
     <version>1.0</version>
@@ -125,24 +125,26 @@
             <baseAddress>0x60000300</baseAddress>
             <addressBlock>
                 <offset>0</offset>
-                <size>0x000003a0</size>
+                <size>0x00000380</size>
                 <usage>registers</usage>
             </addressBlock>
             <registers>
                 <register>
                     <name>GPIO_OUT</name>
                     <addressOffset>0x0</addressOffset>
-                    <description>GPIO_OUT</description>
+                    <description>BT-Coexist Selection register</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>GPIO_BT_SEL</name>
+                            <description>BT-Coexist Selection register</description>
                             <bitOffset>16</bitOffset>
                             <bitWidth>16</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_OUT_DATA</name>
+                            <description>The output value when the GPIO pin is set as output.</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>16</bitWidth>
                         </field>
@@ -157,6 +159,9 @@
                     <fields>
                         <field>
                             <name>GPIO_OUT_DATA_W1TS</name>
+                            <description>Writing 1 into a bit in this register will set the related bit in
+                                GPIO_OUT_DATA
+                            </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>16</bitWidth>
                         </field>
@@ -171,6 +176,9 @@
                     <fields>
                         <field>
                             <name>GPIO_OUT_DATA_W1TC</name>
+                            <description>Writing 1 into a bit in this register will clear the related bit in
+                                GPIO_OUT_DATA
+                            </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>16</bitWidth>
                         </field>
@@ -185,11 +193,13 @@
                     <fields>
                         <field>
                             <name>GPIO_SDIO_SEL</name>
+                            <description>SDIO-dis selection register</description>
                             <bitOffset>16</bitOffset>
                             <bitWidth>6</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_ENABLE_DATA</name>
+                            <description>The output enable register.</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>16</bitWidth>
                         </field>
@@ -204,6 +214,9 @@
                     <fields>
                         <field>
                             <name>GPIO_ENABLE_DATA_W1TS</name>
+                            <description>Writing 1 into a bit in this register will set the related bit in
+                                GPIO_ENABLE_DATA
+                            </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>16</bitWidth>
                         </field>
@@ -218,6 +231,9 @@
                     <fields>
                         <field>
                             <name>GPIO_ENABLE_DATA_W1TC</name>
+                            <description>Writing 1 into a bit in this register will clear the related bit in
+                                GPIO_ENABLE_DATA
+                            </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>16</bitWidth>
                         </field>
@@ -226,17 +242,19 @@
                 <register>
                     <name>GPIO_IN</name>
                     <addressOffset>0x18</addressOffset>
-                    <description>GPIO_IN</description>
+                    <description>The values of the strapping pins.</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>GPIO_STRAPPING</name>
+                            <description>The values of the strapping pins.</description>
                             <bitOffset>16</bitOffset>
                             <bitWidth>16</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_IN_DATA</name>
+                            <description>The values of the GPIO pins when the GPIO pin is set as input.</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>16</bitWidth>
                         </field>
@@ -251,6 +269,7 @@
                     <fields>
                         <field>
                             <name>GPIO_STATUS_INTERRUPT</name>
+                            <description>Interrupt enable register.</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>16</bitWidth>
                         </field>
@@ -265,6 +284,9 @@
                     <fields>
                         <field>
                             <name>GPIO_STATUS_INTERRUPT_W1TS</name>
+                            <description>Writing 1 into a bit in this register will set the related bit in
+                                GPIO_STATUS_INTERRUPT
+                            </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>16</bitWidth>
                         </field>
@@ -279,6 +301,9 @@
                     <fields>
                         <field>
                             <name>GPIO_STATUS_INTERRUPT_W1TC</name>
+                            <description>Writing 1 into a bit in this register will clear the related bit in
+                                GPIO_STATUS_INTERRUPT
+                            </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>16</bitWidth>
                         </field>
@@ -292,27 +317,30 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN0_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
                             <name>GPIO_PIN0_WAKEUP_ENABLE</name>
+                            <description>0: disable; 1: enable GPIO wakeup CPU, only when GPIO_PIN0_INT_TYPE is 0x4 or
+                                0x5
+                            </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN0_INT_TYPE</name>
+                            <description>0: disable; 1: positive edge; 2: negative edge; 3: both types of edge; 4:
+                                low-level; 5: high-level
+                            </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN0_DRIVER</name>
+                            <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN0_SOURCE</name>
+                            <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
@@ -326,27 +354,30 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN1_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
                             <name>GPIO_PIN1_WAKEUP_ENABLE</name>
+                            <description>0: disable; 1: enable GPIO wakeup CPU, only when GPIO_PIN0_INT_TYPE is 0x4 or
+                                0x5
+                            </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN1_INT_TYPE</name>
+                            <description>0: disable; 1: positive edge; 2: negative edge; 3: both types of edge; 4:
+                                low-level; 5: high-level
+                            </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN1_DRIVER</name>
+                            <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN1_SOURCE</name>
+                            <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
@@ -360,27 +391,30 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN2_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
                             <name>GPIO_PIN2_WAKEUP_ENABLE</name>
+                            <description>0: disable; 1: enable GPIO wakeup CPU, only when GPIO_PIN0_INT_TYPE is 0x4 or
+                                0x5
+                            </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN2_INT_TYPE</name>
+                            <description>0: disable; 1: positive edge; 2: negative edge; 3: both types of edge; 4:
+                                low-level; 5: high-level
+                            </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN2_DRIVER</name>
+                            <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN2_SOURCE</name>
+                            <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
@@ -394,27 +428,30 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN3_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
                             <name>GPIO_PIN3_WAKEUP_ENABLE</name>
+                            <description>0: disable; 1: enable GPIO wakeup CPU, only when GPIO_PIN0_INT_TYPE is 0x4 or
+                                0x5
+                            </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN3_INT_TYPE</name>
+                            <description>0: disable; 1: positive edge; 2: negative edge; 3: both types of edge; 4:
+                                low-level; 5: high-level
+                            </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN3_DRIVER</name>
+                            <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN3_SOURCE</name>
+                            <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
@@ -428,27 +465,30 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN4_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
                             <name>GPIO_PIN4_WAKEUP_ENABLE</name>
+                            <description>0: disable; 1: enable GPIO wakeup CPU, only when GPIO_PIN0_INT_TYPE is 0x4 or
+                                0x5
+                            </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN4_INT_TYPE</name>
+                            <description>0: disable; 1: positive edge; 2: negative edge; 3: both types of edge; 4:
+                                low-level; 5: high-level
+                            </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN4_DRIVER</name>
+                            <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN4_SOURCE</name>
+                            <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
@@ -462,27 +502,30 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN5_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
                             <name>GPIO_PIN5_WAKEUP_ENABLE</name>
+                            <description>0: disable; 1: enable GPIO wakeup CPU, only when GPIO_PIN0_INT_TYPE is 0x4 or
+                                0x5
+                            </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN5_INT_TYPE</name>
+                            <description>0: disable; 1: positive edge; 2: negative edge; 3: both types of edge; 4:
+                                low-level; 5: high-level
+                            </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN5_DRIVER</name>
+                            <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN5_SOURCE</name>
+                            <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
@@ -496,27 +539,30 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN6_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
                             <name>GPIO_PIN6_WAKEUP_ENABLE</name>
+                            <description>0: disable; 1: enable GPIO wakeup CPU, only when GPIO_PIN0_INT_TYPE is 0x4 or
+                                0x5
+                            </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN6_INT_TYPE</name>
+                            <description>0: disable; 1: positive edge; 2: negative edge; 3: both types of edge; 4:
+                                low-level; 5: high-level
+                            </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN6_DRIVER</name>
+                            <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN6_SOURCE</name>
+                            <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
@@ -530,27 +576,30 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN7_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
                             <name>GPIO_PIN7_WAKEUP_ENABLE</name>
+                            <description>0: disable; 1: enable GPIO wakeup CPU, only when GPIO_PIN0_INT_TYPE is 0x4 or
+                                0x5
+                            </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN7_INT_TYPE</name>
+                            <description>0: disable; 1: positive edge; 2: negative edge; 3: both types of edge; 4:
+                                low-level; 5: high-level
+                            </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN7_DRIVER</name>
+                            <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN7_SOURCE</name>
+                            <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
@@ -564,27 +613,30 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN8_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
                             <name>GPIO_PIN8_WAKEUP_ENABLE</name>
+                            <description>0: disable; 1: enable GPIO wakeup CPU, only when GPIO_PIN0_INT_TYPE is 0x4 or
+                                0x5
+                            </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN8_INT_TYPE</name>
+                            <description>0: disable; 1: positive edge; 2: negative edge; 3: both types of edge; 4:
+                                low-level; 5: high-level
+                            </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN8_DRIVER</name>
+                            <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN8_SOURCE</name>
+                            <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
@@ -598,27 +650,30 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN9_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
                             <name>GPIO_PIN9_WAKEUP_ENABLE</name>
+                            <description>0: disable; 1: enable GPIO wakeup CPU, only when GPIO_PIN0_INT_TYPE is 0x4 or
+                                0x5
+                            </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN9_INT_TYPE</name>
+                            <description>0: disable; 1: positive edge; 2: negative edge; 3: both types of edge; 4:
+                                low-level; 5: high-level
+                            </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN9_DRIVER</name>
+                            <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN9_SOURCE</name>
+                            <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
@@ -632,27 +687,30 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN10_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
                             <name>GPIO_PIN10_WAKEUP_ENABLE</name>
+                            <description>0: disable; 1: enable GPIO wakeup CPU, only when GPIO_PIN0_INT_TYPE is 0x4 or
+                                0x5
+                            </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN10_INT_TYPE</name>
+                            <description>0: disable; 1: positive edge; 2: negative edge; 3: both types of edge; 4:
+                                low-level; 5: high-level
+                            </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN10_DRIVER</name>
+                            <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN10_SOURCE</name>
+                            <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
@@ -666,27 +724,30 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN11_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
                             <name>GPIO_PIN11_WAKEUP_ENABLE</name>
+                            <description>0: disable; 1: enable GPIO wakeup CPU, only when GPIO_PIN0_INT_TYPE is 0x4 or
+                                0x5
+                            </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN11_INT_TYPE</name>
+                            <description>0: disable; 1: positive edge; 2: negative edge; 3: both types of edge; 4:
+                                low-level; 5: high-level
+                            </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN11_DRIVER</name>
+                            <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN11_SOURCE</name>
+                            <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
@@ -700,27 +761,30 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN12_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
                             <name>GPIO_PIN12_WAKEUP_ENABLE</name>
+                            <description>0: disable; 1: enable GPIO wakeup CPU, only when GPIO_PIN0_INT_TYPE is 0x4 or
+                                0x5
+                            </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN12_INT_TYPE</name>
+                            <description>0: disable; 1: positive edge; 2: negative edge; 3: both types of edge; 4:
+                                low-level; 5: high-level
+                            </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN12_DRIVER</name>
+                            <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN12_SOURCE</name>
+                            <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
@@ -734,27 +798,30 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN13_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
                             <name>GPIO_PIN13_WAKEUP_ENABLE</name>
+                            <description>0: disable; 1: enable GPIO wakeup CPU, only when GPIO_PIN0_INT_TYPE is 0x4 or
+                                0x5
+                            </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN13_INT_TYPE</name>
+                            <description>0: disable; 1: positive edge; 2: negative edge; 3: both types of edge; 4:
+                                low-level; 5: high-level
+                            </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN13_DRIVER</name>
+                            <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN13_SOURCE</name>
+                            <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
@@ -768,27 +835,30 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN14_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
                             <name>GPIO_PIN14_WAKEUP_ENABLE</name>
+                            <description>0: disable; 1: enable GPIO wakeup CPU, only when GPIO_PIN0_INT_TYPE is 0x4 or
+                                0x5
+                            </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN14_INT_TYPE</name>
+                            <description>0: disable; 1: positive edge; 2: negative edge; 3: both types of edge; 4:
+                                low-level; 5: high-level
+                            </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN14_DRIVER</name>
+                            <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN14_SOURCE</name>
+                            <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
@@ -802,27 +872,30 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>GPIO_PIN15_CONFIG</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>2</bitWidth>
-                        </field>
-                        <field>
                             <name>GPIO_PIN15_WAKEUP_ENABLE</name>
+                            <description>0: disable; 1: enable GPIO wakeup CPU, only when GPIO_PIN0_INT_TYPE is 0x4 or
+                                0x5
+                            </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN15_INT_TYPE</name>
+                            <description>0: disable; 1: positive edge; 2: negative edge; 3: both types of edge; 4:
+                                low-level; 5: high-level
+                            </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN15_DRIVER</name>
+                            <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>GPIO_PIN15_SOURCE</name>
+                            <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
@@ -837,16 +910,19 @@
                     <fields>
                         <field>
                             <name>SIGMA_DELTA_ENABLE</name>
+                            <description>1: enable sigma-delta; 0: disable</description>
                             <bitOffset>16</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>SIGMA_DELTA_PRESCALAR</name>
+                            <description>Clock pre-divider for sigma-delta.</description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>8</bitWidth>
                         </field>
                         <field>
                             <name>SIGMA_DELTA_TARGET</name>
+                            <description>target level of the sigma-delta. It is a signed byte.</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>8</bitWidth>
                         </field>
@@ -855,43 +931,22 @@
                 <register>
                     <name>GPIO_RTC_CALIB_SYNC</name>
                     <addressOffset>0x6c</addressOffset>
-                    <description>GPIO_RTC_CALIB_SYNC</description>
+                    <description>Positvie edge of this bit will trigger the RTC-clock-calibration process.</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>RTC_CALIB_START</name>
+                            <description>Positvie edge of this bit will trigger the RTC-clock-calibration process.
+                            </description>
                             <bitOffset>31</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
                             <name>RTC_PERIOD_NUM</name>
+                            <description>The cycle number of RTC-clock during RTC-clock-calibration</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>10</bitWidth>
-                        </field>
-                    </fields>
-                </register>
-                <register>
-                    <name>GPIO_RTC_CALIB_VALUE</name>
-                    <addressOffset>0x70</addressOffset>
-                    <description>GPIO_RTC_CALIB_VALUE</description>
-                    <size>32</size>
-                    <resetValue>0x00000000</resetValue>
-                    <fields>
-                        <field>
-                            <name>RTC_CALIB_RDY</name>
-                            <bitOffset>31</bitOffset>
-                            <bitWidth>1</bitWidth>
-                        </field>
-                        <field>
-                            <name>RTC_CALIB_RDY_REAL</name>
-                            <bitOffset>30</bitOffset>
-                            <bitWidth>1</bitWidth>
-                        </field>
-                        <field>
-                            <name>RTC_CALIB_VALUE</name>
-                            <bitOffset>0</bitOffset>
-                            <bitWidth>20</bitWidth>
                         </field>
                     </fields>
                 </register>
@@ -2679,19 +2734,20 @@
             <baseAddress>0x60000600</baseAddress>
             <addressBlock>
                 <offset>0</offset>
-                <size>0x00000120</size>
+                <size>0x00000100</size>
                 <usage>registers</usage>
             </addressBlock>
             <registers>
                 <register>
                     <name>FRC1_LOAD</name>
                     <addressOffset>0x0</addressOffset>
-                    <description>FRC1_LOAD</description>
+                    <description>the load value into the counter</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>TIMER_FRC1_LOAD_VALUE</name>
+                            <name>frc1_load_value</name>
+                            <description>the load value into the counter</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>23</bitWidth>
                         </field>
@@ -2700,12 +2756,13 @@
                 <register>
                     <name>FRC1_COUNT</name>
                     <addressOffset>0x4</addressOffset>
-                    <description>FRC1_COUNT</description>
+                    <description>the current value of the counter. It is a decreasingcounter.</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>TIMER_FRC1_COUNT</name>
+                            <name>frc1_count</name>
+                            <description>the current value of the counter. It is a decreasingcounter.</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>23</bitWidth>
                         </field>
@@ -2719,12 +2776,22 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>TIMER_FRC1_INT</name>
+                            <name>frc1_ctrl_data</name>
+                            <bitOffset>9</bitOffset>
+                            <bitWidth>23</bitWidth>
+                        </field>
+                        <field>
+                            <name>frc1_int</name>
+                            <description>the status of the interrupt, when the count isdereased to zero</description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>TIMER_FRC1_CTRL</name>
+                            <name>frc1_ctrl</name>
+                            <description>bit[7]: timer enable, bit[6]: automatically reload, when the counter isequal to
+                                zero, bit[3:2]: prescale-divider, 0: divided by 1, 1: dividedby 16, 2 or 3: divided by
+                                256, bit[0]: interrupt type, 0:edge, 1:level
+                            </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>8</bitWidth>
                         </field>
@@ -2738,7 +2805,14 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>TIMER_FRC1_INT_CLR_MASK</name>
+                            <name>frc1_int_data</name>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>31</bitWidth>
+                        </field>
+                        <field>
+                            <name>frc1_int_clr_mask</name>
+                            <description>write to clear the status of the interrupt, if theinterrupt type is "level"
+                            </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
@@ -2747,12 +2821,13 @@
                 <register>
                     <name>FRC2_LOAD</name>
                     <addressOffset>0x20</addressOffset>
-                    <description>FRC2_LOAD</description>
+                    <description>the load value into the counter</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>TIMER_FRC2_LOAD_VALUE</name>
+                            <name>frc2_load_value</name>
+                            <description>the load value into the counter</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                         </field>
@@ -2761,12 +2836,13 @@
                 <register>
                     <name>FRC2_COUNT</name>
                     <addressOffset>0x24</addressOffset>
-                    <description>FRC2_COUNT</description>
+                    <description>the current value of the counter. It is a increasingcounter.</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>TIMER_FRC2_COUNT</name>
+                            <name>frc2_count</name>
+                            <description>the current value of the counter. It is a increasingcounter.</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                         </field>
@@ -2780,12 +2856,23 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>TIMER_FRC2_INT</name>
+                            <name>frc2_ctrl_data</name>
+                            <bitOffset>9</bitOffset>
+                            <bitWidth>23</bitWidth>
+                        </field>
+                        <field>
+                            <name>frc2_int</name>
+                            <description>the status of the interrupt, when the count is equal tothe alarm value
+                            </description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>TIMER_FRC2_CTRL</name>
+                            <name>frc2_ctrl</name>
+                            <description>bit[7]: timer enable, bit[6]: automatically reload, when the counter isequal to
+                                zero, bit[3:2]: prescale-divider, 0: divided by 1, 1: dividedby 16, 2 or 3: divided by
+                                256, bit[0]: interrupt type, 0:edge, 1:level
+                            </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>8</bitWidth>
                         </field>
@@ -2799,23 +2886,16 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>TIMER_FRC2_INT_CLR_MASK</name>
+                            <name>frc2_int_data</name>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>31</bitWidth>
+                        </field>
+                        <field>
+                            <name>frc2_int_clr_mask</name>
+                            <description>write to clear the status of the interrupt, if theinterrupt type is "level"
+                            </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
-                        </field>
-                    </fields>
-                </register>
-                <register>
-                    <name>FRC2_ALARM</name>
-                    <addressOffset>0x30</addressOffset>
-                    <description>FRC2_ALARM</description>
-                    <size>32</size>
-                    <resetValue>0x00000000</resetValue>
-                    <fields>
-                        <field>
-                            <name>TIMER_FRC2_ALARM</name>
-                            <bitOffset>0</bitOffset>
-                            <bitWidth>32</bitWidth>
                         </field>
                     </fields>
                 </register>
@@ -2826,19 +2906,26 @@
             <baseAddress>0x60000000</baseAddress>
             <addressBlock>
                 <offset>0</offset>
-                <size>0x000001e0</size>
+                <size>0x000001c0</size>
                 <usage>registers</usage>
             </addressBlock>
             <registers>
                 <register>
                     <name>UART_FIFO</name>
                     <addressOffset>0x0</addressOffset>
-                    <description>UART_FIFO</description>
+                    <description>UART FIFO,length 128</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>UART_RXFIFO_RD_BYTE</name>
+                            <name>uart_fifo_data</name>
+                            <description>UART FIFO,length 128</description>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>24</bitWidth>
+                        </field>
+                        <field>
+                            <name>rxfifo_rd_byte</name>
+                            <description>R/W share the same address</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>8</bitWidth>
                         </field>
@@ -2847,52 +2934,67 @@
                 <register>
                     <name>UART_INT_RAW</name>
                     <addressOffset>0x4</addressOffset>
-                    <description>UART_INT_RAW</description>
+                    <description>UART INTERRUPT RAW STATE</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>UART_RXFIFO_TOUT_INT_RAW</name>
+                            <name>rxfifo_tout_int_raw</name>
+                            <description>The interrupt raw bit for Rx time-out interrupt(depands on
+                                theUART_RX_TOUT_THRHD)
+                            </description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_BRK_DET_INT_RAW</name>
+                            <name>brk_det_int_raw</name>
+                            <description>The interrupt raw bit for Rx byte start error</description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_CTS_CHG_INT_RAW</name>
+                            <name>cts_chg_int_raw</name>
+                            <description>The interrupt raw bit for CTS changing level</description>
                             <bitOffset>6</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_DSR_CHG_INT_RAW</name>
+                            <name>dsr_chg_int_raw</name>
+                            <description>The interrupt raw bit for DSR changing level</description>
                             <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_RXFIFO_OVF_INT_RAW</name>
+                            <name>rxfifo_ovf_int_raw</name>
+                            <description>The interrupt raw bit for rx fifo overflow</description>
                             <bitOffset>4</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_FRM_ERR_INT_RAW</name>
+                            <name>frm_err_int_raw</name>
+                            <description>The interrupt raw bit for other rx error</description>
                             <bitOffset>3</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_PARITY_ERR_INT_RAW</name>
+                            <name>parity_err_int_raw</name>
+                            <description>The interrupt raw bit for parity check error</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_TXFIFO_EMPTY_INT_RAW</name>
+                            <name>txfifo_empty_int_raw</name>
+                            <description>The interrupt raw bit for tx fifo empty interrupt(depands
+                                onUART_TXFIFO_EMPTY_THRHD bits)
+                            </description>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_RXFIFO_FULL_INT_RAW</name>
+                            <name>rxfifo_full_int_raw</name>
+                            <description>The interrupt raw bit for rx fifo full interrupt(depands
+                                onUART_RXFIFO_FULL_THRHD bits)
+                            </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
@@ -2901,52 +3003,61 @@
                 <register>
                     <name>UART_INT_ST</name>
                     <addressOffset>0x8</addressOffset>
-                    <description>UART_INT_ST</description>
+                    <description>UART INTERRUPT STATEREGISTERUART_INT_RAW&amp;UART_INT_ENA</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>UART_RXFIFO_TOUT_INT_ST</name>
+                            <name>rxfifo_tout_int_st</name>
+                            <description>The interrupt state bit for Rx time-out event</description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_BRK_DET_INT_ST</name>
+                            <name>brk_det_int_st</name>
+                            <description>The interrupt state bit for rx byte start error</description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_CTS_CHG_INT_ST</name>
+                            <name>cts_chg_int_st</name>
+                            <description>The interrupt state bit for CTS changing level</description>
                             <bitOffset>6</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_DSR_CHG_INT_ST</name>
+                            <name>dsr_chg_int_st</name>
+                            <description>The interrupt state bit for DSR changing level</description>
                             <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_RXFIFO_OVF_INT_ST</name>
+                            <name>rxfifo_ovf_int_st</name>
+                            <description>The interrupt state bit for RX fifo overflow</description>
                             <bitOffset>4</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_FRM_ERR_INT_ST</name>
+                            <name>frm_err_int_st</name>
+                            <description>The interrupt state for other rx error</description>
                             <bitOffset>3</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_PARITY_ERR_INT_ST</name>
+                            <name>parity_err_int_st</name>
+                            <description>The interrupt state bit for rx parity error</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_TXFIFO_EMPTY_INT_ST</name>
+                            <name>txfifo_empty_int_st</name>
+                            <description>The interrupt state bit for TX fifo empty</description>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_RXFIFO_FULL_INT_ST</name>
+                            <name>rxfifo_full_int_st</name>
+                            <description>The interrupt state bit for RX fifo full event</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
@@ -2955,52 +3066,61 @@
                 <register>
                     <name>UART_INT_ENA</name>
                     <addressOffset>0xc</addressOffset>
-                    <description>UART_INT_ENA</description>
+                    <description>UART INTERRUPT ENABLE REGISTER</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>UART_RXFIFO_TOUT_INT_ENA</name>
+                            <name>rxfifo_tout_int_ena</name>
+                            <description>The interrupt enable bit for rx time-out interrupt</description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_BRK_DET_INT_ENA</name>
+                            <name>brk_det_int_ena</name>
+                            <description>The interrupt enable bit for rx byte start error</description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_CTS_CHG_INT_ENA</name>
+                            <name>cts_chg_int_ena</name>
+                            <description>The interrupt enable bit for CTS changing level</description>
                             <bitOffset>6</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_DSR_CHG_INT_ENA</name>
+                            <name>dsr_chg_int_ena</name>
+                            <description>The interrupt enable bit for DSR changing level</description>
                             <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_RXFIFO_OVF_INT_ENA</name>
+                            <name>rxfifo_ovf_int_ena</name>
+                            <description>The interrupt enable bit for rx fifo overflow</description>
                             <bitOffset>4</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_FRM_ERR_INT_ENA</name>
+                            <name>frm_err_int_ena</name>
+                            <description>The interrupt enable bit for other rx error</description>
                             <bitOffset>3</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_PARITY_ERR_INT_ENA</name>
+                            <name>parity_err_int_ena</name>
+                            <description>The interrupt enable bit for parity error</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_TXFIFO_EMPTY_INT_ENA</name>
+                            <name>txfifo_empty_int_ena</name>
+                            <description>The interrupt enable bit for tx fifo empty event</description>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_RXFIFO_FULL_INT_ENA</name>
+                            <name>rxfifo_full_int_ena</name>
+                            <description>The interrupt enable bit for rx fifo full event</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
@@ -3009,52 +3129,61 @@
                 <register>
                     <name>UART_INT_CLR</name>
                     <addressOffset>0x10</addressOffset>
-                    <description>UART_INT_CLR</description>
+                    <description>UART INTERRUPT CLEAR REGISTER</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>UART_RXFIFO_TOUT_INT_CLR</name>
+                            <name>rxfifo_tout_int_clr</name>
+                            <description>Set this bit to clear the rx time-out interrupt</description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_BRK_DET_INT_CLR</name>
+                            <name>brk_det_int_clr</name>
+                            <description>Set this bit to clear the rx byte start interrupt</description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_CTS_CHG_INT_CLR</name>
+                            <name>cts_chg_int_clr</name>
+                            <description>Set this bit to clear the CTS changing interrupt</description>
                             <bitOffset>6</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_DSR_CHG_INT_CLR</name>
+                            <name>dsr_chg_int_clr</name>
+                            <description>Set this bit to clear the DSR changing interrupt</description>
                             <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_RXFIFO_OVF_INT_CLR</name>
+                            <name>rxfifo_ovf_int_clr</name>
+                            <description>Set this bit to clear the rx fifo over-flow interrupt</description>
                             <bitOffset>4</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_FRM_ERR_INT_CLR</name>
+                            <name>frm_err_int_clr</name>
+                            <description>Set this bit to clear other rx error interrupt</description>
                             <bitOffset>3</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_PARITY_ERR_INT_CLR</name>
+                            <name>parity_err_int_clr</name>
+                            <description>Set this bit to clear the parity error interrupt</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_TXFIFO_EMPTY_INT_CLR</name>
+                            <name>txfifo_empty_int_clr</name>
+                            <description>Set this bit to clear the tx fifo empty interrupt</description>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_RXFIFO_FULL_INT_CLR</name>
+                            <name>rxfifo_full_int_clr</name>
+                            <description>Set this bit to clear the rx fifo full interrupt</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
@@ -3063,12 +3192,13 @@
                 <register>
                     <name>UART_CLKDIV</name>
                     <addressOffset>0x14</addressOffset>
-                    <description>UART_CLKDIV</description>
+                    <description>UART CLK DIV REGISTER</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>UART_CLKDIV</name>
+                            <name>uart_clkdiv</name>
+                            <description>BAUDRATE = UART_CLK_FREQ / UART_CLKDIV</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>20</bitWidth>
                         </field>
@@ -3077,17 +3207,23 @@
                 <register>
                     <name>UART_AUTOBAUD</name>
                     <addressOffset>0x18</addressOffset>
-                    <description>UART_AUTOBAUD</description>
+                    <description>UART BAUDRATE DETECT REGISTER</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>UART_GLITCH_FILT</name>
+                            <name>glitch_filt</name>
                             <bitOffset>8</bitOffset>
                             <bitWidth>8</bitWidth>
                         </field>
                         <field>
-                            <name>UART_AUTOBAUD_EN</name>
+                            <name>uart_autobaud_data</name>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>7</bitWidth>
+                        </field>
+                        <field>
+                            <name>autobaud_en</name>
+                            <description>Set this bit to enable baudrate detect</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
@@ -3096,47 +3232,65 @@
                 <register>
                     <name>UART_STATUS</name>
                     <addressOffset>0x1c</addressOffset>
-                    <description>UART_STATUS</description>
+                    <description>UART STATUS REGISTER</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>UART_TXD</name>
+                            <name>txd</name>
+                            <description>The level of the uart txd pin</description>
                             <bitOffset>31</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_RTSN</name>
+                            <name>rtsn</name>
+                            <description>The level of uart rts pin</description>
                             <bitOffset>30</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_DTRN</name>
+                            <name>dtrn</name>
+                            <description>The level of uart dtr pin</description>
                             <bitOffset>29</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_TXFIFO_CNT</name>
+                            <name>uart_status_data</name>
+                            <bitOffset>14</bitOffset>
+                            <bitWidth>15</bitWidth>
+                        </field>
+                        <field>
+                            <name>txfifo_cnt</name>
+                            <description>Number of data in UART TX fifo</description>
                             <bitOffset>16</bitOffset>
                             <bitWidth>8</bitWidth>
                         </field>
                         <field>
-                            <name>UART_RXD</name>
+                            <name>rxd</name>
+                            <description>The level of uart rxd pin</description>
                             <bitOffset>15</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_CTSN</name>
+                            <name>ctsn</name>
+                            <description>The level of uart cts pin</description>
                             <bitOffset>14</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_DSRN</name>
+                            <name>dsrn</name>
+                            <description>The level of uart dsr pin</description>
                             <bitOffset>13</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_RXFIFO_CNT</name>
+                            <name>uart_status_data</name>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>5</bitWidth>
+                        </field>
+                        <field>
+                            <name>rxfifo_cnt</name>
+                            <description>Number of data in uart rx fifo</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>8</bitWidth>
                         </field>
@@ -3145,118 +3299,110 @@
                 <register>
                     <name>UART_CONF0</name>
                     <addressOffset>0x20</addressOffset>
-                    <description>UART_CONF0</description>
+                    <description>UART CONFIG0(UART0 and UART1)</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>UART_DTR_INV</name>
+                            <name>uart_dtr_inv</name>
+                            <description>Set this bit to inverse uart dtr level</description>
                             <bitOffset>24</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_RTS_INV</name>
+                            <name>uart_rts_inv</name>
+                            <description>Set this bit to inverse uart rts level</description>
                             <bitOffset>23</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_TXD_INV</name>
+                            <name>uart_txd_inv</name>
+                            <description>Set this bit to inverse uart txd level</description>
                             <bitOffset>22</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_DSR_INV</name>
+                            <name>uart_dsr_inv</name>
+                            <description>Set this bit to inverse uart dsr level</description>
                             <bitOffset>21</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_CTS_INV</name>
+                            <name>uart_cts_inv</name>
+                            <description>Set this bit to inverse uart cts level</description>
                             <bitOffset>20</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_RXD_INV</name>
+                            <name>uart_rxd_inv</name>
+                            <description>Set this bit to inverse uart rxd level</description>
                             <bitOffset>19</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_TXFIFO_RST</name>
+                            <name>txfifo_rst</name>
+                            <description>Set this bit to reset uart tx fifo</description>
                             <bitOffset>18</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_RXFIFO_RST</name>
+                            <name>rxfifo_rst</name>
+                            <description>Set this bit to reset uart rx fifo</description>
                             <bitOffset>17</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_IRDA_EN</name>
-                            <bitOffset>16</bitOffset>
-                            <bitWidth>1</bitWidth>
-                        </field>
-                        <field>
-                            <name>UART_TX_FLOW_EN</name>
+                            <name>tx_flow_en</name>
+                            <description>Set this bit to enable uart tx hardware flow control</description>
                             <bitOffset>15</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_LOOPBACK</name>
+                            <name>uart_loopback</name>
+                            <description>Set this bit to enable uart loopback test mode</description>
                             <bitOffset>14</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_IRDA_RX_INV</name>
-                            <bitOffset>13</bitOffset>
-                            <bitWidth>1</bitWidth>
-                        </field>
-                        <field>
-                            <name>UART_IRDA_TX_INV</name>
-                            <bitOffset>12</bitOffset>
-                            <bitWidth>1</bitWidth>
-                        </field>
-                        <field>
-                            <name>UART_IRDA_WCTL</name>
-                            <bitOffset>11</bitOffset>
-                            <bitWidth>1</bitWidth>
-                        </field>
-                        <field>
-                            <name>UART_IRDA_TX_EN</name>
-                            <bitOffset>10</bitOffset>
-                            <bitWidth>1</bitWidth>
-                        </field>
-                        <field>
-                            <name>UART_IRDA_DPLX</name>
-                            <bitOffset>9</bitOffset>
-                            <bitWidth>1</bitWidth>
-                        </field>
-                        <field>
-                            <name>UART_TXD_BRK</name>
+                            <name>txd_brk</name>
+                            <description>RESERVED, DO NOT CHANGE THIS BIT</description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_SW_DTR</name>
+                            <name>sw_dtr</name>
+                            <description>sw dtr</description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_SW_RTS</name>
+                            <name>sw_rts</name>
+                            <description>sw rts</description>
                             <bitOffset>6</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_STOP_BIT_NUM</name>
+                            <name>stop_bit_num</name>
+                            <description>Set stop bit: 1:1bit 2:1.5bits 3:2bits</description>
                             <bitOffset>4</bitOffset>
                             <bitWidth>2</bitWidth>
                         </field>
                         <field>
-                            <name>UART_BIT_NUM</name>
+                            <name>bit_num</name>
+                            <description>Set bit num: 0:5bits 1:6bits 2:7bits 3:8bits</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>2</bitWidth>
                         </field>
                         <field>
-                            <name>UART_PARITY_EN</name>
+                            <name>parity_en</name>
+                            <description>Set this bit to enable uart parity check</description>
                             <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>parity</name>
+                            <description>Set parity check: 0:even 1:odd, UART CONFIG1</description>
+                            <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                     </fields>
@@ -3264,37 +3410,53 @@
                 <register>
                     <name>UART_CONF1</name>
                     <addressOffset>0x24</addressOffset>
-                    <description>UART_CONF1</description>
+                    <description>Set this bit to enable rx time-out function</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>UART_RX_TOUT_EN</name>
+                            <name>rx_tout_en</name>
+                            <description>Set this bit to enable rx time-out function</description>
                             <bitOffset>31</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_RX_TOUT_THRHD</name>
+                            <name>rx_tout_thrhd</name>
+                            <description>Config bits for rx time-out threshold,uint: byte,0-127</description>
                             <bitOffset>24</bitOffset>
                             <bitWidth>7</bitWidth>
                         </field>
                         <field>
-                            <name>UART_RX_FLOW_EN</name>
+                            <name>rx_flow_en</name>
+                            <description>Set this bit to enable rx hardware flow control</description>
                             <bitOffset>23</bitOffset>
                             <bitWidth>1</bitWidth>
                         </field>
                         <field>
-                            <name>UART_RX_FLOW_THRHD</name>
+                            <name>rx_flow_thrhd</name>
+                            <description>The config bits for rx flow control threshold,0-127</description>
                             <bitOffset>16</bitOffset>
                             <bitWidth>7</bitWidth>
                         </field>
                         <field>
-                            <name>UART_TXFIFO_EMPTY_THRHD</name>
+                            <name>uart_conf1_data</name>
+                            <bitOffset>15</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>txfifo_empty_thrhd</name>
+                            <description>The config bits for tx fifo empty threshold,0-127</description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>7</bitWidth>
                         </field>
                         <field>
-                            <name>UART_RXFIFO_FULL_THRHD</name>
+                            <name>uart_conf1_data</name>
+                            <bitOffset>7</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>rxfifo_full_thrhd</name>
+                            <description>The config bits for rx fifo full threshold,0-127</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>7</bitWidth>
                         </field>
@@ -3308,7 +3470,8 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>UART_LOWPULSE_MIN_CNT</name>
+                            <name>lowpulse_min_cnt</name>
+                            <description>used in baudrate detect</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>20</bitWidth>
                         </field>
@@ -3322,21 +3485,23 @@
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>UART_HIGHPULSE_MIN_CNT</name>
+                            <name>highpulse_min_cnt</name>
+                            <description>used in baudrate detect</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>20</bitWidth>
                         </field>
                     </fields>
                 </register>
                 <register>
-                    <name>UART_PULSE_NUM</name>
+                    <name>UART_RXD_CNT</name>
                     <addressOffset>0x30</addressOffset>
-                    <description>UART_PULSE_NUM</description>
+                    <description>UART_RXD_CNT</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>UART_PULSE_NUM_CNT</name>
+                            <name>rxd_edge_cnt</name>
+                            <description>used in baudrate detect</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>10</bitWidth>
                         </field>
@@ -3345,26 +3510,13 @@
                 <register>
                     <name>UART_DATE</name>
                     <addressOffset>0x78</addressOffset>
-                    <description>UART_DATE</description>
+                    <description>UART HW INFO</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
-                            <name>Register</name>
-                            <bitOffset>0</bitOffset>
-                            <bitWidth>32</bitWidth>
-                        </field>
-                    </fields>
-                </register>
-                <register>
-                    <name>UART_ID</name>
-                    <addressOffset>0x7c</addressOffset>
-                    <description>UART_ID</description>
-                    <size>32</size>
-                    <resetValue>0x00000000</resetValue>
-                    <fields>
-                        <field>
-                            <name>Register</name>
+                            <name>uart_date</name>
+                            <description>UART HW INFO</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                         </field>
