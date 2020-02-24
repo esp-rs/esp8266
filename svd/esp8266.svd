@@ -2730,6 +2730,919 @@
             </registers>
         </peripheral>
         <peripheral>
+            <name>SPI</name>
+            <baseAddress>0x60000200</baseAddress>
+            <addressBlock>
+                <offset>0</offset>
+                <size>0x000003e0</size>
+                <usage>registers</usage>
+            </addressBlock>
+            <registers>
+                <register>
+                    <name>SPI_CMD</name>
+                    <addressOffset>0x0</addressOffset>
+                    <description>In the master mode, it is the start bit of a single operation. Self-clear by hardware
+                    </description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>spi_usr</name>
+                            <description>In the master mode, it is the start bit of a single operation. Self-clear by
+                                hardware
+                            </description>
+                            <bitOffset>18</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_ADDR</name>
+                    <addressOffset>0x4</addressOffset>
+                    <description>In the master mode, it is the value of address in "address" phase.</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>iodata_start_addr</name>
+                            <description>In the master mode, it is the value of address in "address" phase.
+                            </description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_CTRL</name>
+                    <addressOffset>0x8</addressOffset>
+                    <description>SPI_CTRL</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>spi_wr_bit_order</name>
+                            <description>In "command", "address", "write-data" (MOSI) phases, 1: LSB first; 0: MSB
+                                first
+                            </description>
+                            <bitOffset>26</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_rd_bit_order</name>
+                            <description>In "read-data" (MISO) phase, 1: LSB first; 0: MSB first</description>
+                            <bitOffset>25</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_qio_mode</name>
+                            <description>In the read operations, "address" phase and "read-data" phase apply 4 signals
+                            </description>
+                            <bitOffset>24</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_dio_mode</name>
+                            <description>In the read operations, "address" phase and "read-data" phase apply 2 signals
+                            </description>
+                            <bitOffset>23</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_qout_mode</name>
+                            <description>In the read operations, "read-data" phase apply 4 signals</description>
+                            <bitOffset>20</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_dout_mode</name>
+                            <description>In the read operations, "read-data" phase apply 2 signals</description>
+                            <bitOffset>14</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_fastrd_mode</name>
+                            <description>this bit enable the bits: spi_qio_mode, spi_dio_mode, spi_qout_mode and
+                                spi_dout_mode
+                            </description>
+                            <bitOffset>13</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_RD_STATUS</name>
+                    <addressOffset>0x10</addressOffset>
+                    <description>In the slave mode, this register are the status register for the master to read out.
+                    </description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>slv_rd_status</name>
+                            <description>In the slave mode, this register are the status register for the master to read
+                                out.
+                            </description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_CTRL2</name>
+                    <addressOffset>0x14</addressOffset>
+                    <description>spi_cs signal is delayed by 80MHz clock cycles</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>spi_cs_delay_num</name>
+                            <description>spi_cs signal is delayed by 80MHz clock cycles</description>
+                            <bitOffset>28</bitOffset>
+                            <bitWidth>4</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_cs_delay_mode</name>
+                            <description>spi_cs signal is delayed by spi_clk. 0: zero; 1: half cycle; 2: one cycle
+                            </description>
+                            <bitOffset>26</bitOffset>
+                            <bitWidth>2</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_mosi_delay_num</name>
+                            <description>MOSI signals are delayed by 80MHz clock cycles</description>
+                            <bitOffset>23</bitOffset>
+                            <bitWidth>3</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_mosi_delay_mode</name>
+                            <description>MOSI signals are delayed by spi_clk. 0: zero; 1: half cycle; 2: one cycle
+                            </description>
+                            <bitOffset>21</bitOffset>
+                            <bitWidth>2</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_miso_delay_num</name>
+                            <description>MISO signals are delayed by 80MHz clock cycles</description>
+                            <bitOffset>18</bitOffset>
+                            <bitWidth>3</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_miso_delay_mode</name>
+                            <description>MISO signals are delayed by spi_clk. 0: zero; 1: half cycle; 2: one cycle
+                            </description>
+                            <bitOffset>16</bitOffset>
+                            <bitWidth>2</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_CLOCK</name>
+                    <addressOffset>0x18</addressOffset>
+                    <description>In the master mode, 1: spi_clk is eqaul to 80MHz, 0: spi_clk is divided from 80 MHz
+                        clock.
+                    </description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>spi_clk_equ_sysclk</name>
+                            <description>In the master mode, 1: spi_clk is eqaul to 80MHz, 0: spi_clk is divided from 80
+                                MHz clock.
+                            </description>
+                            <bitOffset>31</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_clkdiv_pre</name>
+                            <description>In the master mode, it is pre-divider of spi_clk.</description>
+                            <bitOffset>18</bitOffset>
+                            <bitWidth>13</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_clkcnt_N</name>
+                            <description>In the master mode, it is the divider of spi_clk. So spi_clk frequency is
+                                80MHz/(spi_clkdiv_pre+1)/(spi_clkcnt_N+1)
+                            </description>
+                            <bitOffset>12</bitOffset>
+                            <bitWidth>6</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_clkcnt_H</name>
+                            <description>In the master mode, it must be floor((spi_clkcnt_N+1)/2-1). In the slave mode,
+                                it must be 0.
+                            </description>
+                            <bitOffset>6</bitOffset>
+                            <bitWidth>6</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_clkcnt_L</name>
+                            <description>In the master mode, it must be eqaul to spi_clkcnt_N. In the slave mode, it
+                                must be 0.
+                            </description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>6</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_USER</name>
+                    <addressOffset>0x1c</addressOffset>
+                    <description>This bit enable the "command" phase of an operation.</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>spi_usr_command</name>
+                            <description>This bit enable the "command" phase of an operation.</description>
+                            <bitOffset>31</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_usr_addr</name>
+                            <description>This bit enable the "address" phase of an operation.</description>
+                            <bitOffset>30</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_usr_dummy</name>
+                            <description>This bit enable the "dummy" phase of an operation.</description>
+                            <bitOffset>29</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_usr_miso</name>
+                            <description>This bit enable the "read-data" phase of an operation.</description>
+                            <bitOffset>28</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_usr_mosi</name>
+                            <description>This bit enable the "write-data" phase of an operation.</description>
+                            <bitOffset>27</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>reg_usr_mosi_highpart</name>
+                            <description>1: "write-data" phase only access to high-part of the buffer spi_w8~spi_w15
+                            </description>
+                            <bitOffset>25</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>reg_usr_miso_highpart</name>
+                            <description>1: "read-data" phase only access to high-part of the buffer spi_w8~spi_w15
+                            </description>
+                            <bitOffset>24</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_sio</name>
+                            <description>1: mosi and miso signals share the same pin</description>
+                            <bitOffset>16</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_fwrite_qio</name>
+                            <description>In the write operations, "address" phase and "read-data" phase apply 4
+                                signals
+                            </description>
+                            <bitOffset>15</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_fwrite_dio</name>
+                            <description>In the write operations, "address" phase and "read-data" phase apply 2
+                                signals
+                            </description>
+                            <bitOffset>14</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_fwrite_quad</name>
+                            <description>In the write operations, "read-data" phase apply 4 signals</description>
+                            <bitOffset>13</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_fwrite_dual</name>
+                            <description>In the write operations, "read-data" phase apply 2 signals</description>
+                            <bitOffset>12</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_wr_byte_order</name>
+                            <description>In "command", "address", "write-data" (MOSI) phases, 1: little-endian; 0:
+                                big_endian
+                            </description>
+                            <bitOffset>11</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_rd_byte_order</name>
+                            <description>In "read-data" (MISO) phase, 1: little-endian; 0: big_endian</description>
+                            <bitOffset>10</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_ck_i_edge</name>
+                            <description>In the slave mode, 1: rising-edge; 0: falling-edge</description>
+                            <bitOffset>6</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_USER1</name>
+                    <addressOffset>0x20</addressOffset>
+                    <description>The length in bits of "address" phase. The register value shall be (bit_num-1)
+                    </description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>reg_usr_addr_bitlen</name>
+                            <description>The length in bits of "address" phase. The register value shall be
+                                (bit_num-1)
+                            </description>
+                            <bitOffset>26</bitOffset>
+                            <bitWidth>6</bitWidth>
+                        </field>
+                        <field>
+                            <name>reg_usr_mosi_bitlen</name>
+                            <description>The length in bits of "write-data" phase. The register value shall be
+                                (bit_num-1)
+                            </description>
+                            <bitOffset>17</bitOffset>
+                            <bitWidth>9</bitWidth>
+                        </field>
+                        <field>
+                            <name>reg_usr_miso_bitlen</name>
+                            <description>The length in bits of "read-data" phase. The register value shall be
+                                (bit_num-1)
+                            </description>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>9</bitWidth>
+                        </field>
+                        <field>
+                            <name>reg_usr_dummy_cyclelen</name>
+                            <description>The length in spi_clk cycles of "dummy" phase. The register value shall be
+                                (cycle_num-1)
+                            </description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>8</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_USER2</name>
+                    <addressOffset>0x24</addressOffset>
+                    <description>The length in bits of "command" phase. The register value shall be (bit_num-1)
+                    </description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>reg_usr_command_bitlen</name>
+                            <description>The length in bits of "command" phase. The register value shall be
+                                (bit_num-1)
+                            </description>
+                            <bitOffset>28</bitOffset>
+                            <bitWidth>4</bitWidth>
+                        </field>
+                        <field>
+                            <name>reg_usr_command_value</name>
+                            <description>The value of "command" phase</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>16</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_WR_STATUS</name>
+                    <addressOffset>0x28</addressOffset>
+                    <description>In the slave mode, this register are the status register for the master to write
+                        into.
+                    </description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>slv_wr_status</name>
+                            <description>In the slave mode, this register are the status register for the master to
+                                write into.
+                            </description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_PIN</name>
+                    <addressOffset>0x2c</addressOffset>
+                    <description>1: disable CS2; 0: spi_cs signal is from/to CS2 pin</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>spi_cs2_dis</name>
+                            <description>1: disable CS2; 0: spi_cs signal is from/to CS2 pin</description>
+                            <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_cs1_dis</name>
+                            <description>1: disable CS1; 0: spi_cs signal is from/to CS1 pin</description>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_cs0_dis</name>
+                            <description>1: disable CS0; 0: spi_cs signal is from/to CS0 pin</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_SLAVE</name>
+                    <addressOffset>0x30</addressOffset>
+                    <description>It is the synchronous reset signal of the module. This bit is self-cleared by
+                        hardware.
+                    </description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>spi_sync_reset</name>
+                            <description>It is the synchronous reset signal of the module. This bit is self-cleared by
+                                hardware.
+                            </description>
+                            <bitOffset>31</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_slave_mode</name>
+                            <description>1: slave mode, 0: master mode.</description>
+                            <bitOffset>30</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>slv_cmd_define</name>
+                            <description>1: slave mode commands are defined in SPI_SLAVE3. 0: slave mode commands are
+                                fixed as 1: "write-status"; 4: "read-status"; 2: "write-buffer" and 3: "read-buffer".
+                            </description>
+                            <bitOffset>27</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_trans_cnt</name>
+                            <description>The operations counter in both the master mode and the slave mode.
+                            </description>
+                            <bitOffset>23</bitOffset>
+                            <bitWidth>4</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_int_en</name>
+                            <description>Interrupt enable bits for the below 5 sources</description>
+                            <bitOffset>5</bitOffset>
+                            <bitWidth>5</bitWidth>
+                        </field>
+                        <field>
+                            <name>spi_trans_done</name>
+                            <description>The interrupt raw bit for the completement of any operation in both the master
+                                mode and the slave mode.
+                            </description>
+                            <bitOffset>4</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>slv_wr_sta_done</name>
+                            <description>The interrupt raw bit for the completement of "write-status" operation in the
+                                slave mode.
+                            </description>
+                            <bitOffset>3</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>slv_rd_sta_done</name>
+                            <description>The interrupt raw bit for the completement of "read-status" operation in the
+                                slave mode.
+                            </description>
+                            <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>slv_wr_buf_done</name>
+                            <description>The interrupt raw bit for the completement of "write-buffer" operation in the
+                                slave mode.
+                            </description>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>slv_rd_buf_done</name>
+                            <description>The interrupt raw bit for the completement of "read-buffer" operation in the
+                                slave mode.
+                            </description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_SLAVE1</name>
+                    <addressOffset>0x34</addressOffset>
+                    <description>In the slave mode, it is the length in bits for "write-status" and "read-status"
+                        operations. The register valueshall be (bit_num-1)
+                    </description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>slv_status_bitlen</name>
+                            <description>In the slave mode, it is the length in bits for "write-status" and
+                                "read-status" operations. The register valueshall be (bit_num-1)
+                            </description>
+                            <bitOffset>27</bitOffset>
+                            <bitWidth>5</bitWidth>
+                        </field>
+                        <field>
+                            <name>slv_buf_bitlen</name>
+                            <description>In the slave mode, it is the length in bits for "write-buffer" and
+                                "read-buffer" operations. The register value shallbe (bit_num-1)
+                            </description>
+                            <bitOffset>16</bitOffset>
+                            <bitWidth>9</bitWidth>
+                        </field>
+                        <field>
+                            <name>slv_rd_addr_bitlen</name>
+                            <description>In the slave mode, it is the address length in bits for "read-buffer"
+                                operation. The register value shall be(bit_num-1)
+                            </description>
+                            <bitOffset>10</bitOffset>
+                            <bitWidth>6</bitWidth>
+                        </field>
+                        <field>
+                            <name>slv_wr_addr_bitlen</name>
+                            <description>In the slave mode, it is the address length in bits for "write-buffer"
+                                operation. The register value shall be(bit_num-1)
+                            </description>
+                            <bitOffset>4</bitOffset>
+                            <bitWidth>6</bitWidth>
+                        </field>
+                        <field>
+                            <name>slv_wrsta_dummy_en</name>
+                            <description>In the slave mode, it is the enable bit of "dummy" phase for "write-status"
+                                operations.
+                            </description>
+                            <bitOffset>3</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>slv_rdsta_dummy_en</name>
+                            <description>In the slave mode, it is the enable bit of "dummy" phase for "read-status"
+                                operations.
+                            </description>
+                            <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>slv_wrbuf_dummy_en</name>
+                            <description>In the slave mode, it is the enable bit of "dummy" phase for "write-buffer"
+                                operations.
+                            </description>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>slv_rdbuf_dummy_en</name>
+                            <description>In the slave mode, it is the enable bit of "dummy" phase for "read-buffer"
+                                operations.
+                            </description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_SLAVE2</name>
+                    <addressOffset>0x38</addressOffset>
+                    <description>In the slave mode, it is the length in spi_clk cycles "dummy" phase for "write-buffer"
+                        operations. The registervalue shall be (cycle_num-1)
+                    </description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>slv_wrbuf_dummy_cyclelen</name>
+                            <description>In the slave mode, it is the length in spi_clk cycles "dummy" phase for
+                                "write-buffer" operations. The registervalue shall be (cycle_num-1)
+                            </description>
+                            <bitOffset>24</bitOffset>
+                            <bitWidth>8</bitWidth>
+                        </field>
+                        <field>
+                            <name>slv_rdbuf_dummy_cyclelen</name>
+                            <description>In the slave mode, it is the length in spi_clk cycles of "dummy" phase for
+                                "read-buffer" operations. The registervalue shall be (cycle_num-1)
+                            </description>
+                            <bitOffset>16</bitOffset>
+                            <bitWidth>8</bitWidth>
+                        </field>
+                        <field>
+                            <name>slv_wrsta_dummy_cyclelen</name>
+                            <description>In the slave mode, it is the length in spi_clk cycles of "dummy" phase for
+                                "write-status" operations. Theregister value shall be (cycle_num-1)
+                            </description>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>8</bitWidth>
+                        </field>
+                        <field>
+                            <name>slv_rdsta_dummy_cyclelen</name>
+                            <description>In the slave mode, it is the length in spi_clk cycles of "dummy" phase for
+                                "read-status" operations. Theregister value shall be (cycle_num-1)
+                            </description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>8</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_SLAVE3</name>
+                    <addressOffset>0x3c</addressOffset>
+                    <description>In slave mode, it is the value of "write-status" command</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>slv_wrsta_cmd_value</name>
+                            <description>In slave mode, it is the value of "write-status" command</description>
+                            <bitOffset>24</bitOffset>
+                            <bitWidth>8</bitWidth>
+                        </field>
+                        <field>
+                            <name>slv_rdsta_cmd_value</name>
+                            <description>In slave mode, it is the value of "read-status" command</description>
+                            <bitOffset>16</bitOffset>
+                            <bitWidth>8</bitWidth>
+                        </field>
+                        <field>
+                            <name>slv_wrbuf_cmd_value</name>
+                            <description>In slave mode, it is the value of "write-buffer" command</description>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>8</bitWidth>
+                        </field>
+                        <field>
+                            <name>slv_rdbuf_cmd_value</name>
+                            <description>In slave mode, it is the value of "read-buffer" command</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>8</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_W0</name>
+                    <addressOffset>0x40</addressOffset>
+                    <description>the data inside the buffer of the SPI module, byte 0</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>spi_w0</name>
+                            <description>the data inside the buffer of the SPI module, byte 0</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_W1</name>
+                    <addressOffset>0x60</addressOffset>
+                    <description>the data inside the buffer of the SPI module, byte 1</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>spi_w1</name>
+                            <description>the data inside the buffer of the SPI module, byte 1</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_W2</name>
+                    <addressOffset>0x80</addressOffset>
+                    <description>the data inside the buffer of the SPI module, byte 2</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>spi_w2</name>
+                            <description>the data inside the buffer of the SPI module, byte 2</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_W3</name>
+                    <addressOffset>0xa0</addressOffset>
+                    <description>the data inside the buffer of the SPI module, byte 3</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>spi_w3</name>
+                            <description>the data inside the buffer of the SPI module, byte 3</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_W4</name>
+                    <addressOffset>0xc0</addressOffset>
+                    <description>the data inside the buffer of the SPI module, byte 4</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>spi_w4</name>
+                            <description>the data inside the buffer of the SPI module, byte 4</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_W5</name>
+                    <addressOffset>0xe0</addressOffset>
+                    <description>the data inside the buffer of the SPI module, byte 5</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>spi_w5</name>
+                            <description>the data inside the buffer of the SPI module, byte 5</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_W6</name>
+                    <addressOffset>0x100</addressOffset>
+                    <description>the data inside the buffer of the SPI module, byte 6</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>spi_w6</name>
+                            <description>the data inside the buffer of the SPI module, byte 6</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_W7</name>
+                    <addressOffset>0x120</addressOffset>
+                    <description>the data inside the buffer of the SPI module, byte 7</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>spi_w7</name>
+                            <description>the data inside the buffer of the SPI module, byte 7</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_W8</name>
+                    <addressOffset>0x140</addressOffset>
+                    <description>the data inside the buffer of the SPI module, byte 8</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>spi_w8</name>
+                            <description>the data inside the buffer of the SPI module, byte 8</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_W9</name>
+                    <addressOffset>0x160</addressOffset>
+                    <description>the data inside the buffer of the SPI module, byte 9</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>spi_w9</name>
+                            <description>the data inside the buffer of the SPI module, byte 9</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_W10</name>
+                    <addressOffset>0x180</addressOffset>
+                    <description>the data inside the buffer of the SPI module, byte 10</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>spi_w10</name>
+                            <description>the data inside the buffer of the SPI module, byte 10</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_W11</name>
+                    <addressOffset>0x1a0</addressOffset>
+                    <description>the data inside the buffer of the SPI module, byte 11</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>spi_w11</name>
+                            <description>the data inside the buffer of the SPI module, byte 11</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_W12</name>
+                    <addressOffset>0x1c0</addressOffset>
+                    <description>the data inside the buffer of the SPI module, byte 12</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>spi_w12</name>
+                            <description>the data inside the buffer of the SPI module, byte 12</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_W13</name>
+                    <addressOffset>0x1e0</addressOffset>
+                    <description>the data inside the buffer of the SPI module, byte 13</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>spi_w13</name>
+                            <description>the data inside the buffer of the SPI module, byte 13</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_W14</name>
+                    <addressOffset>0x200</addressOffset>
+                    <description>the data inside the buffer of the SPI module, byte 14</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>spi_w14</name>
+                            <description>the data inside the buffer of the SPI module, byte 14</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>SPI_W15</name>
+                    <addressOffset>0x220</addressOffset>
+                    <description>the data inside the buffer of the SPI module, byte 15</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>spi_w15</name>
+                            <description>the data inside the buffer of the SPI module, byte 15</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+            </registers>
+        </peripheral>
+        <peripheral>
             <name>TIMER</name>
             <baseAddress>0x60000600</baseAddress>
             <addressBlock>
@@ -2882,8 +3795,600 @@
             </registers>
         </peripheral>
         <peripheral>
-            <name>UART</name>
+            <name>UART0</name>
             <baseAddress>0x60000000</baseAddress>
+            <addressBlock>
+                <offset>0</offset>
+                <size>0x000001c0</size>
+                <usage>registers</usage>
+            </addressBlock>
+            <registers>
+                <register>
+                    <name>UART_FIFO</name>
+                    <addressOffset>0x0</addressOffset>
+                    <description>UART FIFO,length 128</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>rxfifo_rd_byte</name>
+                            <description>R/W share the same address</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>8</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_INT_RAW</name>
+                    <addressOffset>0x4</addressOffset>
+                    <description>UART INTERRUPT RAW STATE</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>rxfifo_tout_int_raw</name>
+                            <description>The interrupt raw bit for Rx time-out interrupt(depands on
+                                theUART_RX_TOUT_THRHD)
+                            </description>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>brk_det_int_raw</name>
+                            <description>The interrupt raw bit for Rx byte start error</description>
+                            <bitOffset>7</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>cts_chg_int_raw</name>
+                            <description>The interrupt raw bit for CTS changing level</description>
+                            <bitOffset>6</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>dsr_chg_int_raw</name>
+                            <description>The interrupt raw bit for DSR changing level</description>
+                            <bitOffset>5</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>rxfifo_ovf_int_raw</name>
+                            <description>The interrupt raw bit for rx fifo overflow</description>
+                            <bitOffset>4</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>frm_err_int_raw</name>
+                            <description>The interrupt raw bit for other rx error</description>
+                            <bitOffset>3</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>parity_err_int_raw</name>
+                            <description>The interrupt raw bit for parity check error</description>
+                            <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>txfifo_empty_int_raw</name>
+                            <description>The interrupt raw bit for tx fifo empty interrupt(depands
+                                onUART_TXFIFO_EMPTY_THRHD bits)
+                            </description>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>rxfifo_full_int_raw</name>
+                            <description>The interrupt raw bit for rx fifo full interrupt(depands
+                                onUART_RXFIFO_FULL_THRHD bits)
+                            </description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_INT_ST</name>
+                    <addressOffset>0x8</addressOffset>
+                    <description>UART INTERRUPT STATEREGISTERUART_INT_RAW&amp;UART_INT_ENA</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>rxfifo_tout_int_st</name>
+                            <description>The interrupt state bit for Rx time-out event</description>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>brk_det_int_st</name>
+                            <description>The interrupt state bit for rx byte start error</description>
+                            <bitOffset>7</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>cts_chg_int_st</name>
+                            <description>The interrupt state bit for CTS changing level</description>
+                            <bitOffset>6</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>dsr_chg_int_st</name>
+                            <description>The interrupt state bit for DSR changing level</description>
+                            <bitOffset>5</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>rxfifo_ovf_int_st</name>
+                            <description>The interrupt state bit for RX fifo overflow</description>
+                            <bitOffset>4</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>frm_err_int_st</name>
+                            <description>The interrupt state for other rx error</description>
+                            <bitOffset>3</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>parity_err_int_st</name>
+                            <description>The interrupt state bit for rx parity error</description>
+                            <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>txfifo_empty_int_st</name>
+                            <description>The interrupt state bit for TX fifo empty</description>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>rxfifo_full_int_st</name>
+                            <description>The interrupt state bit for RX fifo full event</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_INT_ENA</name>
+                    <addressOffset>0xc</addressOffset>
+                    <description>UART INTERRUPT ENABLE REGISTER</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>rxfifo_tout_int_ena</name>
+                            <description>The interrupt enable bit for rx time-out interrupt</description>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>brk_det_int_ena</name>
+                            <description>The interrupt enable bit for rx byte start error</description>
+                            <bitOffset>7</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>cts_chg_int_ena</name>
+                            <description>The interrupt enable bit for CTS changing level</description>
+                            <bitOffset>6</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>dsr_chg_int_ena</name>
+                            <description>The interrupt enable bit for DSR changing level</description>
+                            <bitOffset>5</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>rxfifo_ovf_int_ena</name>
+                            <description>The interrupt enable bit for rx fifo overflow</description>
+                            <bitOffset>4</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>frm_err_int_ena</name>
+                            <description>The interrupt enable bit for other rx error</description>
+                            <bitOffset>3</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>parity_err_int_ena</name>
+                            <description>The interrupt enable bit for parity error</description>
+                            <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>txfifo_empty_int_ena</name>
+                            <description>The interrupt enable bit for tx fifo empty event</description>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>rxfifo_full_int_ena</name>
+                            <description>The interrupt enable bit for rx fifo full event</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_INT_CLR</name>
+                    <addressOffset>0x10</addressOffset>
+                    <description>UART INTERRUPT CLEAR REGISTER</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>rxfifo_tout_int_clr</name>
+                            <description>Set this bit to clear the rx time-out interrupt</description>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>brk_det_int_clr</name>
+                            <description>Set this bit to clear the rx byte start interrupt</description>
+                            <bitOffset>7</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>cts_chg_int_clr</name>
+                            <description>Set this bit to clear the CTS changing interrupt</description>
+                            <bitOffset>6</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>dsr_chg_int_clr</name>
+                            <description>Set this bit to clear the DSR changing interrupt</description>
+                            <bitOffset>5</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>rxfifo_ovf_int_clr</name>
+                            <description>Set this bit to clear the rx fifo over-flow interrupt</description>
+                            <bitOffset>4</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>frm_err_int_clr</name>
+                            <description>Set this bit to clear other rx error interrupt</description>
+                            <bitOffset>3</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>parity_err_int_clr</name>
+                            <description>Set this bit to clear the parity error interrupt</description>
+                            <bitOffset>2</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>txfifo_empty_int_clr</name>
+                            <description>Set this bit to clear the tx fifo empty interrupt</description>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>rxfifo_full_int_clr</name>
+                            <description>Set this bit to clear the rx fifo full interrupt</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_CLKDIV</name>
+                    <addressOffset>0x14</addressOffset>
+                    <description>UART CLK DIV REGISTER</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>uart_clkdiv</name>
+                            <description>BAUDRATE = UART_CLK_FREQ / UART_CLKDIV</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>20</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_AUTOBAUD</name>
+                    <addressOffset>0x18</addressOffset>
+                    <description>UART BAUDRATE DETECT REGISTER</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>glitch_filt</name>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>8</bitWidth>
+                        </field>
+                        <field>
+                            <name>autobaud_en</name>
+                            <description>Set this bit to enable baudrate detect</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_STATUS</name>
+                    <addressOffset>0x1c</addressOffset>
+                    <description>UART STATUS REGISTER</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>txd</name>
+                            <description>The level of the uart txd pin</description>
+                            <bitOffset>31</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>rtsn</name>
+                            <description>The level of uart rts pin</description>
+                            <bitOffset>30</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>dtrn</name>
+                            <description>The level of uart dtr pin</description>
+                            <bitOffset>29</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>txfifo_cnt</name>
+                            <description>Number of data in UART TX fifo</description>
+                            <bitOffset>16</bitOffset>
+                            <bitWidth>8</bitWidth>
+                        </field>
+                        <field>
+                            <name>rxd</name>
+                            <description>The level of uart rxd pin</description>
+                            <bitOffset>15</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>ctsn</name>
+                            <description>The level of uart cts pin</description>
+                            <bitOffset>14</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>dsrn</name>
+                            <description>The level of uart dsr pin</description>
+                            <bitOffset>13</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>rxfifo_cnt</name>
+                            <description>Number of data in uart rx fifo</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>8</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_CONF0</name>
+                    <addressOffset>0x20</addressOffset>
+                    <description>UART CONFIG0(UART0 and UART1)</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>uart_dtr_inv</name>
+                            <description>Set this bit to inverse uart dtr level</description>
+                            <bitOffset>24</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>uart_rts_inv</name>
+                            <description>Set this bit to inverse uart rts level</description>
+                            <bitOffset>23</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>uart_txd_inv</name>
+                            <description>Set this bit to inverse uart txd level</description>
+                            <bitOffset>22</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>uart_dsr_inv</name>
+                            <description>Set this bit to inverse uart dsr level</description>
+                            <bitOffset>21</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>uart_cts_inv</name>
+                            <description>Set this bit to inverse uart cts level</description>
+                            <bitOffset>20</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>uart_rxd_inv</name>
+                            <description>Set this bit to inverse uart rxd level</description>
+                            <bitOffset>19</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>txfifo_rst</name>
+                            <description>Set this bit to reset uart tx fifo</description>
+                            <bitOffset>18</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>rxfifo_rst</name>
+                            <description>Set this bit to reset uart rx fifo</description>
+                            <bitOffset>17</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>tx_flow_en</name>
+                            <description>Set this bit to enable uart tx hardware flow control</description>
+                            <bitOffset>15</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>uart_loopback</name>
+                            <description>Set this bit to enable uart loopback test mode</description>
+                            <bitOffset>14</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>txd_brk</name>
+                            <description>RESERVED, DO NOT CHANGE THIS BIT</description>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>sw_dtr</name>
+                            <description>sw dtr</description>
+                            <bitOffset>7</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>sw_rts</name>
+                            <description>sw rts</description>
+                            <bitOffset>6</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>stop_bit_num</name>
+                            <description>Set stop bit: 1:1bit 2:1.5bits 3:2bits</description>
+                            <bitOffset>4</bitOffset>
+                            <bitWidth>2</bitWidth>
+                        </field>
+                        <field>
+                            <name>bit_num</name>
+                            <description>Set bit num: 0:5bits 1:6bits 2:7bits 3:8bits</description>
+                            <bitOffset>2</bitOffset>
+                            <bitWidth>2</bitWidth>
+                        </field>
+                        <field>
+                            <name>parity_en</name>
+                            <description>Set this bit to enable uart parity check</description>
+                            <bitOffset>1</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>parity</name>
+                            <description>Set parity check: 0:even 1:odd, UART CONFIG1</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_CONF1</name>
+                    <addressOffset>0x24</addressOffset>
+                    <description>Set this bit to enable rx time-out function</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>rx_tout_en</name>
+                            <description>Set this bit to enable rx time-out function</description>
+                            <bitOffset>31</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>rx_tout_thrhd</name>
+                            <description>Config bits for rx time-out threshold,uint: byte,0-127</description>
+                            <bitOffset>24</bitOffset>
+                            <bitWidth>7</bitWidth>
+                        </field>
+                        <field>
+                            <name>rx_flow_en</name>
+                            <description>Set this bit to enable rx hardware flow control</description>
+                            <bitOffset>23</bitOffset>
+                            <bitWidth>1</bitWidth>
+                        </field>
+                        <field>
+                            <name>rx_flow_thrhd</name>
+                            <description>The config bits for rx flow control threshold,0-127</description>
+                            <bitOffset>16</bitOffset>
+                            <bitWidth>7</bitWidth>
+                        </field>
+                        <field>
+                            <name>txfifo_empty_thrhd</name>
+                            <description>The config bits for tx fifo empty threshold,0-127</description>
+                            <bitOffset>8</bitOffset>
+                            <bitWidth>7</bitWidth>
+                        </field>
+                        <field>
+                            <name>rxfifo_full_thrhd</name>
+                            <description>The config bits for rx fifo full threshold,0-127</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>7</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_LOWPULSE</name>
+                    <addressOffset>0x28</addressOffset>
+                    <description>UART_LOWPULSE</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>lowpulse_min_cnt</name>
+                            <description>used in baudrate detect</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>20</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_HIGHPULSE</name>
+                    <addressOffset>0x2c</addressOffset>
+                    <description>UART_HIGHPULSE</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>highpulse_min_cnt</name>
+                            <description>used in baudrate detect</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>20</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_RXD_CNT</name>
+                    <addressOffset>0x30</addressOffset>
+                    <description>UART_RXD_CNT</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>rxd_edge_cnt</name>
+                            <description>used in baudrate detect</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>10</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+                <register>
+                    <name>UART_DATE</name>
+                    <addressOffset>0x78</addressOffset>
+                    <description>UART HW INFO</description>
+                    <size>32</size>
+                    <resetValue>0x00000000</resetValue>
+                    <fields>
+                        <field>
+                            <name>uart_date</name>
+                            <description>UART HW INFO</description>
+                            <bitOffset>0</bitOffset>
+                            <bitWidth>32</bitWidth>
+                        </field>
+                    </fields>
+                </register>
+            </registers>
+        </peripheral>
+        <peripheral>
+            <name>UART1</name>
+            <baseAddress>0x60000f00</baseAddress>
             <addressBlock>
                 <offset>0</offset>
                 <size>0x000001c0</size>
