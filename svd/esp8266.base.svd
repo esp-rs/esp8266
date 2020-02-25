@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<device xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1.0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
-        schemaVersion="1.0">
+<device schemaVersion="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+        xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1.0.xsd">
     <name>Espressif</name>
     <version>1.0</version>
     <width>32</width>
@@ -34,6 +34,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -48,6 +49,7 @@
                             <name>DPORT_CTL_DOUBLE_CLK</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -73,6 +75,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -87,6 +90,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -101,6 +105,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -115,6 +120,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -141,12 +147,14 @@
                             <description>BT-Coexist Selection register</description>
                             <bitOffset>16</bitOffset>
                             <bitWidth>16</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_OUT_DATA</name>
                             <description>The output value when the GPIO pin is set as output.</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>16</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -164,6 +172,7 @@
                             </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>16</bitWidth>
+                            <access>write-only</access>
                         </field>
                     </fields>
                 </register>
@@ -181,6 +190,7 @@
                             </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>16</bitWidth>
+                            <access>write-only</access>
                         </field>
                     </fields>
                 </register>
@@ -196,12 +206,14 @@
                             <description>SDIO-dis selection register</description>
                             <bitOffset>16</bitOffset>
                             <bitWidth>6</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_ENABLE_DATA</name>
                             <description>The output enable register.</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>16</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -219,6 +231,7 @@
                             </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>16</bitWidth>
+                            <access>write-only</access>
                         </field>
                     </fields>
                 </register>
@@ -236,6 +249,7 @@
                             </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>16</bitWidth>
+                            <access>write-only</access>
                         </field>
                     </fields>
                 </register>
@@ -251,12 +265,14 @@
                             <description>The values of the strapping pins.</description>
                             <bitOffset>16</bitOffset>
                             <bitWidth>16</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_IN_DATA</name>
                             <description>The values of the GPIO pins when the GPIO pin is set as input.</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>16</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -272,6 +288,7 @@
                             <description>Interrupt enable register.</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>16</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -289,6 +306,7 @@
                             </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>16</bitWidth>
+                            <access>write-only</access>
                         </field>
                     </fields>
                 </register>
@@ -306,6 +324,7 @@
                             </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>16</bitWidth>
+                            <access>write-only</access>
                         </field>
                     </fields>
                 </register>
@@ -323,6 +342,7 @@
                             </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN0_INT_TYPE</name>
@@ -331,18 +351,21 @@
                             </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN0_DRIVER</name>
                             <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN0_SOURCE</name>
                             <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -360,6 +383,7 @@
                             </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN1_INT_TYPE</name>
@@ -368,18 +392,21 @@
                             </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN1_DRIVER</name>
                             <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN1_SOURCE</name>
                             <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -397,6 +424,7 @@
                             </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN2_INT_TYPE</name>
@@ -405,18 +433,21 @@
                             </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN2_DRIVER</name>
                             <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN2_SOURCE</name>
                             <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -434,6 +465,7 @@
                             </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN3_INT_TYPE</name>
@@ -442,18 +474,21 @@
                             </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN3_DRIVER</name>
                             <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN3_SOURCE</name>
                             <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -471,6 +506,7 @@
                             </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN4_INT_TYPE</name>
@@ -479,18 +515,21 @@
                             </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN4_DRIVER</name>
                             <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN4_SOURCE</name>
                             <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -508,6 +547,7 @@
                             </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN5_INT_TYPE</name>
@@ -516,18 +556,21 @@
                             </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN5_DRIVER</name>
                             <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN5_SOURCE</name>
                             <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -545,6 +588,7 @@
                             </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN6_INT_TYPE</name>
@@ -553,18 +597,21 @@
                             </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN6_DRIVER</name>
                             <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN6_SOURCE</name>
                             <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -582,6 +629,7 @@
                             </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN7_INT_TYPE</name>
@@ -590,18 +638,21 @@
                             </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN7_DRIVER</name>
                             <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN7_SOURCE</name>
                             <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -619,6 +670,7 @@
                             </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN8_INT_TYPE</name>
@@ -627,18 +679,21 @@
                             </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN8_DRIVER</name>
                             <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN8_SOURCE</name>
                             <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -656,6 +711,7 @@
                             </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN9_INT_TYPE</name>
@@ -664,18 +720,21 @@
                             </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN9_DRIVER</name>
                             <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN9_SOURCE</name>
                             <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -693,6 +752,7 @@
                             </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN10_INT_TYPE</name>
@@ -701,18 +761,21 @@
                             </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN10_DRIVER</name>
                             <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN10_SOURCE</name>
                             <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -730,6 +793,7 @@
                             </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN11_INT_TYPE</name>
@@ -738,18 +802,21 @@
                             </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN11_DRIVER</name>
                             <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN11_SOURCE</name>
                             <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -767,6 +834,7 @@
                             </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN12_INT_TYPE</name>
@@ -775,18 +843,21 @@
                             </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN12_DRIVER</name>
                             <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN12_SOURCE</name>
                             <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -804,6 +875,7 @@
                             </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN13_INT_TYPE</name>
@@ -812,18 +884,21 @@
                             </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN13_DRIVER</name>
                             <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN13_SOURCE</name>
                             <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -841,6 +916,7 @@
                             </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN14_INT_TYPE</name>
@@ -849,18 +925,21 @@
                             </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN14_DRIVER</name>
                             <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN14_SOURCE</name>
                             <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -878,6 +957,7 @@
                             </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN15_INT_TYPE</name>
@@ -886,18 +966,21 @@
                             </description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>3</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN15_DRIVER</name>
                             <description>1: open drain; 0: normal</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>GPIO_PIN15_SOURCE</name>
                             <description>1: sigma-delta; 0: GPIO_DATA</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -913,18 +996,21 @@
                             <description>1: enable sigma-delta; 0: disable</description>
                             <bitOffset>16</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SIGMA_DELTA_PRESCALAR</name>
                             <description>Clock pre-divider for sigma-delta.</description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>8</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SIGMA_DELTA_TARGET</name>
                             <description>target level of the sigma-delta. It is a signed byte.</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>8</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -941,12 +1027,14 @@
                             </description>
                             <bitOffset>31</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>RTC_PERIOD_NUM</name>
                             <description>The cycle number of RTC-clock during RTC-clock-calibration</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>10</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -972,6 +1060,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -986,6 +1075,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1000,76 +1090,91 @@
                             <name>I2S_BCK_DIV_NUM</name>
                             <bitOffset>22</bitOffset>
                             <bitWidth>6</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_CLKM_DIV_NUM</name>
                             <bitOffset>16</bitOffset>
                             <bitWidth>6</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_BITS_MOD</name>
                             <bitOffset>12</bitOffset>
                             <bitWidth>4</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_RECE_MSB_SHIFT</name>
                             <bitOffset>11</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_TRANS_MSB_SHIFT</name>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_RX_START</name>
                             <bitOffset>9</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_TX_START</name>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_MSB_RIGHT</name>
                             <bitOffset>7</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_RIGHT_FIRST</name>
                             <bitOffset>6</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_RECE_SLAVE_MOD</name>
                             <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_TRANS_SLAVE_MOD</name>
                             <bitOffset>4</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_RX_FIFO_RESET</name>
                             <bitOffset>3</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_TX_FIFO_RESET</name>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_RX_RESET</name>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_TX_RESET</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1084,31 +1189,37 @@
                             <name>I2S_I2S_TX_REMPTY_INT_RAW</name>
                             <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_TX_WFULL_INT_RAW</name>
                             <bitOffset>4</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_RX_REMPTY_INT_RAW</name>
                             <bitOffset>3</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_RX_WFULL_INT_RAW</name>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_TX_PUT_DATA_INT_RAW</name>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_RX_TAKE_DATA_INT_RAW</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1123,31 +1234,37 @@
                             <name>I2S_I2S_TX_REMPTY_INT_ST</name>
                             <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_TX_WFULL_INT_ST</name>
                             <bitOffset>4</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_RX_REMPTY_INT_ST</name>
                             <bitOffset>3</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_RX_WFULL_INT_ST</name>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_TX_PUT_DATA_INT_ST</name>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_RX_TAKE_DATA_INT_ST</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1162,31 +1279,37 @@
                             <name>I2S_I2S_TX_REMPTY_INT_ENA</name>
                             <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_TX_WFULL_INT_ENA</name>
                             <bitOffset>4</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_RX_REMPTY_INT_ENA</name>
                             <bitOffset>3</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_RX_WFULL_INT_ENA</name>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_TX_PUT_DATA_INT_ENA</name>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_RX_TAKE_DATA_INT_ENA</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1201,31 +1324,37 @@
                             <name>I2S_I2S_TX_REMPTY_INT_CLR</name>
                             <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_TX_WFULL_INT_CLR</name>
                             <bitOffset>4</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_RX_REMPTY_INT_CLR</name>
                             <bitOffset>3</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_RX_WFULL_INT_CLR</name>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_PUT_DATA_INT_CLR</name>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_TAKE_DATA_INT_CLR</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1240,66 +1369,79 @@
                             <name>I2S_TRANS_BCK_IN_INV</name>
                             <bitOffset>22</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_RECE_DSYNC_SW</name>
                             <bitOffset>21</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_TRANS_DSYNC_SW</name>
                             <bitOffset>20</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_RECE_BCK_OUT_DELAY</name>
                             <bitOffset>18</bitOffset>
                             <bitWidth>2</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_RECE_WS_OUT_DELAY</name>
                             <bitOffset>16</bitOffset>
                             <bitWidth>2</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_TRANS_SD_OUT_DELAY</name>
                             <bitOffset>14</bitOffset>
                             <bitWidth>2</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_TRANS_WS_OUT_DELAY</name>
                             <bitOffset>12</bitOffset>
                             <bitWidth>2</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_TRANS_BCK_OUT_DELAY</name>
                             <bitOffset>10</bitOffset>
                             <bitWidth>2</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_RECE_SD_IN_DELAY</name>
                             <bitOffset>8</bitOffset>
                             <bitWidth>2</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_RECE_WS_IN_DELAY</name>
                             <bitOffset>6</bitOffset>
                             <bitWidth>2</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_RECE_BCK_IN_DELAY</name>
                             <bitOffset>4</bitOffset>
                             <bitWidth>2</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_TRANS_WS_IN_DELAY</name>
                             <bitOffset>2</bitOffset>
                             <bitWidth>2</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_TRANS_BCK_IN_DELAY</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>2</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1314,26 +1456,31 @@
                             <name>I2S_I2S_RX_FIFO_MOD</name>
                             <bitOffset>16</bitOffset>
                             <bitWidth>3</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_TX_FIFO_MOD</name>
                             <bitOffset>13</bitOffset>
                             <bitWidth>3</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_DSCR_EN</name>
                             <bitOffset>12</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_TX_DATA_NUM</name>
                             <bitOffset>6</bitOffset>
                             <bitWidth>6</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>I2S_I2S_RX_DATA_NUM</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>6</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1348,6 +1495,7 @@
                             <name>I2S_I2S_RX_EOF_NUM</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1362,6 +1510,7 @@
                             <name>I2S_I2S_SIGLE_DATA</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1387,11 +1536,13 @@
                             <name>SPI0_CLK_EQU_SYS_CLK</name>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SPI1_CLK_EQU_SYS_CLK</name>
                             <bitOffset>9</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1406,6 +1557,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1420,6 +1572,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1434,6 +1587,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1448,6 +1602,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1462,6 +1617,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1476,6 +1632,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1490,6 +1647,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1504,6 +1662,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1518,6 +1677,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1532,6 +1692,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1546,6 +1707,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1560,6 +1722,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1574,6 +1737,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1588,6 +1752,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1602,6 +1767,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1616,6 +1782,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1641,6 +1808,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1655,6 +1823,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1680,56 +1849,67 @@
                             <name>SLC_MODE</name>
                             <bitOffset>12</bitOffset>
                             <bitWidth>2</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_DATA_BURST_EN</name>
                             <bitOffset>9</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_DSCR_BURST_EN</name>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RX_NO_RESTART_CLR</name>
                             <bitOffset>7</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RX_AUTO_WRBACK</name>
                             <bitOffset>6</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RX_LOOP_TEST</name>
                             <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TX_LOOP_TEST</name>
                             <bitOffset>4</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_AHBM_RST</name>
                             <bitOffset>3</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_AHBM_FIFO_RST</name>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RXLINK_RST</name>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TXLINK_RST</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1744,111 +1924,133 @@
                             <name>SLC_TX_DSCR_EMPTY_INT_RAW</name>
                             <bitOffset>21</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RX_DSCR_ERR_INT_RAW</name>
                             <bitOffset>20</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TX_DSCR_ERR_INT_RAW</name>
                             <bitOffset>19</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TOHOST_INT_RAW</name>
                             <bitOffset>18</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RX_EOF_INT_RAW</name>
                             <bitOffset>17</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RX_DONE_INT_RAW</name>
                             <bitOffset>16</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TX_EOF_INT_RAW</name>
                             <bitOffset>15</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TX_DONE_INT_RAW</name>
                             <bitOffset>14</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TOKEN1_1TO0_INT_RAW</name>
                             <bitOffset>13</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TOKEN0_1TO0_INT_RAW</name>
                             <bitOffset>12</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TX_OVF_INT_RAW</name>
                             <bitOffset>11</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RX_UDF_INT_RAW</name>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TX_START_INT_RAW</name>
                             <bitOffset>9</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RX_START_INT_RAW</name>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT7_INT_RAW</name>
                             <bitOffset>7</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT6_INT_RAW</name>
                             <bitOffset>6</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT5_INT_RAW</name>
                             <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT4_INT_RAW</name>
                             <bitOffset>4</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT3_INT_RAW</name>
                             <bitOffset>3</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT2_INT_RAW</name>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT1_INT_RAW</name>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT0_INT_RAW</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1863,111 +2065,133 @@
                             <name>SLC_TX_DSCR_EMPTY_INT_ST</name>
                             <bitOffset>21</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RX_DSCR_ERR_INT_ST</name>
                             <bitOffset>20</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TX_DSCR_ERR_INT_ST</name>
                             <bitOffset>19</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TOHOST_INT_ST</name>
                             <bitOffset>18</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RX_EOF_INT_ST</name>
                             <bitOffset>17</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RX_DONE_INT_ST</name>
                             <bitOffset>16</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TX_EOF_INT_ST</name>
                             <bitOffset>15</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TX_DONE_INT_ST</name>
                             <bitOffset>14</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TOKEN1_1TO0_INT_ST</name>
                             <bitOffset>13</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TOKEN0_1TO0_INT_ST</name>
                             <bitOffset>12</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TX_OVF_INT_ST</name>
                             <bitOffset>11</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RX_UDF_INT_ST</name>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TX_START_INT_ST</name>
                             <bitOffset>9</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RX_START_INT_ST</name>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT7_INT_ST</name>
                             <bitOffset>7</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT6_INT_ST</name>
                             <bitOffset>6</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT5_INT_ST</name>
                             <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT4_INT_ST</name>
                             <bitOffset>4</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT3_INT_ST</name>
                             <bitOffset>3</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT2_INT_ST</name>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT1_INT_ST</name>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT0_INT_ST</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -1982,111 +2206,133 @@
                             <name>SLC_TX_DSCR_EMPTY_INT_ENA</name>
                             <bitOffset>21</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RX_DSCR_ERR_INT_ENA</name>
                             <bitOffset>20</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TX_DSCR_ERR_INT_ENA</name>
                             <bitOffset>19</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TOHOST_INT_ENA</name>
                             <bitOffset>18</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RX_EOF_INT_ENA</name>
                             <bitOffset>17</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RX_DONE_INT_ENA</name>
                             <bitOffset>16</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TX_EOF_INT_ENA</name>
                             <bitOffset>15</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TX_DONE_INT_ENA</name>
                             <bitOffset>14</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TOKEN1_1TO0_INT_ENA</name>
                             <bitOffset>13</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TOKEN0_1TO0_INT_ENA</name>
                             <bitOffset>12</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TX_OVF_INT_ENA</name>
                             <bitOffset>11</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RX_UDF_INT_ENA</name>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TX_START_INT_ENA</name>
                             <bitOffset>9</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RX_START_INT_ENA</name>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT7_INT_ENA</name>
                             <bitOffset>7</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT6_INT_ENA</name>
                             <bitOffset>6</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT5_INT_ENA</name>
                             <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT4_INT_ENA</name>
                             <bitOffset>4</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT3_INT_ENA</name>
                             <bitOffset>3</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT2_INT_ENA</name>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT1_INT_ENA</name>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT0_INT_ENA</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2101,111 +2347,133 @@
                             <name>SLC_TX_DSCR_EMPTY_INT_CLR</name>
                             <bitOffset>21</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RX_DSCR_ERR_INT_CLR</name>
                             <bitOffset>20</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TX_DSCR_ERR_INT_CLR</name>
                             <bitOffset>19</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TOHOST_INT_CLR</name>
                             <bitOffset>18</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RX_EOF_INT_CLR</name>
                             <bitOffset>17</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RX_DONE_INT_CLR</name>
                             <bitOffset>16</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TX_EOF_INT_CLR</name>
                             <bitOffset>15</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TX_DONE_INT_CLR</name>
                             <bitOffset>14</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TOKEN1_1TO0_INT_CLR</name>
                             <bitOffset>13</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TOKEN0_1TO0_INT_CLR</name>
                             <bitOffset>12</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TX_OVF_INT_CLR</name>
                             <bitOffset>11</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RX_UDF_INT_CLR</name>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TX_START_INT_CLR</name>
                             <bitOffset>9</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RX_START_INT_CLR</name>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT7_INT_CLR</name>
                             <bitOffset>7</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT6_INT_CLR</name>
                             <bitOffset>6</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT5_INT_CLR</name>
                             <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT4_INT_CLR</name>
                             <bitOffset>4</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT3_INT_CLR</name>
                             <bitOffset>3</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT2_INT_CLR</name>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT1_INT_CLR</name>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FRHOST_BIT0_INT_CLR</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2220,11 +2488,13 @@
                             <name>SLC_RX_EMPTY</name>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RX_FULL</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2239,11 +2509,13 @@
                             <name>SLC_RXFIFO_PUSH</name>
                             <bitOffset>16</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RXFIFO_WDATA</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>9</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2258,11 +2530,13 @@
                             <name>SLC_TX_EMPTY</name>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TX_FULL</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2277,11 +2551,13 @@
                             <name>SLC_TXFIFO_POP</name>
                             <bitOffset>16</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TXFIFO_RDATA</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>11</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2296,26 +2572,31 @@
                             <name>SLC_RXLINK_PARK</name>
                             <bitOffset>31</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RXLINK_RESTART</name>
                             <bitOffset>30</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RXLINK_START</name>
                             <bitOffset>29</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RXLINK_STOP</name>
                             <bitOffset>28</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_RXLINK_ADDR</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>20</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2330,26 +2611,31 @@
                             <name>SLC_TXLINK_PARK</name>
                             <bitOffset>31</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TXLINK_RESTART</name>
                             <bitOffset>30</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TXLINK_START</name>
                             <bitOffset>29</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TXLINK_STOP</name>
                             <bitOffset>28</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TXLINK_ADDR</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>20</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2364,6 +2650,7 @@
                             <name>SLC_TOHOST_INTVEC</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>8</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2378,26 +2665,31 @@
                             <name>SLC_TOKEN0</name>
                             <bitOffset>16</bitOffset>
                             <bitWidth>12</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TOKEN0_LOCAL_INC_MORE</name>
                             <bitOffset>14</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TOKEN0_LOCAL_INC</name>
                             <bitOffset>13</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TOKEN0_LOCAL_WR</name>
                             <bitOffset>12</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TOKEN0_LOCAL_WDATA</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>12</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2412,26 +2704,31 @@
                             <name>SLC_TOKEN1</name>
                             <bitOffset>16</bitOffset>
                             <bitWidth>12</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TOKEN1_LOCAL_INC_MORE</name>
                             <bitOffset>14</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TOKEN1_LOCAL_INC</name>
                             <bitOffset>13</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TOKEN1_LOCAL_WR</name>
                             <bitOffset>12</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TOKEN1_LOCAL_WDATA</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>12</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2446,6 +2743,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2460,6 +2758,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2474,6 +2773,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2488,21 +2788,25 @@
                             <name>SLC_TX_PUSH_IDLE_NUM</name>
                             <bitOffset>16</bitOffset>
                             <bitWidth>16</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TX_DUMMY_MODE</name>
                             <bitOffset>12</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FIFO_MAP_ENA</name>
                             <bitOffset>8</bitOffset>
                             <bitWidth>4</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TXEOF_ENA</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>6</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2517,6 +2821,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2531,6 +2836,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2545,6 +2851,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2559,11 +2866,13 @@
                             <name>SLC_AHB_TESTADDR</name>
                             <bitOffset>4</bitOffset>
                             <bitWidth>2</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_AHB_TESTMODE</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>3</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2578,21 +2887,25 @@
                             <name>SLC_BUS_ST</name>
                             <bitOffset>12</bitOffset>
                             <bitWidth>3</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_SDIO_WAKEUP</name>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_FUNC_ST</name>
                             <bitOffset>4</bitOffset>
                             <bitWidth>4</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_CMD_ST</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>3</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2607,11 +2920,13 @@
                             <name>SLC_INFOR_NO_REPLACE</name>
                             <bitOffset>9</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>SLC_TOKEN_NO_REPLACE</name>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2626,6 +2941,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2640,6 +2956,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2654,6 +2971,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2668,6 +2986,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2682,6 +3001,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2696,6 +3016,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2710,6 +3031,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2724,6 +3046,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2753,6 +3076,7 @@
                             </description>
                             <bitOffset>18</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2769,6 +3093,7 @@
                             </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2786,12 +3111,14 @@
                             </description>
                             <bitOffset>26</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_rd_bit_order</name>
                             <description>In "read-data" (MISO) phase, 1: LSB first; 0: MSB first</description>
                             <bitOffset>25</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_qio_mode</name>
@@ -2799,6 +3126,7 @@
                             </description>
                             <bitOffset>24</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_dio_mode</name>
@@ -2806,18 +3134,21 @@
                             </description>
                             <bitOffset>23</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_qout_mode</name>
                             <description>In the read operations, "read-data" phase apply 4 signals</description>
                             <bitOffset>20</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_dout_mode</name>
                             <description>In the read operations, "read-data" phase apply 2 signals</description>
                             <bitOffset>14</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_fastrd_mode</name>
@@ -2826,6 +3157,7 @@
                             </description>
                             <bitOffset>13</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2844,6 +3176,7 @@
                             </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2859,6 +3192,7 @@
                             <description>spi_cs signal is delayed by 80MHz clock cycles</description>
                             <bitOffset>28</bitOffset>
                             <bitWidth>4</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_cs_delay_mode</name>
@@ -2866,12 +3200,14 @@
                             </description>
                             <bitOffset>26</bitOffset>
                             <bitWidth>2</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_mosi_delay_num</name>
                             <description>MOSI signals are delayed by 80MHz clock cycles</description>
                             <bitOffset>23</bitOffset>
                             <bitWidth>3</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_mosi_delay_mode</name>
@@ -2879,12 +3215,14 @@
                             </description>
                             <bitOffset>21</bitOffset>
                             <bitWidth>2</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_miso_delay_num</name>
                             <description>MISO signals are delayed by 80MHz clock cycles</description>
                             <bitOffset>18</bitOffset>
                             <bitWidth>3</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_miso_delay_mode</name>
@@ -2892,6 +3230,7 @@
                             </description>
                             <bitOffset>16</bitOffset>
                             <bitWidth>2</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2911,12 +3250,14 @@
                             </description>
                             <bitOffset>31</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_clkdiv_pre</name>
                             <description>In the master mode, it is pre-divider of spi_clk.</description>
                             <bitOffset>18</bitOffset>
                             <bitWidth>13</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_clkcnt_N</name>
@@ -2925,6 +3266,7 @@
                             </description>
                             <bitOffset>12</bitOffset>
                             <bitWidth>6</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_clkcnt_H</name>
@@ -2933,6 +3275,7 @@
                             </description>
                             <bitOffset>6</bitOffset>
                             <bitWidth>6</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_clkcnt_L</name>
@@ -2941,6 +3284,7 @@
                             </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>6</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -2956,30 +3300,35 @@
                             <description>This bit enable the "command" phase of an operation.</description>
                             <bitOffset>31</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_usr_addr</name>
                             <description>This bit enable the "address" phase of an operation.</description>
                             <bitOffset>30</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_usr_dummy</name>
                             <description>This bit enable the "dummy" phase of an operation.</description>
                             <bitOffset>29</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_usr_miso</name>
                             <description>This bit enable the "read-data" phase of an operation.</description>
                             <bitOffset>28</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_usr_mosi</name>
                             <description>This bit enable the "write-data" phase of an operation.</description>
                             <bitOffset>27</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>reg_usr_mosi_highpart</name>
@@ -2987,6 +3336,7 @@
                             </description>
                             <bitOffset>25</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>reg_usr_miso_highpart</name>
@@ -2994,12 +3344,14 @@
                             </description>
                             <bitOffset>24</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_sio</name>
                             <description>1: mosi and miso signals share the same pin</description>
                             <bitOffset>16</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_fwrite_qio</name>
@@ -3008,6 +3360,7 @@
                             </description>
                             <bitOffset>15</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_fwrite_dio</name>
@@ -3016,18 +3369,21 @@
                             </description>
                             <bitOffset>14</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_fwrite_quad</name>
                             <description>In the write operations, "read-data" phase apply 4 signals</description>
                             <bitOffset>13</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_fwrite_dual</name>
                             <description>In the write operations, "read-data" phase apply 2 signals</description>
                             <bitOffset>12</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_wr_byte_order</name>
@@ -3036,18 +3392,21 @@
                             </description>
                             <bitOffset>11</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_rd_byte_order</name>
                             <description>In "read-data" (MISO) phase, 1: little-endian; 0: big_endian</description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_ck_i_edge</name>
                             <description>In the slave mode, 1: rising-edge; 0: falling-edge</description>
                             <bitOffset>6</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3066,6 +3425,7 @@
                             </description>
                             <bitOffset>26</bitOffset>
                             <bitWidth>6</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>reg_usr_mosi_bitlen</name>
@@ -3074,6 +3434,7 @@
                             </description>
                             <bitOffset>17</bitOffset>
                             <bitWidth>9</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>reg_usr_miso_bitlen</name>
@@ -3082,6 +3443,7 @@
                             </description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>9</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>reg_usr_dummy_cyclelen</name>
@@ -3090,6 +3452,7 @@
                             </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>8</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3108,12 +3471,14 @@
                             </description>
                             <bitOffset>28</bitOffset>
                             <bitWidth>4</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>reg_usr_command_value</name>
                             <description>The value of "command" phase</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>16</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3133,6 +3498,7 @@
                             </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3148,18 +3514,21 @@
                             <description>1: disable CS2; 0: spi_cs signal is from/to CS2 pin</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_cs1_dis</name>
                             <description>1: disable CS1; 0: spi_cs signal is from/to CS1 pin</description>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_cs0_dis</name>
                             <description>1: disable CS0; 0: spi_cs signal is from/to CS0 pin</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3179,12 +3548,14 @@
                             </description>
                             <bitOffset>31</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_slave_mode</name>
                             <description>1: slave mode, 0: master mode.</description>
                             <bitOffset>30</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>slv_cmd_define</name>
@@ -3193,6 +3564,7 @@
                             </description>
                             <bitOffset>27</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_trans_cnt</name>
@@ -3200,12 +3572,14 @@
                             </description>
                             <bitOffset>23</bitOffset>
                             <bitWidth>4</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>spi_int_en</name>
                             <description>Interrupt enable bits for the below 5 sources</description>
                             <bitOffset>5</bitOffset>
                             <bitWidth>5</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>spi_trans_done</name>
@@ -3214,6 +3588,7 @@
                             </description>
                             <bitOffset>4</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>slv_wr_sta_done</name>
@@ -3222,6 +3597,7 @@
                             </description>
                             <bitOffset>3</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>slv_rd_sta_done</name>
@@ -3230,6 +3606,7 @@
                             </description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>slv_wr_buf_done</name>
@@ -3238,6 +3615,7 @@
                             </description>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>slv_rd_buf_done</name>
@@ -3246,6 +3624,7 @@
                             </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3265,6 +3644,7 @@
                             </description>
                             <bitOffset>27</bitOffset>
                             <bitWidth>5</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>slv_buf_bitlen</name>
@@ -3273,6 +3653,7 @@
                             </description>
                             <bitOffset>16</bitOffset>
                             <bitWidth>9</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>slv_rd_addr_bitlen</name>
@@ -3281,6 +3662,7 @@
                             </description>
                             <bitOffset>10</bitOffset>
                             <bitWidth>6</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>slv_wr_addr_bitlen</name>
@@ -3289,6 +3671,7 @@
                             </description>
                             <bitOffset>4</bitOffset>
                             <bitWidth>6</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>slv_wrsta_dummy_en</name>
@@ -3297,6 +3680,7 @@
                             </description>
                             <bitOffset>3</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>slv_rdsta_dummy_en</name>
@@ -3305,6 +3689,7 @@
                             </description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>slv_wrbuf_dummy_en</name>
@@ -3313,6 +3698,7 @@
                             </description>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>slv_rdbuf_dummy_en</name>
@@ -3321,6 +3707,7 @@
                             </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3340,6 +3727,7 @@
                             </description>
                             <bitOffset>24</bitOffset>
                             <bitWidth>8</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>slv_rdbuf_dummy_cyclelen</name>
@@ -3348,6 +3736,7 @@
                             </description>
                             <bitOffset>16</bitOffset>
                             <bitWidth>8</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>slv_wrsta_dummy_cyclelen</name>
@@ -3356,6 +3745,7 @@
                             </description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>8</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>slv_rdsta_dummy_cyclelen</name>
@@ -3364,6 +3754,7 @@
                             </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>8</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3379,24 +3770,28 @@
                             <description>In slave mode, it is the value of "write-status" command</description>
                             <bitOffset>24</bitOffset>
                             <bitWidth>8</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>slv_rdsta_cmd_value</name>
                             <description>In slave mode, it is the value of "read-status" command</description>
                             <bitOffset>16</bitOffset>
                             <bitWidth>8</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>slv_wrbuf_cmd_value</name>
                             <description>In slave mode, it is the value of "write-buffer" command</description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>8</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>slv_rdbuf_cmd_value</name>
                             <description>In slave mode, it is the value of "read-buffer" command</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>8</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3412,6 +3807,7 @@
                             <description>the data inside the buffer of the SPI module, byte 0</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3427,6 +3823,7 @@
                             <description>the data inside the buffer of the SPI module, byte 1</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3442,6 +3839,7 @@
                             <description>the data inside the buffer of the SPI module, byte 2</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3457,6 +3855,7 @@
                             <description>the data inside the buffer of the SPI module, byte 3</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3472,6 +3871,7 @@
                             <description>the data inside the buffer of the SPI module, byte 4</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3487,6 +3887,7 @@
                             <description>the data inside the buffer of the SPI module, byte 5</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3502,6 +3903,7 @@
                             <description>the data inside the buffer of the SPI module, byte 6</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3517,6 +3919,7 @@
                             <description>the data inside the buffer of the SPI module, byte 7</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3532,6 +3935,7 @@
                             <description>the data inside the buffer of the SPI module, byte 8</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3547,6 +3951,7 @@
                             <description>the data inside the buffer of the SPI module, byte 9</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3562,6 +3967,7 @@
                             <description>the data inside the buffer of the SPI module, byte 10</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3577,6 +3983,7 @@
                             <description>the data inside the buffer of the SPI module, byte 11</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3592,6 +3999,7 @@
                             <description>the data inside the buffer of the SPI module, byte 12</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3607,6 +4015,7 @@
                             <description>the data inside the buffer of the SPI module, byte 13</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3622,6 +4031,7 @@
                             <description>the data inside the buffer of the SPI module, byte 14</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3637,6 +4047,7 @@
                             <description>the data inside the buffer of the SPI module, byte 15</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3663,6 +4074,7 @@
                             <description>the load value into the counter</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>23</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3678,6 +4090,7 @@
                             <description>the current value of the counter. It is a decreasingcounter.</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>23</bitWidth>
+                            <access>read-only</access>
                         </field>
                     </fields>
                 </register>
@@ -3693,6 +4106,7 @@
                             <description>the status of the interrupt, when the count isdereased to zero</description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>frc1_ctrl</name>
@@ -3702,6 +4116,7 @@
                             </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>8</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3718,6 +4133,7 @@
                             </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3733,6 +4149,7 @@
                             <description>the load value into the counter</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3748,6 +4165,7 @@
                             <description>the current value of the counter. It is a increasingcounter.</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-only</access>
                         </field>
                     </fields>
                 </register>
@@ -3764,6 +4182,7 @@
                             </description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>frc2_ctrl</name>
@@ -3773,6 +4192,7 @@
                             </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>8</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3789,6 +4209,7 @@
                             </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -3815,6 +4236,7 @@
                             <description>R/W share the same address</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>8</bitWidth>
+                            <access>read-only</access>
                         </field>
                     </fields>
                 </register>
@@ -3832,42 +4254,49 @@
                             </description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>brk_det_int_raw</name>
                             <description>The interrupt raw bit for Rx byte start error</description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>cts_chg_int_raw</name>
                             <description>The interrupt raw bit for CTS changing level</description>
                             <bitOffset>6</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>dsr_chg_int_raw</name>
                             <description>The interrupt raw bit for DSR changing level</description>
                             <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>rxfifo_ovf_int_raw</name>
                             <description>The interrupt raw bit for rx fifo overflow</description>
                             <bitOffset>4</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>frm_err_int_raw</name>
                             <description>The interrupt raw bit for other rx error</description>
                             <bitOffset>3</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>parity_err_int_raw</name>
                             <description>The interrupt raw bit for parity check error</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>txfifo_empty_int_raw</name>
@@ -3876,6 +4305,7 @@
                             </description>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>rxfifo_full_int_raw</name>
@@ -3884,6 +4314,7 @@
                             </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                     </fields>
                 </register>
@@ -3899,54 +4330,63 @@
                             <description>The interrupt state bit for Rx time-out event</description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>brk_det_int_st</name>
                             <description>The interrupt state bit for rx byte start error</description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>cts_chg_int_st</name>
                             <description>The interrupt state bit for CTS changing level</description>
                             <bitOffset>6</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>dsr_chg_int_st</name>
                             <description>The interrupt state bit for DSR changing level</description>
                             <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>rxfifo_ovf_int_st</name>
                             <description>The interrupt state bit for RX fifo overflow</description>
                             <bitOffset>4</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>frm_err_int_st</name>
                             <description>The interrupt state for other rx error</description>
                             <bitOffset>3</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>parity_err_int_st</name>
                             <description>The interrupt state bit for rx parity error</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>txfifo_empty_int_st</name>
                             <description>The interrupt state bit for TX fifo empty</description>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>rxfifo_full_int_st</name>
                             <description>The interrupt state bit for RX fifo full event</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                     </fields>
                 </register>
@@ -3962,54 +4402,63 @@
                             <description>The interrupt enable bit for rx time-out interrupt</description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>brk_det_int_ena</name>
                             <description>The interrupt enable bit for rx byte start error</description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>cts_chg_int_ena</name>
                             <description>The interrupt enable bit for CTS changing level</description>
                             <bitOffset>6</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>dsr_chg_int_ena</name>
                             <description>The interrupt enable bit for DSR changing level</description>
                             <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>rxfifo_ovf_int_ena</name>
                             <description>The interrupt enable bit for rx fifo overflow</description>
                             <bitOffset>4</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>frm_err_int_ena</name>
                             <description>The interrupt enable bit for other rx error</description>
                             <bitOffset>3</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>parity_err_int_ena</name>
                             <description>The interrupt enable bit for parity error</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>txfifo_empty_int_ena</name>
                             <description>The interrupt enable bit for tx fifo empty event</description>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>rxfifo_full_int_ena</name>
                             <description>The interrupt enable bit for rx fifo full event</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -4025,54 +4474,63 @@
                             <description>Set this bit to clear the rx time-out interrupt</description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>write-only</access>
                         </field>
                         <field>
                             <name>brk_det_int_clr</name>
                             <description>Set this bit to clear the rx byte start interrupt</description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>write-only</access>
                         </field>
                         <field>
                             <name>cts_chg_int_clr</name>
                             <description>Set this bit to clear the CTS changing interrupt</description>
                             <bitOffset>6</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>write-only</access>
                         </field>
                         <field>
                             <name>dsr_chg_int_clr</name>
                             <description>Set this bit to clear the DSR changing interrupt</description>
                             <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>write-only</access>
                         </field>
                         <field>
                             <name>rxfifo_ovf_int_clr</name>
                             <description>Set this bit to clear the rx fifo over-flow interrupt</description>
                             <bitOffset>4</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>write-only</access>
                         </field>
                         <field>
                             <name>frm_err_int_clr</name>
                             <description>Set this bit to clear other rx error interrupt</description>
                             <bitOffset>3</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>write-only</access>
                         </field>
                         <field>
                             <name>parity_err_int_clr</name>
                             <description>Set this bit to clear the parity error interrupt</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>write-only</access>
                         </field>
                         <field>
                             <name>txfifo_empty_int_clr</name>
                             <description>Set this bit to clear the tx fifo empty interrupt</description>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>write-only</access>
                         </field>
                         <field>
                             <name>rxfifo_full_int_clr</name>
                             <description>Set this bit to clear the rx fifo full interrupt</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>write-only</access>
                         </field>
                     </fields>
                 </register>
@@ -4088,6 +4546,7 @@
                             <description>BAUDRATE = UART_CLK_FREQ / UART_CLKDIV</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>20</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -4102,12 +4561,14 @@
                             <name>glitch_filt</name>
                             <bitOffset>8</bitOffset>
                             <bitWidth>8</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>autobaud_en</name>
                             <description>Set this bit to enable baudrate detect</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -4123,48 +4584,56 @@
                             <description>The level of the uart txd pin</description>
                             <bitOffset>31</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>rtsn</name>
                             <description>The level of uart rts pin</description>
                             <bitOffset>30</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>dtrn</name>
                             <description>The level of uart dtr pin</description>
                             <bitOffset>29</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>txfifo_cnt</name>
                             <description>Number of data in UART TX fifo</description>
                             <bitOffset>16</bitOffset>
                             <bitWidth>8</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>rxd</name>
                             <description>The level of uart rxd pin</description>
                             <bitOffset>15</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>ctsn</name>
                             <description>The level of uart cts pin</description>
                             <bitOffset>14</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>dsrn</name>
                             <description>The level of uart dsr pin</description>
                             <bitOffset>13</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>rxfifo_cnt</name>
                             <description>Number of data in uart rx fifo</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>8</bitWidth>
+                            <access>read-only</access>
                         </field>
                     </fields>
                 </register>
@@ -4180,102 +4649,119 @@
                             <description>Set this bit to inverse uart dtr level</description>
                             <bitOffset>24</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>uart_rts_inv</name>
                             <description>Set this bit to inverse uart rts level</description>
                             <bitOffset>23</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>uart_txd_inv</name>
                             <description>Set this bit to inverse uart txd level</description>
                             <bitOffset>22</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>uart_dsr_inv</name>
                             <description>Set this bit to inverse uart dsr level</description>
                             <bitOffset>21</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>uart_cts_inv</name>
                             <description>Set this bit to inverse uart cts level</description>
                             <bitOffset>20</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>uart_rxd_inv</name>
                             <description>Set this bit to inverse uart rxd level</description>
                             <bitOffset>19</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>txfifo_rst</name>
                             <description>Set this bit to reset uart tx fifo</description>
                             <bitOffset>18</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>rxfifo_rst</name>
                             <description>Set this bit to reset uart rx fifo</description>
                             <bitOffset>17</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>tx_flow_en</name>
                             <description>Set this bit to enable uart tx hardware flow control</description>
                             <bitOffset>15</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>uart_loopback</name>
                             <description>Set this bit to enable uart loopback test mode</description>
                             <bitOffset>14</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>txd_brk</name>
                             <description>RESERVED, DO NOT CHANGE THIS BIT</description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>sw_dtr</name>
                             <description>sw dtr</description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>sw_rts</name>
                             <description>sw rts</description>
                             <bitOffset>6</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>stop_bit_num</name>
                             <description>Set stop bit: 1:1bit 2:1.5bits 3:2bits</description>
                             <bitOffset>4</bitOffset>
                             <bitWidth>2</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>bit_num</name>
                             <description>Set bit num: 0:5bits 1:6bits 2:7bits 3:8bits</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>2</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>parity_en</name>
                             <description>Set this bit to enable uart parity check</description>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>parity</name>
                             <description>Set parity check: 0:even 1:odd, UART CONFIG1</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -4291,36 +4777,42 @@
                             <description>Set this bit to enable rx time-out function</description>
                             <bitOffset>31</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>rx_tout_thrhd</name>
                             <description>Config bits for rx time-out threshold,uint: byte,0-127</description>
                             <bitOffset>24</bitOffset>
                             <bitWidth>7</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>rx_flow_en</name>
                             <description>Set this bit to enable rx hardware flow control</description>
                             <bitOffset>23</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>rx_flow_thrhd</name>
                             <description>The config bits for rx flow control threshold,0-127</description>
                             <bitOffset>16</bitOffset>
                             <bitWidth>7</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>txfifo_empty_thrhd</name>
                             <description>The config bits for tx fifo empty threshold,0-127</description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>7</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>rxfifo_full_thrhd</name>
                             <description>The config bits for rx fifo full threshold,0-127</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>7</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -4336,6 +4828,7 @@
                             <description>used in baudrate detect</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>20</bitWidth>
+                            <access>read-only</access>
                         </field>
                     </fields>
                 </register>
@@ -4351,6 +4844,7 @@
                             <description>used in baudrate detect</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>20</bitWidth>
+                            <access>read-only</access>
                         </field>
                     </fields>
                 </register>
@@ -4366,6 +4860,7 @@
                             <description>used in baudrate detect</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>10</bitWidth>
+                            <access>read-only</access>
                         </field>
                     </fields>
                 </register>
@@ -4381,6 +4876,7 @@
                             <description>UART HW INFO</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -4407,6 +4903,7 @@
                             <description>R/W share the same address</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>8</bitWidth>
+                            <access>read-only</access>
                         </field>
                     </fields>
                 </register>
@@ -4424,42 +4921,49 @@
                             </description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>brk_det_int_raw</name>
                             <description>The interrupt raw bit for Rx byte start error</description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>cts_chg_int_raw</name>
                             <description>The interrupt raw bit for CTS changing level</description>
                             <bitOffset>6</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>dsr_chg_int_raw</name>
                             <description>The interrupt raw bit for DSR changing level</description>
                             <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>rxfifo_ovf_int_raw</name>
                             <description>The interrupt raw bit for rx fifo overflow</description>
                             <bitOffset>4</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>frm_err_int_raw</name>
                             <description>The interrupt raw bit for other rx error</description>
                             <bitOffset>3</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>parity_err_int_raw</name>
                             <description>The interrupt raw bit for parity check error</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>txfifo_empty_int_raw</name>
@@ -4468,6 +4972,7 @@
                             </description>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>rxfifo_full_int_raw</name>
@@ -4476,6 +4981,7 @@
                             </description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                     </fields>
                 </register>
@@ -4491,54 +4997,63 @@
                             <description>The interrupt state bit for Rx time-out event</description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>brk_det_int_st</name>
                             <description>The interrupt state bit for rx byte start error</description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>cts_chg_int_st</name>
                             <description>The interrupt state bit for CTS changing level</description>
                             <bitOffset>6</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>dsr_chg_int_st</name>
                             <description>The interrupt state bit for DSR changing level</description>
                             <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>rxfifo_ovf_int_st</name>
                             <description>The interrupt state bit for RX fifo overflow</description>
                             <bitOffset>4</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>frm_err_int_st</name>
                             <description>The interrupt state for other rx error</description>
                             <bitOffset>3</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>parity_err_int_st</name>
                             <description>The interrupt state bit for rx parity error</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>txfifo_empty_int_st</name>
                             <description>The interrupt state bit for TX fifo empty</description>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>rxfifo_full_int_st</name>
                             <description>The interrupt state bit for RX fifo full event</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                     </fields>
                 </register>
@@ -4554,54 +5069,63 @@
                             <description>The interrupt enable bit for rx time-out interrupt</description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>brk_det_int_ena</name>
                             <description>The interrupt enable bit for rx byte start error</description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>cts_chg_int_ena</name>
                             <description>The interrupt enable bit for CTS changing level</description>
                             <bitOffset>6</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>dsr_chg_int_ena</name>
                             <description>The interrupt enable bit for DSR changing level</description>
                             <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>rxfifo_ovf_int_ena</name>
                             <description>The interrupt enable bit for rx fifo overflow</description>
                             <bitOffset>4</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>frm_err_int_ena</name>
                             <description>The interrupt enable bit for other rx error</description>
                             <bitOffset>3</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>parity_err_int_ena</name>
                             <description>The interrupt enable bit for parity error</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>txfifo_empty_int_ena</name>
                             <description>The interrupt enable bit for tx fifo empty event</description>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>rxfifo_full_int_ena</name>
                             <description>The interrupt enable bit for rx fifo full event</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -4617,54 +5141,63 @@
                             <description>Set this bit to clear the rx time-out interrupt</description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>write-only</access>
                         </field>
                         <field>
                             <name>brk_det_int_clr</name>
                             <description>Set this bit to clear the rx byte start interrupt</description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>write-only</access>
                         </field>
                         <field>
                             <name>cts_chg_int_clr</name>
                             <description>Set this bit to clear the CTS changing interrupt</description>
                             <bitOffset>6</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>write-only</access>
                         </field>
                         <field>
                             <name>dsr_chg_int_clr</name>
                             <description>Set this bit to clear the DSR changing interrupt</description>
                             <bitOffset>5</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>write-only</access>
                         </field>
                         <field>
                             <name>rxfifo_ovf_int_clr</name>
                             <description>Set this bit to clear the rx fifo over-flow interrupt</description>
                             <bitOffset>4</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>write-only</access>
                         </field>
                         <field>
                             <name>frm_err_int_clr</name>
                             <description>Set this bit to clear other rx error interrupt</description>
                             <bitOffset>3</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>write-only</access>
                         </field>
                         <field>
                             <name>parity_err_int_clr</name>
                             <description>Set this bit to clear the parity error interrupt</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>write-only</access>
                         </field>
                         <field>
                             <name>txfifo_empty_int_clr</name>
                             <description>Set this bit to clear the tx fifo empty interrupt</description>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>write-only</access>
                         </field>
                         <field>
                             <name>rxfifo_full_int_clr</name>
                             <description>Set this bit to clear the rx fifo full interrupt</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>write-only</access>
                         </field>
                     </fields>
                 </register>
@@ -4680,6 +5213,7 @@
                             <description>BAUDRATE = UART_CLK_FREQ / UART_CLKDIV</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>20</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -4694,12 +5228,14 @@
                             <name>glitch_filt</name>
                             <bitOffset>8</bitOffset>
                             <bitWidth>8</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>autobaud_en</name>
                             <description>Set this bit to enable baudrate detect</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -4715,48 +5251,56 @@
                             <description>The level of the uart txd pin</description>
                             <bitOffset>31</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>rtsn</name>
                             <description>The level of uart rts pin</description>
                             <bitOffset>30</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>dtrn</name>
                             <description>The level of uart dtr pin</description>
                             <bitOffset>29</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>txfifo_cnt</name>
                             <description>Number of data in UART TX fifo</description>
                             <bitOffset>16</bitOffset>
                             <bitWidth>8</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>rxd</name>
                             <description>The level of uart rxd pin</description>
                             <bitOffset>15</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>ctsn</name>
                             <description>The level of uart cts pin</description>
                             <bitOffset>14</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>dsrn</name>
                             <description>The level of uart dsr pin</description>
                             <bitOffset>13</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-only</access>
                         </field>
                         <field>
                             <name>rxfifo_cnt</name>
                             <description>Number of data in uart rx fifo</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>8</bitWidth>
+                            <access>read-only</access>
                         </field>
                     </fields>
                 </register>
@@ -4772,102 +5316,119 @@
                             <description>Set this bit to inverse uart dtr level</description>
                             <bitOffset>24</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>uart_rts_inv</name>
                             <description>Set this bit to inverse uart rts level</description>
                             <bitOffset>23</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>uart_txd_inv</name>
                             <description>Set this bit to inverse uart txd level</description>
                             <bitOffset>22</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>uart_dsr_inv</name>
                             <description>Set this bit to inverse uart dsr level</description>
                             <bitOffset>21</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>uart_cts_inv</name>
                             <description>Set this bit to inverse uart cts level</description>
                             <bitOffset>20</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>uart_rxd_inv</name>
                             <description>Set this bit to inverse uart rxd level</description>
                             <bitOffset>19</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>txfifo_rst</name>
                             <description>Set this bit to reset uart tx fifo</description>
                             <bitOffset>18</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>rxfifo_rst</name>
                             <description>Set this bit to reset uart rx fifo</description>
                             <bitOffset>17</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>tx_flow_en</name>
                             <description>Set this bit to enable uart tx hardware flow control</description>
                             <bitOffset>15</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>uart_loopback</name>
                             <description>Set this bit to enable uart loopback test mode</description>
                             <bitOffset>14</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>txd_brk</name>
                             <description>RESERVED, DO NOT CHANGE THIS BIT</description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>sw_dtr</name>
                             <description>sw dtr</description>
                             <bitOffset>7</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>sw_rts</name>
                             <description>sw rts</description>
                             <bitOffset>6</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>stop_bit_num</name>
                             <description>Set stop bit: 1:1bit 2:1.5bits 3:2bits</description>
                             <bitOffset>4</bitOffset>
                             <bitWidth>2</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>bit_num</name>
                             <description>Set bit num: 0:5bits 1:6bits 2:7bits 3:8bits</description>
                             <bitOffset>2</bitOffset>
                             <bitWidth>2</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>parity_en</name>
                             <description>Set this bit to enable uart parity check</description>
                             <bitOffset>1</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>parity</name>
                             <description>Set parity check: 0:even 1:odd, UART CONFIG1</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -4883,36 +5444,42 @@
                             <description>Set this bit to enable rx time-out function</description>
                             <bitOffset>31</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>rx_tout_thrhd</name>
                             <description>Config bits for rx time-out threshold,uint: byte,0-127</description>
                             <bitOffset>24</bitOffset>
                             <bitWidth>7</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>rx_flow_en</name>
                             <description>Set this bit to enable rx hardware flow control</description>
                             <bitOffset>23</bitOffset>
                             <bitWidth>1</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>rx_flow_thrhd</name>
                             <description>The config bits for rx flow control threshold,0-127</description>
                             <bitOffset>16</bitOffset>
                             <bitWidth>7</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>txfifo_empty_thrhd</name>
                             <description>The config bits for tx fifo empty threshold,0-127</description>
                             <bitOffset>8</bitOffset>
                             <bitWidth>7</bitWidth>
+                            <access>read-write</access>
                         </field>
                         <field>
                             <name>rxfifo_full_thrhd</name>
                             <description>The config bits for rx fifo full threshold,0-127</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>7</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -4928,6 +5495,7 @@
                             <description>used in baudrate detect</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>20</bitWidth>
+                            <access>read-only</access>
                         </field>
                     </fields>
                 </register>
@@ -4943,6 +5511,7 @@
                             <description>used in baudrate detect</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>20</bitWidth>
+                            <access>read-only</access>
                         </field>
                     </fields>
                 </register>
@@ -4958,6 +5527,7 @@
                             <description>used in baudrate detect</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>10</bitWidth>
+                            <access>read-only</access>
                         </field>
                     </fields>
                 </register>
@@ -4973,6 +5543,7 @@
                             <description>UART HW INFO</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -4998,6 +5569,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -5012,6 +5584,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -5026,6 +5599,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
@@ -5040,6 +5614,7 @@
                             <name>Register</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
+                            <access>read-write</access>
                         </field>
                     </fields>
                 </register>
