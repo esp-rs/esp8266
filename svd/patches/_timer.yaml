@@ -25,3 +25,6 @@
       devided_by_1: [0, "divided by 1"]
       devided_by_16: [1, "divided by 16"]
       devided_by_256: [2, "divided by 256"]
+    interrupt_type:
+      edge: [0, "edge"]
+      level: [1, "level"]
