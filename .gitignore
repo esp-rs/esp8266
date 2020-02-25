@@ -1,3 +1,4 @@
 /target
 Cargo.lock
 src
+svd/esp8266.svd

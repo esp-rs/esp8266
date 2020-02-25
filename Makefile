@@ -1,10 +1,18 @@
-all: clean generate form fmt build
+OUTPUT=esp8266.svd
+BASE=esp8266.base.svd
+
+all: clean patch generate form fmt build
 
 clean:
 	rm -rf src/
 
+patch:
+	rm -f svd/$(OUTPUT)
+	svd patch svd/patches/esp8266.yaml
+	mv svd/$(BASE).patched svd/$(OUTPUT)
+
 generate:
-	svd2rust --target none -i svd/esp8266.svd
+	svd2rust --target none -i svd/$(OUTPUT)
 
 form:
 	form -i lib.rs -o src/
