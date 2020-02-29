@@ -17,10 +17,6 @@ IO_MUX:
         description: "configures pull up during sleep mode"
         bitOffset: 3
         bitWidth: 1
-      SLEEP_PULLDOWN:
-        description: "configures pull down during sleep mode"
-        bitOffset: 2
-        bitWidth: 1
       SLEEP_ENABLE:
         description: "configures output enable during sleep mode"
         bitOffset: 0
