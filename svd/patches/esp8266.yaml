@@ -5,3 +5,4 @@ _include:
   - "_io_mux.yaml"
   - "_uart.yaml"
   - "_timer.yaml"
+  - "_gpio.yaml"
