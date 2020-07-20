@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <device schemaVersion="1.0" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1.0.xsd"
         xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
-    <name>Espressif</name>
+    <name>esp8266</name>
     <version>1.0</version>
     <width>32</width>
     <cpu>
@@ -131,7 +131,7 @@
             <baseAddress>0x60000300</baseAddress>
             <addressBlock>
                 <offset>0</offset>
-                <size>0x000003a0</size>
+                <size>0x00000380</size>
                 <usage>registers</usage>
             </addressBlock>
             <registers>
@@ -265,14 +265,14 @@
                             <description>The values of the strapping pins.</description>
                             <bitOffset>16</bitOffset>
                             <bitWidth>16</bitWidth>
-                            <access>read-write</access>
+                            <access>write-only</access>
                         </field>
                         <field>
                             <name>GPIO_IN_DATA</name>
                             <description>The values of the GPIO pins when the GPIO pin is set as input.</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>16</bitWidth>
-                            <access>read-write</access>
+                            <access>write-only</access>
                         </field>
                     </fields>
                 </register>
@@ -1034,38 +1034,6 @@
                             <description>The cycle number of RTC-clock during RTC-clock-calibration</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>10</bitWidth>
-                            <access>read-write</access>
-                        </field>
-                    </fields>
-                </register>
-                <register>
-                    <name>GPIO_RTC_CALIB_VALUE</name>
-                    <addressOffset>0x70</addressOffset>
-                    <description>0: during RTC-clock-calibration; 1: RTC-clock-calibration is done</description>
-                    <size>32</size>
-                    <resetValue>0x00000000</resetValue>
-                    <fields>
-                        <field>
-                            <name>RTC_CALIB_RDY</name>
-                            <description>0: during RTC-clock-calibration; 1: RTC-clock-calibration is done</description>
-                            <bitOffset>31</bitOffset>
-                            <bitWidth>1</bitWidth>
-                            <access>read-write</access>
-                        </field>
-                        <field>
-                            <name>RTC_CALIB_RDY_REAL</name>
-                            <description>0: during RTC-clock-calibration; 1: RTC-clock-calibration is done</description>
-                            <bitOffset>30</bitOffset>
-                            <bitWidth>1</bitWidth>
-                            <access>read-write</access>
-                        </field>
-                        <field>
-                            <name>RTC_CALIB_VALUE</name>
-                            <description>The cycle number of clk_xtal (crystal clock) for the RTC_PERIOD_NUM cycles of
-                                RTC-clock
-                            </description>
-                            <bitOffset>0</bitOffset>
-                            <bitWidth>20</bitWidth>
                             <access>read-write</access>
                         </field>
                     </fields>
@@ -3089,7 +3057,7 @@
             <baseAddress>0x60000200</baseAddress>
             <addressBlock>
                 <offset>0</offset>
-                <size>0x00000400</size>
+                <size>0x000003e0</size>
                 <usage>registers</usage>
             </addressBlock>
             <registers>
@@ -3828,25 +3796,6 @@
                     </fields>
                 </register>
                 <register>
-                    <name>SPI_EXT3</name>
-                    <addressOffset>0xfc</addressOffset>
-                    <description>This register is for two SPI masters to share the same cs, clock and data signals.
-                    </description>
-                    <size>32</size>
-                    <resetValue>0x00000000</resetValue>
-                    <fields>
-                        <field>
-                            <name>reg_int_hold_ena</name>
-                            <description>This register is for two SPI masters to share the same cs, clock and data
-                                signals.
-                            </description>
-                            <bitOffset>0</bitOffset>
-                            <bitWidth>2</bitWidth>
-                            <access>read-write</access>
-                        </field>
-                    </fields>
-                </register>
-                <register>
                     <name>SPI_W0</name>
                     <addressOffset>0x40</addressOffset>
                     <description>the data inside the buffer of the SPI module, byte 0</description>
@@ -4109,7 +4058,7 @@
             <baseAddress>0x60000600</baseAddress>
             <addressBlock>
                 <offset>0</offset>
-                <size>0x00000120</size>
+                <size>0x00000100</size>
                 <usage>registers</usage>
             </addressBlock>
             <registers>
@@ -4264,22 +4213,6 @@
                         </field>
                     </fields>
                 </register>
-                <register>
-                    <name>FRC2_ALARM</name>
-                    <addressOffset>0x30</addressOffset>
-                    <description>the alarm value for the counter</description>
-                    <size>32</size>
-                    <resetValue>0x00000000</resetValue>
-                    <fields>
-                        <field>
-                            <name>frc2_alarm</name>
-                            <description>the alarm value for the counter</description>
-                            <bitOffset>0</bitOffset>
-                            <bitWidth>32</bitWidth>
-                            <access>read-write</access>
-                        </field>
-                    </fields>
-                </register>
             </registers>
         </peripheral>
         <peripheral>
@@ -4287,7 +4220,7 @@
             <baseAddress>0x60000000</baseAddress>
             <addressBlock>
                 <offset>0</offset>
-                <size>0x000001e0</size>
+                <size>0x000001c0</size>
                 <usage>registers</usage>
             </addressBlock>
             <registers>
@@ -4941,21 +4874,6 @@
                         <field>
                             <name>uart_date</name>
                             <description>UART HW INFO</description>
-                            <bitOffset>0</bitOffset>
-                            <bitWidth>32</bitWidth>
-                            <access>read-write</access>
-                        </field>
-                    </fields>
-                </register>
-                <register>
-                    <name>UART_ID</name>
-                    <addressOffset>0x7c</addressOffset>
-                    <description>UART_ID</description>
-                    <size>32</size>
-                    <resetValue>0x00000000</resetValue>
-                    <fields>
-                        <field>
-                            <name>uart_id</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -4969,7 +4887,7 @@
             <baseAddress>0x60000f00</baseAddress>
             <addressBlock>
                 <offset>0</offset>
-                <size>0x000001e0</size>
+                <size>0x000001c0</size>
                 <usage>registers</usage>
             </addressBlock>
             <registers>
@@ -5623,21 +5541,6 @@
                         <field>
                             <name>uart_date</name>
                             <description>UART HW INFO</description>
-                            <bitOffset>0</bitOffset>
-                            <bitWidth>32</bitWidth>
-                            <access>read-write</access>
-                        </field>
-                    </fields>
-                </register>
-                <register>
-                    <name>UART_ID</name>
-                    <addressOffset>0x7c</addressOffset>
-                    <description>UART_ID</description>
-                    <size>32</size>
-                    <resetValue>0x00000000</resetValue>
-                    <fields>
-                        <field>
-                            <name>uart_id</name>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
