@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<device schemaVersion="1.0" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1.0.xsd"
-        xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
-    <name>Espressif</name>
+<device schemaVersion="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+        xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1.0.xsd">
+    <name>esp8266</name>
     <version>1.0</version>
     <width>32</width>
     <cpu>
