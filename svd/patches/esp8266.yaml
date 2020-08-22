@@ -6,3 +6,4 @@ _include:
   - "_uart.yaml"
   - "_timer.yaml"
   - "_gpio.yaml"
+  - "_spi.yaml"
