@@ -1,0 +1,16 @@
+_add:
+  # See https://web.archive.org/web/20170604020535/http://esp8266-re.foogod.com/wiki/Random_Number_Generator
+  RNG:
+    description: RNG register
+    baseAddress: "0x3FF20E44"
+    addressBlock:
+      offset: 0x0
+      size: 0x20
+      usage: "RNG register"
+    registers:
+      rng:
+        description: RNG register
+        addressOffset: 0x0
+        size: 0x20
+        access: read-only
+        resetValue: 0x00000000

@@ -7,3 +7,4 @@ _include:
   - "_timer.yaml"
   - "_gpio.yaml"
   - "_spi.yaml"
+  - "_misc.yaml"
