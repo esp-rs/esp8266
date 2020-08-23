@@ -5,12 +5,85 @@ _add:
     baseAddress: "0x3FF20E44"
     addressBlock:
       offset: 0x0
-      size: 0x20
+      size: 32
       usage: "RNG register"
     registers:
       rng:
         description: RNG register
         addressOffset: 0x0
-        size: 0x20
+        size: 32
         access: read-only
+        resetValue: 0x00000000
+  # See https://mongoose-os.com/blog/esp8266-watchdog-timer/
+  WATCHDOG:
+    description: Watchdog registers
+    baseAddress: "0x60000900"
+    addressBlock:
+      offset: 0x0
+      size: 0x18
+      usage: "Watchdog registers"
+    registers:
+      ctl:
+        description: Watchdog control
+        addressOffset: 0x0
+        size: 32
+        access: read-write
+        resetValue: 0x00000000
+        fields:
+          enable:
+            description: "Enable the watchdog timer."
+            bitOffset: 0
+            bitWidth: 1
+          stage_1_no_reset:
+            description: "When set to 1, and running in two-stage mode, it turns the watchdog into a single shot timer that doesn't reset the device."
+            bitOffset: 1
+            bitWidth: 1
+          stage_1_disable:
+            description: "Set to 1 to disable the stage 1 of the watchdog timer"
+            bitOffset: 2
+            bitWidth: 1
+          unknown_3:
+            bitOffset: 3
+            bitWidth: 1
+          unknown_4:
+            bitOffset: 4
+            bitWidth: 1
+          unknown_5:
+            bitOffset: 5
+            bitWidth: 1
+      reload_stage0:
+        description: Reload value for stage 0
+        addressOffset: 0x4
+        size: 32
+        access: read-write
+        resetValue: 0x00000000
+      reload_stage1:
+        description: Reload value for stage 1
+        addressOffset: 0x8
+        size: 32
+        access: read-write
+        resetValue: 0x00000000
+      count:
+        description: Watchdog clock cycle count
+        addressOffset: 0xc
+        size: 32
+        access: read-write
+        resetValue: 0x00000000
+      stage:
+        description: The current watchdog stage
+        addressOffset: 0x10
+        size: 32
+        access: read-write
+        resetValue: 0x00000000
+      reset:
+        description: Watchdog reset
+        addressOffset: 0x14
+        size: 32
+        access: read-write
+        resetValue: 0x00000000
+      reset_stage:
+        description: Watchdog stage reset
+        addressOffset: 0x18
+        size: 32
+        access: read-write
         resetValue: 0x00000000
