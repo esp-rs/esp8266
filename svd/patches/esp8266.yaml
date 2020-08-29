@@ -8,3 +8,4 @@ _include:
   - "_gpio.yaml"
   - "_spi.yaml"
   - "_misc.yaml"
+  - "_dport.yaml"

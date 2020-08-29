@@ -1,0 +1,11 @@
+"DPORT":
+  EDGE_INT_ENABLE:
+    _add:
+      wdt_edge_int_enable:
+        description: "Enable the watchdog timer edge interrupt"
+        bitOffset: 0
+        bitWidth: 1
+      timer1_edge_int_enable:
+        description: "Enable the timer1 edge interrupt"
+        bitOffset: 1
+        bitWidth: 1
