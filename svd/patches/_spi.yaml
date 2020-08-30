@@ -1,4 +1,53 @@
 "SPI*":
+  SPI_CMD:
+    _add:
+      spi_read:
+        bitOffset: 31
+        bitWidth: 1
+      spi_write_enable:
+        bitOffset: 30
+        bitWidth: 1
+      spi_write_disable:
+        bitOffset: 29
+        bitWidth: 1
+      spi_read_id:
+        bitOffset: 28
+        bitWidth: 1
+      spi_read_sr:
+        bitOffset: 27
+        bitWidth: 1
+      spi_write_sr:
+        bitOffset: 26
+        bitWidth: 1
+      spi_pp:
+        bitOffset: 25
+        bitWidth: 1
+      spi_se:
+        bitOffset: 24
+        bitWidth: 1
+      spi_be:
+        bitOffset: 23
+        bitWidth: 1
+      spi_ce:
+        bitOffset: 22
+        bitWidth: 1
+      spi_dp:
+        bitOffset: 21
+        bitWidth: 1
+      spi_res:
+        bitOffset: 20
+        bitWidth: 1
+      spi_hpm:
+        bitOffset: 19
+        bitWidth: 1
+  SPI_ADDR:
+    _add:
+      address:
+        bitOffset: 0
+        bitWidth: 24
+      size:
+        bitOffset: 24
+        bitWidth: 8
   SPI_USER:
     _add:
       spi_ck_o_edge:
