@@ -9,3 +9,39 @@
         description: "Enable the timer1 edge interrupt"
         bitOffset: 1
         bitWidth: 1
+  _add:
+    IOSWAP:
+      description: IO Swap register
+      addressOffset: 0x28
+      size: 32
+      access: read-write
+      resetValue: 0x00000000
+      fields:
+        uart:
+          description: "Swap UART"
+          bitOffset: 0
+          bitWidth: 1
+        spi:
+          description: "Swap SPI"
+          bitOffset: 1
+          bitWidth: 1
+        uart0:
+          description: "Swap UART0 pins (u0rxd <-> u0cts), (u0txd <-> u0rts)"
+          bitOffset: 2
+          bitWidth: 1
+        uart1:
+          description: "Swap UART1 pins (u0rxd <-> u0cts), (u0txd <-> u0rts)"
+          bitOffset: 3
+          bitWidth: 1
+        hspi:
+          description: "Set HSPI with higher priority"
+          bitOffset: 5
+          bitWidth: 1
+        double_hspi:
+          description: "Set two SPI masters on HSPI"
+          bitOffset: 6
+          bitWidth: 1
+        double_cspi:
+          description: "Set two SPI masters on CSPI"
+          bitOffset: 7
+          bitWidth: 1
