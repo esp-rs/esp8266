@@ -45,3 +45,23 @@
           description: "Set two SPI masters on CSPI"
           bitOffset: 7
           bitWidth: 1
+    MAC0:
+      description: Mac address 0
+      addressOffset: 0x50
+      size: 32
+      access: read-only
+    MAC1:
+      description: Mac address 1
+      addressOffset: 0x54
+      size: 32
+      access: read-only
+    CHIPID:
+      description: Chip id
+      addressOffset: 0x58
+      size: 32
+      access: read-only
+    MAC2:
+      description: Mac address 2
+      addressOffset: 0x5c
+      size: 32
+      access: read-only
