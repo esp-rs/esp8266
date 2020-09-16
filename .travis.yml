@@ -1,0 +1,22 @@
+dist: focal
+language: rust
+
+rust:
+  - stable
+  - nightly
+
+cache: cargo
+
+matrix:
+  fast_finish: true
+
+before_install:
+  - sudo apt-get -y install python3-minimal python3-pip python3-setuptools
+
+install:
+  - python3 -m pip install --upgrade --user svdtools
+  - rustup component add rustfmt
+  - cargo install form --force
+  - cargo install --git https://github.com/rust-embedded/svd2rust svd2rust --force
+
+script: make clean patch generate form fmt
