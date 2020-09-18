@@ -87,3 +87,38 @@ _add:
         size: 32
         access: read-write
         resetValue: 0x00000000
+  RTCCNTL:
+    description: RNG register
+    baseAddress: 0
+    addressBlock:
+      offset: 0x0
+      size: 32
+      usage: "Internal I2C registers"
+    registers:
+      PLL:
+        description: PLL I2C Register
+        addressOffset: 0x60000d10
+        size: 32
+        access: read-write
+        resetValue: 0
+        fields:
+          BLOCK:
+            description: Block
+            bitOffset: 0
+            bitWidth: 8
+          ADDR:
+            description: Address
+            bitOffset: 8
+            bitWidth: 8
+          DATA:
+            description: Data
+            bitOffset: 16
+            bitWidth: 8
+          WRITE:
+            description: Write
+            bitOffset: 24
+            bitWidth: 1
+          BUSY:
+            description: Ready
+            bitOffset: 25
+            bitWidth: 1
