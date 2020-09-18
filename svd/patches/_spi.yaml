@@ -83,6 +83,46 @@
         description: "In the master mode, 1: high when idle; 0: low when idle"
         bitOffset: 29
         bitWidth: 1
+  SPI_SLAVE:
+    _add:
+      spi_buffer_enable:
+        description: "Enable read/write buffer"
+        bitOffset: 29
+        bitWidth: 1
+      sta_enable:
+        description: "Enable read/write buffer"
+        bitOffset: 28
+        bitWidth: 1
+      interrupt_trans_enable:
+        description: "Enable TRANS interrupts"
+        bitOffset: 9
+        bitWidth: 1
+      interrupt_ws_enable:
+        description: "Enable status write interrupts"
+        bitOffset: 8
+        bitWidth: 1
+      interrupt_rs_enable:
+        description: "Enable status read interrupts"
+        bitOffset: 7
+        bitWidth: 1
+      interrupt_wb_enable:
+        description: "Enable buffer write interrupts"
+        bitOffset: 6
+        bitWidth: 1
+      interrupt_rb_enable:
+        description: "Enable buffer read interrupts"
+        bitOffset: 5
+        bitWidth: 1
+  SPI_SLAVE1:
+    _add:
+      spi_status_fast_enable:
+        description: "Enable fast spi slave status "
+        bitOffset: 26
+        bitWidth: 1
+      spi_status_read:
+        description: "Enable spi slave status"
+        bitOffset: 25
+        bitWidth: 1
   _add:
     SPI_CTRL1:
       addressOffset: 0xc

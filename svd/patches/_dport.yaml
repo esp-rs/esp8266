@@ -65,3 +65,22 @@
       addressOffset: 0x5c
       size: 32
       access: read-only
+    SPI_INTERRUPT_TYPE:
+      description: "SPI interrupt type register"
+      addressOffset: 0x20
+      size: 32
+      access: read-only
+      resetValue: 0x00000000
+      fields:
+        spi0:
+          description: "SPI0 interrupt"
+          bitOffset: 4
+          bitWidth: 1
+        spi1:
+          description: "SPI1 interrupt"
+          bitOffset: 7
+          bitWidth: 1
+        i2s:
+          description: "I2S interrupt"
+          bitOffset: 9
+          bitWidth: 1
