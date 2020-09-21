@@ -1,6 +1,6 @@
 [package]
 name = "esp8266"
-version = "0.1.4"
+version = "0.1.5"
 description = "A minimal peripheral access crate the ESP8266"
 authors = ["Robin Appelman <robin@icewind.nl>"]
 edition = "2018"
