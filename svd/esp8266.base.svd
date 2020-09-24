@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<device xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1.0.xsd" schemaVersion="1.0"
-        xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+<device xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1.0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+        schemaVersion="1.0">
     <name>esp8266</name>
     <version>1.0</version>
+    <addressUnitBits>8</addressUnitBits>
     <width>32</width>
     <cpu>
         <name>Xtensa LX106</name>
@@ -19,7 +20,7 @@
             <baseAddress>0x3ff00000</baseAddress>
             <addressBlock>
                 <offset>0</offset>
-                <size>0x00000040</size>
+                <size>0x000000a4</size>
                 <usage>registers</usage>
             </addressBlock>
             <registers>
@@ -1825,7 +1826,7 @@
             <baseAddress>0x60000700</baseAddress>
             <addressBlock>
                 <offset>0</offset>
-                <size>0x00000040</size>
+                <size>0x00000100</size>
                 <usage>registers</usage>
             </addressBlock>
             <registers>
@@ -3089,7 +3090,7 @@
             <baseAddress>0x60000200</baseAddress>
             <addressBlock>
                 <offset>0</offset>
-                <size>0x00000400</size>
+                <size>0x00000100</size>
                 <usage>registers</usage>
             </addressBlock>
             <registers>
@@ -3849,13 +3850,13 @@
                 <register>
                     <name>SPI_W0</name>
                     <addressOffset>0x40</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 0</description>
+                    <description>the data inside the buffer of the SPI module, word 0</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w0</name>
-                            <description>the data inside the buffer of the SPI module, byte 0</description>
+                            <description>the data inside the buffer of the SPI module, word 0</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -3864,14 +3865,14 @@
                 </register>
                 <register>
                     <name>SPI_W1</name>
-                    <addressOffset>0x60</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 1</description>
+                    <addressOffset>0x44</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 1</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w1</name>
-                            <description>the data inside the buffer of the SPI module, byte 1</description>
+                            <description>the data inside the buffer of the SPI module, word 1</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -3880,14 +3881,14 @@
                 </register>
                 <register>
                     <name>SPI_W2</name>
-                    <addressOffset>0x80</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 2</description>
+                    <addressOffset>0x48</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 2</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w2</name>
-                            <description>the data inside the buffer of the SPI module, byte 2</description>
+                            <description>the data inside the buffer of the SPI module, word 2</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -3896,14 +3897,14 @@
                 </register>
                 <register>
                     <name>SPI_W3</name>
-                    <addressOffset>0xa0</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 3</description>
+                    <addressOffset>0x4c</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 3</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w3</name>
-                            <description>the data inside the buffer of the SPI module, byte 3</description>
+                            <description>the data inside the buffer of the SPI module, word 3</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -3912,14 +3913,14 @@
                 </register>
                 <register>
                     <name>SPI_W4</name>
-                    <addressOffset>0xc0</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 4</description>
+                    <addressOffset>0x50</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 4</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w4</name>
-                            <description>the data inside the buffer of the SPI module, byte 4</description>
+                            <description>the data inside the buffer of the SPI module, word 4</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -3928,14 +3929,14 @@
                 </register>
                 <register>
                     <name>SPI_W5</name>
-                    <addressOffset>0xe0</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 5</description>
+                    <addressOffset>0x54</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 5</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w5</name>
-                            <description>the data inside the buffer of the SPI module, byte 5</description>
+                            <description>the data inside the buffer of the SPI module, word 5</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -3944,14 +3945,14 @@
                 </register>
                 <register>
                     <name>SPI_W6</name>
-                    <addressOffset>0x100</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 6</description>
+                    <addressOffset>0x58</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 6</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w6</name>
-                            <description>the data inside the buffer of the SPI module, byte 6</description>
+                            <description>the data inside the buffer of the SPI module, word 6</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -3960,14 +3961,14 @@
                 </register>
                 <register>
                     <name>SPI_W7</name>
-                    <addressOffset>0x120</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 7</description>
+                    <addressOffset>0x5c</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 7</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w7</name>
-                            <description>the data inside the buffer of the SPI module, byte 7</description>
+                            <description>the data inside the buffer of the SPI module, word 7</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -3976,14 +3977,14 @@
                 </register>
                 <register>
                     <name>SPI_W8</name>
-                    <addressOffset>0x140</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 8</description>
+                    <addressOffset>0x60</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 8</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w8</name>
-                            <description>the data inside the buffer of the SPI module, byte 8</description>
+                            <description>the data inside the buffer of the SPI module, word 8</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -3992,14 +3993,14 @@
                 </register>
                 <register>
                     <name>SPI_W9</name>
-                    <addressOffset>0x160</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 9</description>
+                    <addressOffset>0x64</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 9</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w9</name>
-                            <description>the data inside the buffer of the SPI module, byte 9</description>
+                            <description>the data inside the buffer of the SPI module, word 9</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -4008,14 +4009,14 @@
                 </register>
                 <register>
                     <name>SPI_W10</name>
-                    <addressOffset>0x180</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 10</description>
+                    <addressOffset>0x68</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 10</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w10</name>
-                            <description>the data inside the buffer of the SPI module, byte 10</description>
+                            <description>the data inside the buffer of the SPI module, word 10</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -4024,14 +4025,14 @@
                 </register>
                 <register>
                     <name>SPI_W11</name>
-                    <addressOffset>0x1a0</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 11</description>
+                    <addressOffset>0x6c</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 11</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w11</name>
-                            <description>the data inside the buffer of the SPI module, byte 11</description>
+                            <description>the data inside the buffer of the SPI module, word 11</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -4040,14 +4041,14 @@
                 </register>
                 <register>
                     <name>SPI_W12</name>
-                    <addressOffset>0x1c0</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 12</description>
+                    <addressOffset>0x70</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 12</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w12</name>
-                            <description>the data inside the buffer of the SPI module, byte 12</description>
+                            <description>the data inside the buffer of the SPI module, word 12</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -4056,14 +4057,14 @@
                 </register>
                 <register>
                     <name>SPI_W13</name>
-                    <addressOffset>0x1e0</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 13</description>
+                    <addressOffset>0x74</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 13</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w13</name>
-                            <description>the data inside the buffer of the SPI module, byte 13</description>
+                            <description>the data inside the buffer of the SPI module, word 13</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -4072,14 +4073,14 @@
                 </register>
                 <register>
                     <name>SPI_W14</name>
-                    <addressOffset>0x200</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 14</description>
+                    <addressOffset>0x78</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 14</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w14</name>
-                            <description>the data inside the buffer of the SPI module, byte 14</description>
+                            <description>the data inside the buffer of the SPI module, word 14</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -4088,14 +4089,14 @@
                 </register>
                 <register>
                     <name>SPI_W15</name>
-                    <addressOffset>0x220</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 15</description>
+                    <addressOffset>0x7c</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 15</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w15</name>
-                            <description>the data inside the buffer of the SPI module, byte 15</description>
+                            <description>the data inside the buffer of the SPI module, word 15</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -4109,7 +4110,7 @@
             <baseAddress>0x60000100</baseAddress>
             <addressBlock>
                 <offset>0</offset>
-                <size>0x00000400</size>
+                <size>0x00000100</size>
                 <usage>registers</usage>
             </addressBlock>
             <registers>
@@ -4869,13 +4870,13 @@
                 <register>
                     <name>SPI_W0</name>
                     <addressOffset>0x40</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 0</description>
+                    <description>the data inside the buffer of the SPI module, word 0</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w0</name>
-                            <description>the data inside the buffer of the SPI module, byte 0</description>
+                            <description>the data inside the buffer of the SPI module, word 0</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -4884,14 +4885,14 @@
                 </register>
                 <register>
                     <name>SPI_W1</name>
-                    <addressOffset>0x60</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 1</description>
+                    <addressOffset>0x44</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 1</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w1</name>
-                            <description>the data inside the buffer of the SPI module, byte 1</description>
+                            <description>the data inside the buffer of the SPI module, word 1</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -4900,14 +4901,14 @@
                 </register>
                 <register>
                     <name>SPI_W2</name>
-                    <addressOffset>0x80</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 2</description>
+                    <addressOffset>0x48</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 2</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w2</name>
-                            <description>the data inside the buffer of the SPI module, byte 2</description>
+                            <description>the data inside the buffer of the SPI module, word 2</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -4916,14 +4917,14 @@
                 </register>
                 <register>
                     <name>SPI_W3</name>
-                    <addressOffset>0xa0</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 3</description>
+                    <addressOffset>0x4c</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 3</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w3</name>
-                            <description>the data inside the buffer of the SPI module, byte 3</description>
+                            <description>the data inside the buffer of the SPI module, word 3</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -4932,14 +4933,14 @@
                 </register>
                 <register>
                     <name>SPI_W4</name>
-                    <addressOffset>0xc0</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 4</description>
+                    <addressOffset>0x50</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 4</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w4</name>
-                            <description>the data inside the buffer of the SPI module, byte 4</description>
+                            <description>the data inside the buffer of the SPI module, word 4</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -4948,14 +4949,14 @@
                 </register>
                 <register>
                     <name>SPI_W5</name>
-                    <addressOffset>0xe0</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 5</description>
+                    <addressOffset>0x54</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 5</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w5</name>
-                            <description>the data inside the buffer of the SPI module, byte 5</description>
+                            <description>the data inside the buffer of the SPI module, word 5</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -4964,14 +4965,14 @@
                 </register>
                 <register>
                     <name>SPI_W6</name>
-                    <addressOffset>0x100</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 6</description>
+                    <addressOffset>0x58</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 6</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w6</name>
-                            <description>the data inside the buffer of the SPI module, byte 6</description>
+                            <description>the data inside the buffer of the SPI module, word 6</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -4980,14 +4981,14 @@
                 </register>
                 <register>
                     <name>SPI_W7</name>
-                    <addressOffset>0x120</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 7</description>
+                    <addressOffset>0x5c</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 7</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w7</name>
-                            <description>the data inside the buffer of the SPI module, byte 7</description>
+                            <description>the data inside the buffer of the SPI module, word 7</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -4996,14 +4997,14 @@
                 </register>
                 <register>
                     <name>SPI_W8</name>
-                    <addressOffset>0x140</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 8</description>
+                    <addressOffset>0x60</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 8</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w8</name>
-                            <description>the data inside the buffer of the SPI module, byte 8</description>
+                            <description>the data inside the buffer of the SPI module, word 8</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -5012,14 +5013,14 @@
                 </register>
                 <register>
                     <name>SPI_W9</name>
-                    <addressOffset>0x160</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 9</description>
+                    <addressOffset>0x64</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 9</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w9</name>
-                            <description>the data inside the buffer of the SPI module, byte 9</description>
+                            <description>the data inside the buffer of the SPI module, word 9</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -5028,14 +5029,14 @@
                 </register>
                 <register>
                     <name>SPI_W10</name>
-                    <addressOffset>0x180</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 10</description>
+                    <addressOffset>0x68</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 10</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w10</name>
-                            <description>the data inside the buffer of the SPI module, byte 10</description>
+                            <description>the data inside the buffer of the SPI module, word 10</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -5044,14 +5045,14 @@
                 </register>
                 <register>
                     <name>SPI_W11</name>
-                    <addressOffset>0x1a0</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 11</description>
+                    <addressOffset>0x6c</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 11</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w11</name>
-                            <description>the data inside the buffer of the SPI module, byte 11</description>
+                            <description>the data inside the buffer of the SPI module, word 11</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -5060,14 +5061,14 @@
                 </register>
                 <register>
                     <name>SPI_W12</name>
-                    <addressOffset>0x1c0</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 12</description>
+                    <addressOffset>0x70</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 12</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w12</name>
-                            <description>the data inside the buffer of the SPI module, byte 12</description>
+                            <description>the data inside the buffer of the SPI module, word 12</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -5076,14 +5077,14 @@
                 </register>
                 <register>
                     <name>SPI_W13</name>
-                    <addressOffset>0x1e0</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 13</description>
+                    <addressOffset>0x74</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 13</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w13</name>
-                            <description>the data inside the buffer of the SPI module, byte 13</description>
+                            <description>the data inside the buffer of the SPI module, word 13</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -5092,14 +5093,14 @@
                 </register>
                 <register>
                     <name>SPI_W14</name>
-                    <addressOffset>0x200</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 14</description>
+                    <addressOffset>0x78</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 14</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w14</name>
-                            <description>the data inside the buffer of the SPI module, byte 14</description>
+                            <description>the data inside the buffer of the SPI module, word 14</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>
@@ -5108,14 +5109,14 @@
                 </register>
                 <register>
                     <name>SPI_W15</name>
-                    <addressOffset>0x220</addressOffset>
-                    <description>the data inside the buffer of the SPI module, byte 15</description>
+                    <addressOffset>0x7c</addressOffset>
+                    <description>the data inside the buffer of the SPI module, word 15</description>
                     <size>32</size>
                     <resetValue>0x00000000</resetValue>
                     <fields>
                         <field>
                             <name>spi_w15</name>
-                            <description>the data inside the buffer of the SPI module, byte 15</description>
+                            <description>the data inside the buffer of the SPI module, word 15</description>
                             <bitOffset>0</bitOffset>
                             <bitWidth>32</bitWidth>
                             <access>read-write</access>

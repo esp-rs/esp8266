@@ -123,6 +123,36 @@
         description: "Enable spi slave status"
         bitOffset: 25
         bitWidth: 1
+  SPI_CTRL:
+    _add:
+      two_byte_status:
+        description: "Enable two byte status"
+        bitOffset: 22
+        bitWidth: 1
+      wp_reg:
+        description: "Write protect?"
+        bitOffset: 21
+        bitWidth: 1
+      share_but:
+        description: "Share bus"
+        bitOffset: 19
+        bitWidth: 1
+      hold_mode:
+        description: "Hold mode"
+        bitOffset: 18
+        bitWidth: 1
+      enable_ahb:
+        description: "Enable AHB"
+        bitOffset: 17
+        bitWidth: 1
+      sst_aai:
+        description: "SST_AAI?"
+        bitOffset: 16
+        bitWidth: 1
+      res_and_res:
+        description: "'Res and res'?"
+        bitOffset: 15
+        bitWidth: 1
   _add:
     SPI_CTRL1:
       addressOffset: 0xc
@@ -142,3 +172,42 @@
           description: "In the slave mode,it is the status for master to read out."
           bitOffset: 24
           bitWidth: 8
+    SPI_EXT0:
+      addressOffset: 0xF0
+      size: 32
+      access: read-write
+      resetValue: 0
+      fields:
+        pp_enable:
+          bitOffset: 31
+          bitWidth: 1
+        pp_shift:
+          bitOffset: 16
+          bitWidth: 4
+        pp_time:
+          bitOffset: 0
+          bitWidth: 12
+    SPI_EXT1:
+      addressOffset: 0xF4
+      size: 32
+      access: read-write
+      resetValue: 0
+      fields:
+        erase_enable:
+          bitOffset: 31
+          bitWidth: 1
+        erase_shift:
+          bitOffset: 16
+          bitWidth: 4
+        erase_time:
+          bitOffset: 0
+          bitWidth: 12
+    SPI_EXT2:
+      addressOffset: 0xF8
+      size: 32
+      access: read-write
+      resetValue: 0
+      fields:
+        st:
+          bitOffset: 0
+          bitWidth: 3
