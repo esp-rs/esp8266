@@ -1,0 +1,20 @@
+language: rust
+rust:
+  - nightly
+cache: cargo
+dist: "trusty"
+before_install:
+  - python --version
+  - pyenv install 3.6.3
+  - pyenv global 3.6.3
+
+matrix:
+  fast_finish: true
+
+install:
+  - rustup component add rustfmt
+  - pip3 install --upgrade --user svdtools
+  - cargo install form --force
+  - cargo install --git https://github.com/rust-embedded/svd2rust svd2rust --force
+
+script: make clean patch generate form fmt
