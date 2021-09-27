@@ -1,6 +1,6 @@
 [package]
 name = "esp8266"
-version = "0.2.0"
+version = "0.3.0"
 description = "A minimal peripheral access crate the ESP8266"
 authors = ["Robin Appelman <robin@icewind.nl>"]
 edition = "2018"
@@ -13,10 +13,10 @@ include = [
 license = "MIT OR Apache-2.0"
 
 [dependencies]
-bare-metal = "0.2"
+bare-metal = "1"
 vcell = "0.1"
-xtensa-lx = "0.3.0"
-xtensa-lx-rt = { version = "0.5.0", optional = true }
+xtensa-lx = "0.4"
+xtensa-lx-rt = { version = "0.7.0", optional = true }
 
 [features]
 default=[]
