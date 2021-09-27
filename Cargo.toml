@@ -4,11 +4,10 @@ version = "0.3.0"
 description = "A minimal peripheral access crate the ESP8266"
 authors = ["Robin Appelman <robin@icewind.nl>"]
 edition = "2018"
-repository = "https://github.com/icewind1991/esp8266"
+repository = "https://github.com/esp-rs/esp8266"
 
 include = [
     "/src/**",
-    "svd/esp8266.svd"
 ]
 license = "MIT OR Apache-2.0"
 
