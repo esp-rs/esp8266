@@ -6,7 +6,7 @@ _add:
     addressBlock:
       offset: 0x0
       size: 32
-      usage: "RNG register"
+      usage: "registers"
     registers:
       rng:
         description: RNG register
@@ -20,7 +20,7 @@ _add:
     addressBlock:
       offset: 0x0
       size: 32
-      usage: "Internal I2C registers"
+      usage: "registers"
     registers:
       PLL:
         description: PLL I2C Register
