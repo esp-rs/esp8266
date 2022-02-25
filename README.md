@@ -1,5 +1,11 @@
 # esp8266
 
+---
+
+## This project has moved! It can now be found in the [esp-rs/esp-pacs](https://github.com/esp-rs/esp-pacs/tree/main/esp8266) repository.
+
+---
+
 [![Build Status](https://travis-ci.com/esp-rs/esp8266.svg?branch=master)](https://travis-ci.com/esp-rs/esp8266)
 ![crates.io](https://img.shields.io/crates/v/esp8266.svg)
 
